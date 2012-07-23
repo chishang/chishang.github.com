@@ -1,0 +1,97 @@
+section{
+	width: 50%;
+	padding:20px;
+	margin: 60px auto;
+	border:1px solid #ccc;
+	box-shadow: 4px 4px 2px #ccc;
+	border-radius: 8px;
+	position: relative;
+}
+/**======================================
+ * 	标题=================================
+ ========================================*/
+header{
+	color: #FF4E00;
+	line-height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 2px 2px 1px #ccc;
+	margin-bottom: 30px;
+}
+h2{
+	line-height: 1.2em;
+	border-bottom: 1px solid #ddd;
+	margin: 10px 0;
+	line-height: 2em;
+	font-weight: bold;
+	color: green;
+}
+
+/**======================================
+ * 	列表=================================
+ ========================================*/
+li{
+	
+	line-height: 24px;
+	border-bottom: 1px dashed #ccc;
+	margin-bottom: 10px;
+}
+/**======================================
+ * 	超链接=================================
+ ========================================*/
+
+/**======================================
+ * 	按钮=================================
+ ========================================*/
+input[type="button"]{
+	background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+    font-family: 'AllerLight',Helvetica,Arial,sans-serif;
+    color: #fff;
+    margin-left: 1em;
+    padding:.6em 1.2em;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    cursor: pointer;
+}
+input[type="button"]:hover{
+	background:-webkit-gradient(linear,0 50%,100% 50%,from(#FF9900),to(#FF6600));/*Old gradient for webkit*/ 
+	background:-webkit-linear-gradient(top,#F90,#F60);/*new gradient for Webkit*/ 
+	background:-o-linear-gradient(top,#F90,#F60); /*Opera11*/
+	background: -moz-linear-gradient(#FF9900, #FF6600);/*Mozilla*/ 
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600);/*IE<9>*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600)";/*IE8+*/
+}
+/**======================================
+ * 	文章=================================
+ ========================================*/
+p{
+	text-indent: 2em;
+	line-height: 2em;
+}
+/**======================================
+ * 	标签=================================
+ ========================================*/
+aside{
+	position: absolute;
+	display:none\9;/*ie下隐藏*/
+	top: 20px;	
+	left: -15px;
+	width:90px;
+	text-align:center;
+	line-height:24px;
+	color:#FFFF2B;
+	font-weight:bold;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	background:-webkit-gradient(linear,0 50%,100% 50%,from(#2099E0),to(#148ED7));/*Old gradient for webkit*/ 
+	background:-webkit-linear-gradient(top,#2099E0,#148ED7);/*new gradient for Webkit*/ 
+	background:-o-linear-gradient(top,#2099E0,#148ED7); /*Opera11*/
+	background: -moz-linear-gradient(#2099E0, #148ED7);/*Mozilla*/ 
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#2099E0, endColorstr=#148ED7);/*IE<9>*/
+}

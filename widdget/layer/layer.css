@@ -1,0 +1,158 @@
+/**
+ * 	本页面分割
+ */
+.layerbody h1{
+	line-height: 1.2em;
+	border-bottom: 1px solid #ddd;
+	margin: 10px 0;
+}
+.layerbody{
+	padding:50px 100px;
+}
+.layerbody header{
+	text-align: center;
+	color: red;
+	font: 36px/1.5 bolder;
+}
+/**
+ * 	layer层
+ */
+.masklayer{
+	position: relative;
+	display:block;
+	z-index: 1;
+	width: 235px;
+	height: 235px;
+	overflow:hidden;
+	text-decoration: none;
+}
+.layer{
+	position:absolute;	
+	top: 0px;
+	left: 0px; 
+	bottom:0;
+	right:0;
+	width:100%;
+	height:100%;
+	z-index:2;
+	display:none;
+	overflow: hidden;
+}
+.s-opacity{
+	position: absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	background-color:#000;
+	opacity: 0.6;
+	filter: Alpha(Opacity=60);
+	z-index: -1;
+}
+
+.masklayer:hover .layer,.masklayer-on .layer{
+	display: block;
+	height:100%;
+	cursor: pointer;
+}
+.masklayer-leave .layer{
+	visibility: hidden;
+}
+.fglayer{
+	overflow: hidden;
+}
+.fglayer .text{
+	position: absolute;
+	display: inline;
+	bottom: 10px;
+	left:0;
+    width: 80%;
+    text-align:center;
+    margin-left: 10%;
+    color: yellow;
+}
+.bglayer{	
+	background: #000;
+	color:#000;
+	opacity: 0.6;
+	height:0;
+	filter:alpha(opacity=60);
+}
+/**
+ * 	价格自适应显示
+ * 
+ */
+.masklayer .price{
+	position: absolute;
+	bottom:0;
+	left:10px;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+    z-index:100;
+	font-size:14px;
+	font-weight:bold;
+	overflow: hidden;
+}
+.masklayer .price .text{
+	padding:0 20px;
+	background: none;
+	color:#f60;
+	font-family: Arial;
+}
+/**
+ * 图片标题底部居中显示
+ */
+.masklayer .title{
+	position: absolute;
+	bottom:0;
+	left:0px;
+	width:100%;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+    z-index:100;
+	font-size:14px;
+	overflow: hidden;
+}
+.masklayer .title .text{
+	color: #fff;
+}
+/**
+ * 	弹出框
+ */
+.layer-alert{
+	position: absolute;
+	top:50%;
+	left:50%;
+	z-index:1001;
+	width: 300px;
+	margin:-150px auto auto -200px;
+	height:200px;
+	background-color: #efefef;
+	display: none;
+}
+.layer-alert-shadow{
+	position: absolute;
+	top: -8px;
+	left: -8px; 
+	width: 100%;
+	height: 100%;
+	border: 8px solid #353535;
+	border-radius:3px;
+	opacity: 0.6;
+	filter:alpha(opacity=60);
+	z-index: 1000;
+}
+.layer-shade{
+	position:absolute;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	z-index:999;
+	filter:alpha(opacity=30);  
+	opacity:0.3;
+	background: #000;
+	display: none;
+}

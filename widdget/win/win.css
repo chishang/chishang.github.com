@@ -1,0 +1,150 @@
+/* 提示框*/
+
+.J_win_header,.J_win_close,.J_win_con,.J_win_footer a{
+	 background-image:url("http://yinghuo.com/q/win.gif");
+	 background-repeat:no-repeat;
+	 text-decoration: none;
+}
+.J_win{
+	  display:none;
+	  position:absolute;
+	  width:400px;
+	  border:1px solid #1d7269;
+	  background:#edf8f7;
+	  -moz-border-radius:3px;
+	  -khtml-border-radius:3px;
+	  -webkit-border-radius:3px;
+	  border-radius:3px;
+	  z-index:10002;	  
+}
+.J_win_header{
+	 padding-left:10px;
+	 height:30px;
+	 line-height:30px;
+	 color:#fff;
+	 font-size:14px;
+	 font-weight:bold;
+	 background-repeat:repeat-x;
+	 background-position:0 -695px;
+	 margin: 0;
+}
+.J_win_close{
+	 position:absolute;
+	 display:block;
+	 top:8px;
+	 right:10px;
+	 width:11px;
+	 height:11px;
+	 cursor:pointer;
+	 background-position:-8px -649px;
+	 overflow:hidden;
+}
+
+.J_win_con{
+	padding:20px 40px;
+}
+
+
+.J_win_message{
+	 display:inline-block;
+	 padding:0px 0px 0px 40px;
+	 font-size:14px;
+	 background-position:0px -352px;
+	 _zoom:1;	
+}
+
+.J_win em{
+	font-weight:bold;
+}
+
+.J_win_footer{
+	  height:23px;
+	  padding:10px;
+	  border-top:1px solid #c3d5e7; 
+}
+
+.J_win_footer a{
+	  float:right;
+	  display:inline;
+	  width:47px;
+	  margin-left:10px;
+	  height:25px;
+	  line-height:25px;
+	  color:#000;
+	  background-position:0px -739px;
+	  font-size:12px;
+	  text-align:center;  
+	  text-decoration: none;
+}
+.J_win_footer a:hover{
+	text-decoration:none;
+}
+.J_win_footer em{
+	  margin:0 auto;
+	  display:block;
+	  width:47px;
+	  height:25px;
+	  line-height:23px;
+	  color:#000;
+	  background-position:-215px -82px;
+}
+
+.J_win_error .J_win_con{
+	  background-position:40px -288px;
+}
+.J_win_right .J_win_con{
+	  background-position:40px -127px;
+}
+.J_win_confirm .J_win_con{
+	  background-position:40px 13px;
+}
+/* 遮罩层*/
+#J_Mask{
+	  position:absolute;
+	  display:none;
+	  top: 0px; 
+	  left: 0px;
+	  width:100%;
+	  height:100%;
+	  background:#000;
+	  z-index: 10001;
+	  filter:alpha(opacity=60);  
+	  opacity:0.6;
+}
+/*******************************************************
+ * iframe框样式
+ ****************************************************/
+.iframe-box{
+	background:#fff;
+	border:none;
+	padding:20px 10px 10px 10px;
+}
+.iframe-box .J_win_header{
+	background: none; 
+	padding:0;
+}
+.iframe-box .J_win_con{
+	background: none;
+	padding: 0;
+	margin: 0;
+}
+.iframe-box .J_win_close{
+	background-position:-44px -649px;
+	top: 4px;
+	right: 4px;
+}
+
+/*透明边框*/
+.J_win .J_win_border{
+	position:absolute;
+	left:-8px;
+	top:-8px;
+	border:8px solid #353535;
+	-moz-border-radius:3px;
+    -khtml-border-radius:3px;
+    -webkit-border-radius:3px;
+	opacity:.6;
+	filter:alpha(opacity=60);
+	z-index: -10001;	 
+}
+

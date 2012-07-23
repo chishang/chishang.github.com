@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="gbk" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>win</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="liuchaowu.pt" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/nav.css" />
+		<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
+		<script src="js/config.js"></script>
+	</head>
+	<body>
+		<section>
+			<header>
+				 弹窗组件
+			</header>
+			<nav>
+				<p>
+				 
+			</nav>
+			<div>
+				<input type="button" value="二次确认" class="J_confirm"/>
+				<input type="button" value="警告" class="J_warn"/>
+				<input type="button" value="提示" class="J_inform"/>
+				<input type="button" value="iframe" class="J_box"/>
+			</div>
+			</section>
+		<script  >
+			KISSY.use("win",function(S){
+				var confirmBtn=S.one(".J_confirm"),
+				warnBtn=S.one(".J_warn"),
+				informBtn=S.one(".J_inform"),
+				boxBtn=S.one(".J_box");
+				confirmBtn.on("click",function(e){
+					S.Win.confirm("你确定要付款吗","系统提示",function(){
+						S.Win.inform("付款成功");
+					},function(){
+						S.Win.warn("请记得回来付款哦~");
+					});
+				});
+				warnBtn.on("click",function(e){
+					S.Win.warn("付款失败","系统提示");
+				});
+				informBtn.on("click",function(e){
+					S.Win.inform("付款成功","系统提示");
+				});
+			boxBtn.on("click",function(e){
+					 var box=new S.Win("#J_boxWin",{
+					 	width:360,
+					 	height:320,
+					 	src:"http://m.taobao.com"
+					 });
+					 box.show();
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="gbk" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>鼠标绘图</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="t-liuchaowu.pt" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	
+		<style type="text/css">
+
+		#canvasDivcanvas{ 
+		
+			border:1px solid #ccc;
+			margin: 20px auto;
+		}
+		
+		</style>
+
+	</head>
+	<body>
+		 
+			<header>
+				<h1>鼠标绘图</h1>
+			</header>
+			
+			<input type="button" value="red"  class="colorbtn"/>
+			<input type="button" value="green"  class="colorbtn"/>
+			<input type="button" value="yellow"  class="colorbtn"/>
+			<input class="reckt" type="button" value="画矩形" />
+			<br />
+			<label for="">画笔半径</label><input type="number" value="10" id="linewidth" class="linewidth"/>
+			<br />
+			<input type="button" value="清除" class="J_Clear" />
+			<input type="button" value="保存图片" class="J_Save" />
+			<div id="canvasDiv">	
+			</div>
+
+			<script src="http://yinghuo.com/??s/kissy/1.2.0/kissy-min.js,widdget/canvas/canvas.js"></script>
+			<script>
+				KISSY.use("canvas",function(S){
+					var E=S.Event;
+					var canvas=new S.Canvas({
+						id:"canvasDiv",
+						width:600,
+						height:300,
+						color:"green",
+						lineWidth:2
+					});
+					S.log(canvas);
+					//颜色设置
+					S.all(".colorbtn").on("click",function(e){
+						var nTarget=S.one(e.currentTarget),
+						color=nTarget.val();
+						canvas.strokeStyle(color);
+					});
+					//半径设置
+					S.one(".linewidth").on("valuechange",function(e){
+						var nTarget=S.one(e.currentTarget),
+						width=nTarget.val();
+						canvas.lineWidth(width);
+					});
+					//画矩形
+					S.one(".reckt").on("click",function(e){
+						E.detach(canvas,"mousedown");
+						E.on(canvas,"mousedown",drawRect);
+						function drawRect(e){
+							var x=e.mouseX,
+							y=e.mouseY;
+							canvas.drawRect(x,y,40,80);
+						};
+						
+					});
+					//保存
+					S.one(".J_Save").on("click",function(e){
+						canvas.save();
+					});
+					S.one(".J_Clear").on("click",function(e){
+						canvas.clear(0,0,600,600);
+					});
+		
+				});
+			</script>
+	</body>
+</html>

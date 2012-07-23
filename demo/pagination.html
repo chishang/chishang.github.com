@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>
+            Cubee - 分页控件
+        </title>
+        <meta charset="gbk" />
+       <link rel="stylesheet" href="http://yinghuo.com/o/css/??base.css,nav.css" />
+        <script src="http://yinghuo.com/??s/kissy/1.2.0/kissy-min.js,demo/js/config.js"></script>
+        <script src="http://yinghuo.com/??s/yui/3.3.0/build/yui/yui-min.js,s/yui/3.3.0/build/loader/loader-min.js"></script>
+    </head>
+    
+    <body class="yui-skin-sam">
+    	
+        <h1>
+                  	基于YUI3 Widget的分页控件
+        </h1>
+       
+        <ol>
+            <li>
+                <h3>
+                    静态的分页
+                </h3>
+                 <div class="clear">
+                    选中第一页：
+                    <div id="page0-0" class="yui-pagenation-content">
+                        <span>
+                            <a class="page-prev-disabled" title="上一页" href="#">
+                                上一页
+                            </a>
+                            <span class="page-main">
+                                <a title="第1页" class="current" href="#page-1">
+                                    1
+                                </a>
+                                <a title="第2页" href="#page-2">
+                                    2
+                                </a>
+                                <a title="第3页" href="#page-3">
+                                    3
+                                </a>
+                                <a title="第4页" href="#page-4">
+                                    4
+                                </a>
+                                <a title="第5页" href="#page-5">
+                                    5
+                                </a>
+                                <a title="第6页" href="#page-6">
+                                    6
+                                </a>
+                                <a title="第7页" href="#page-7">
+                                    7
+                                </a>
+                            </span>
+                            <a class="page-next" title="下一页" href="#">
+                                下一页
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                    选中最后一页：
+                    <div id="page0-1" class="yui-pagenation-content">
+                        <span>
+                            <a class="page-prev" title="上一页" href="#">
+                                上一页
+                            </a>
+                            <span class="page-main">
+                                <a title="第1页" href="#page-1">
+                                    1
+                                </a>
+                                <a title="第2页" href="#page-2">
+                                    2
+                                </a>
+                                <a title="第3页" href="#page-3">
+                                    3
+                                </a>
+                                <a title="第4页" href="#page-4">
+                                    4
+                                </a>
+                                <a title="第5页" href="#page-5">
+                                    5
+                                </a>
+                                <a title="第6页" href="#page-6">
+                                    6
+                                </a>
+                                <a title="第7页" class="current" href="#page-7">
+                                    7
+                                </a>
+                            </span>
+                            <a class="page-next-disabled" title="下一页" href="#">
+                                下一页
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                    选中中间页：
+                    <div id="page0-2" class="yui-pagenation-content">
+                        <span>
+                            <a class="page-prev" title="上一页" href="#">
+                                上一页
+                            </a>
+                            <span class="page-main">
+                                <a title="第1页" href="#page-1">
+                                    1
+                                </a>
+                                <a title="第2页" href="#page-2">
+                                    2
+                                </a>
+                                <a title="第3页" href="#page-3" class="current">
+                                    3
+                                </a>
+                                <a title="第4页" href="#page-4">
+                                    4
+                                </a>
+                                <a title="第5页" href="#page-5">
+                                    5
+                                </a>
+                                <a title="第6页" href="#page-6">
+                                    6
+                                </a>
+                                <a title="第7页" href="#page-7">
+                                    7
+                                </a>
+                            </span>
+                            <a class="page-next" title="下一页" href="#">
+                                下一页
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                    有跳页：
+                    <div id="page0-3" class="yui-pagenation-content">
+                        <span>
+                            <a class="page-prev" title="上一页" href="#">
+                                上一页
+                            </a>
+                            <span class="page-main">
+                                <a title="第1页" href="#page-1">
+                                    1
+                                </a>
+                                <em>
+                                    ...
+                                </em>
+                                <a title="第7页" href="#page-7">
+                                    7
+                                </a>
+                                <a title="第8页" href="#page-8">
+                                    8
+                                </a>
+                                <a title="第9页" href="#page-9">
+                                    9
+                                </a>
+                                <a title="第10页" class="current" href="#page-10">
+                                    10
+                                </a>
+                                <a title="第11页" href="#page-11">
+                                    11
+                                </a>
+                                <a title="第12页" href="#page-12">
+                                    12
+                                </a>
+                                <a title="第13页" href="#page-13">
+                                    13
+                                </a>
+                                <em>
+                                    ...
+                                </em>
+                                <a title="第22页" href="#page-22">
+                                    22
+                                </a>
+                            </span>
+                            <a class="page-next" title="下一页" href="#">
+                                下一页
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="clear">
+                    居中分页：
+                    <div class="page-center">
+                        <div class="wrapper">
+                            <div id="page0-4" class="yui-pagenation-content">
+                                <span>
+                                    <a class="page-prev-disabled" title="上一页" href="#">
+                                        上一页
+                                    </a>
+                                    <span class="page-main">
+                                        <a title="第1页" class="current" href="#page-1">
+                                            1
+                                        </a>
+                                        <a title="第2页" href="#page-2">
+                                            2
+                                        </a>
+                                        <a title="第3页" href="#page-3">
+                                            3
+                                        </a>
+                                        <a title="第4页" href="#page-4">
+                                            4
+                                        </a>
+                                        <a title="第5页" href="#page-5">
+                                            5
+                                        </a>
+                                        <a title="第6页" href="#page-6">
+                                            6
+                                        </a>
+                                        <a title="第7页" href="#page-7">
+                                            7
+                                        </a>
+                                    </span>
+                                    <a class="page-next" title="下一页" href="#">
+                                        下一页
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    基本的分页
+                </h3>
+                <div id="page1" class="yui-pagenation-content">
+                </div>
+            </li>
+            <li>
+                <h3>
+                    带跳转的分页
+                </h3>
+                <div id="page2" class="yui-pagenation-content">
+                </div>
+            </li>
+            <li>
+                <h3>
+                    设置分页的配置
+                </h3>
+                <div id="page3" class="yui-pagenation-content">
+                </div>
+                <br />
+                <div style="clear:both;">
+                    <button id="page-setmax">
+                        设置总页数为50
+                    </button>
+                    <button id="page-setstep">
+                        设置页数步长为10
+                    </button>
+                    <button id="page-setindex">
+                        设置当前页数为20
+                    </button>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    页数回调
+                </h3>
+                <div id="page4" class="yui-pagenation-content">
+                </div>
+            </li>
+        </ol>
+        
+         <script type="text/javascript">
+            YUI(YUI_CONFIG).use('pagenation','dump',
+            function(Y) {
+               var p1 = new Y.Pagenation({
+                    contentBox: '#page1',
+                    max: 22,
+                    index: 10
+                });
+                p1.on('trigger',
+                function(e) {
+                    Y.log(e.page);
+                });
+
+                var p2 = new Y.Pagenation({
+                    contentBox: '#page2',
+                    max: 42,
+                    jump: true
+                });
+                p2.on('trigger',
+                function(e) {
+                    Y.log(e.page);
+                });
+
+                var p3 = new Y.Pagenation({
+                    contentBox: '#page3',
+                    max: 25
+                });
+                p3.on('trigger',
+                function(e) {
+                    Y.log(e.page);
+                });
+                Y.one('#page-setmax').on('click',
+                function(e) {
+                    p3.setMax(50);
+                });
+                Y.one('#page-setstep').on('click',
+                function(e) {
+                    p3.setStep(10);
+                });
+                Y.one('#page-setindex').on('click',
+                function(e) {
+                    p3.setIndex(20);
+                });
+
+                var p4 = new Y.Pagenation({
+                    contentBox: '#page4',
+                    max: 30
+                });
+                p4.on('trigger',
+                function(e) {
+                    alert('您点击的页数是：' + e.page + '\n总页数是：' + e.max);
+                });
+            });
+        </script>
+    </body>
+
+</html>

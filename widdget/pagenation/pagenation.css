@@ -1,0 +1,30 @@
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+.page-center{position:absolute; right:50%;}
+.page-center .wrapper{position:relative; left:50%;overflow:hidden;} 
+.page-center .yui-pagenation-content{float:left;}
+.yui-pagenation-content{font:normal 12px/1.5 'Tahoma','simsun';clear:both;}
+.yui-pagenation-focused{outline:none;}
+.yui-pagenation-content em{font-style:normal;color:#818181;float:left;}
+.yui-pagenation-content ins{text-decoration:none;color:#989898;margin-left:10px;margin-top:6px;float:left;}
+.yui-pagenation-content ins input{width:40px; border:1px solid #D4D4D4;margin:0 5px;}
+.yui-pagenation-content ins button{border:1px solid #808080; background:#ffffff;color:#989898;cursor:pointer;margin-left:5px;padding:0;width:36px;height:20px;}
+.yui-pagenation-content ins button:hover, .yui-pagenation-content ins button.jumpbtn-hover{background:#009FE8;color:#ffffff;}
+.yui-pagenation-content a{float:left;height:20px;border:1px solid #D3D3D3; padding:0 6px;line-height:20px;margin: 3px;color:#808080;text-decoration:none;cursor:pointer;}
+.yui-pagenation-content a:hover{border-color:#019FE8; color:#009EE8;}
+.yui-pagenation-content .current{background:#00A0E9; border-color:#00A0E9; color:#FFFFFF !important;}
+.yui-pagenation-content .page-prev, .yui-pagenation-content .page-prev-disabled, .yui-pagenation-content .page-next, .yui-pagenation-content .page-next-disabled{background:url(http://img01.taobaocdn.com/tps/i1/T1_PVrXaNfXXXXXXXX-4-88.png) no-repeat 8px -20px;}
+
+.yui-pagenation-content .page-prev-disabled, .yui-pagenation-content .page-next-disabled{background-position: 8px 7px;cursor:text;border-color:#D4D4D4 !important; color:#D4D4D4 !important;}
+.yui-pagenation-content .page-prev, .yui-pagenation-content .page-prev-disabled{width:8px;text-indent:20px;overflow:hidden;}
+.yui-pagenation-content .page-next, .yui-pagenation-content .page-next-disabled{background-position:42px -74px; padding-right: 10px;padding-left:3px;}
+.yui-pagenation-content .page-next-disabled{background-position: 42px -47px;}
