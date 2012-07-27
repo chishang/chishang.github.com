@@ -61,7 +61,7 @@ KISSY.add("win", function(S){
     	  	window.__Mask=S.one(maskId);
 			if (!window.__Mask) {
 				//建立一个遮罩
-				window.__Mask = D.create('<div id="J_Mask"></div>');				
+				window.__Mask = D.create('<div id="J_Mask"><iframe id="J_MaskFrame"></iframe></div>');				
 				D.get("body").appendChild(__Mask);
 			}
 			D.css(__Mask,{
