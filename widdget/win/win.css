@@ -114,6 +114,8 @@
 #J_MaskFrame{
 	width:100%;
 	height: 100%;
+	filter:alpha(opacity=0);  
+	  opacity:0;
 }
 /*******************************************************
  * iframe¿òÑùÊ½
