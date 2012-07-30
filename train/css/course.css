@@ -113,10 +113,14 @@ p{
 	padding:5px 10px;
 	line-height: 24px;
 }
-.cs-grid th{
+.cs-grid th ,.cs-grid .th{
 	font-weight: bold;
     background-color: #6199DF;
     color: #FFFFFF;
+    text-align: center;
+}
+.cs-grid .th{
+	background-color: green;
 }
 /**=================================
  * 	按钮
@@ -126,5 +130,4 @@ p{
 	line-height: 16px;
 	height:16px;
 	font-size:12px;
-	
 }
