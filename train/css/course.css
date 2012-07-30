@@ -1,3 +1,7 @@
+#cs-page{
+	width:80%;
+	margin:20px auto;
+}
 .cs-header{
 	text-align:center;
 	font-weight:bolder;
@@ -7,5 +11,44 @@
 .mod-title{
 	border-bottom:1px dashed #008000;
 	line-height: 2em;
-	margin: 10px;
+	margin: 10px 0;
+}
+
+h1.mod-title{
+	font-size:24px;
+	font-weight:bolder;
+	color:#008000
+}
+
+.cs-mod details{
+	 background-position: 10px 50%;
+    background-repeat: no-repeat;
+    color: #000000;
+    margin-bottom: 1em;
+    padding:2em;
+    background-color: #FFF79F;
+    border-radius: 20px 20px 20px 20px;
+}
+.cs-list{
+	list-style-type: decimal;
+	padding-left: 2em;
+	line-height: 1.6em;
+}
+p{
+	text-indent:2em;
+	text-align: justify;
+	line-height:2em;
+}
+
+/**
+ * 	文章
+ */
+.cs-article{
+	background-color: #ECF4FC;
+	padding: 1em;
+	border-radius:10px;
+}
+.cs-article header{
+	text-align:center;
+	
 }
