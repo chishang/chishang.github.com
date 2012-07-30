@@ -2,6 +2,9 @@
 	width:80%;
 	margin:20px auto;
 }
+/**=======================
+ * 	标题
+ ==========================*/
 .cs-header{
 	text-align:center;
 	font-weight:bolder;
@@ -19,7 +22,9 @@ h1.mod-title{
 	font-weight:bolder;
 	color:#008000
 }
-
+/**==============================
+ * 	提要
+ =================================*/
 details{
 	background-position: 10px 50%;
     background-repeat: no-repeat;
@@ -32,17 +37,18 @@ details{
 .cs-list{
 	list-style-type: decimal;
 	padding-left: 2em;
-	line-height: 1.6em;
+	line-height: 2em;
 }
+
+
+/**=======================
+ * 	文章
+ ============================*/
 p{
 	text-indent:2em;
 	text-align: justify;
 	line-height:2em;
 }
-
-/**
- * 	文章
- */
 .cs-article{
 	background-color: #ECF4FC;
 	padding: 1em;
@@ -51,4 +57,30 @@ p{
 .cs-article header{
 	text-align:center;
 	
+}
+/**
+ * 	侧边导航
+ */
+
+.cs-fixwin{
+	position:fixed;
+	bottom: 2em;
+	right:2em;
+}
+
+/**
+ * 代码
+ */
+.cs-mod code {
+	display:block;
+	background-color: #F7F7F7;
+    border-color: #F9F7EE #F9F7EE #F9F7EE #6CE26C;
+    border-style: solid;
+    border-width: 1px 1px 1px 5px;
+    color: #333333;
+    line-height: 20px;
+    margin: 10px 0;
+    padding: 15px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }

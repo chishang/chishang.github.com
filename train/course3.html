@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>第三课- Helloworld作业评讲</title>
+		<meta name="description" content="" />
+		<meta name="author" content="chishang.lcw" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="css/course.css" />
+	</head>
+
+	<body>
+		<div id="cs-page">
+		<header class="cs-header">破冰续</header>
+		<section class="cs-mod">
+			<h1 class="mod-title">课程回顾</h1>
+			<details>认知我们的HTML页面的代码结构，了解标准写法，学习正确完整的网页代码架子</details>
+			<ul class="cs-list">
+				<li>无论何时何地，页面第一行代码始终应当 是:
+					<code>&lt;!doctype html></code>
+    <li>
+    	页面的标准模样参照仙凌的 <a href="http://xianling.github.com/yui3_test/helloworld.html">Demo</a> 
+    	<ol class="cs-pre">
+    		<li >包含完整的标签开启和闭合</li>
+    		<li >HTML代码缩进清晰，Javascript代码缩进格式清晰</li>
+    		<li >在&lt;head>标签中定义&lt;meta charset="utf-8"></li>
+    		<li >yui-min.js的引用使用了淘宝的CDN</li>
+    		<li >HTML代码和JS代码分离</li>
+    		<li >使用YUI().use方法将依赖的模块拽到页面</li>
+    	</ol>
+   
+        </li>
+    <li>建议使用YUI3，不要使用YUI2啦</li>
+    <li>浏览器加载页面时，首先过滤HTML文本并解析 HTML文本的语义，在真正解析DOM节点之前是“配置过程”，即读取HTTP的响应头、并读取&lt;head>标签中的配置项</li>
+    <li>浏览器配置过程中比较重要的是读取页面的编码信息， 即&lt;meta />标签中的规定</li>
+    <li>写JavaScript代码时，应当将自己的代码“闭 包起来”，即使用匿名函数(function(){})();，为什么这样用，后续课程会有讲解。</li>
+    <li>何时何地，养成合理的“规划习惯”，即目录的规划、文 件名的规划</li>
+    <li>github上的代码尽量使用utf-8的编码提交</li>
+
+			</ul>
+		</section>
+		<section class="cs-mod">
+			<h1 class="mod-title">课程作业</h1>
+			<ul class="cs-list">
+	
+			</ul>
+		</section>
+		<section class="cs-mod">
+			<h1 class="mod-title">课后反馈</h1>
+			<p ><span class="vt">这是修改之后的git展示页：<a href="http://chishang.github.com/">http://chishang.github.com/</a></span></p>
+		    
+		</section>
+		</div>
+	</body>
+</html>
