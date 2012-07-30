@@ -1,3 +1,15 @@
+a,a:link ,a:visited,a:hover,a:active{
+	text-decoration: none;
+}
+a:link{
+	color:#0044DD;
+}
+a:hover{
+	color:#f60;
+}
+a:visited{
+	color:red;
+}
 #cs-page{
 	width:80%;
 	margin:20px auto;
@@ -68,9 +80,9 @@ p{
 	right:2em;
 }
 
-/**
+/**=====================================
  * 代码
- */
+ ===================================*/
 .cs-mod code {
 	display:block;
 	background-color: #F7F7F7;
@@ -83,4 +95,36 @@ p{
     padding: 15px;
     white-space: pre-wrap;
     word-wrap: break-word;
+}
+/**=================================
+ * 	表格
+ ===================================*/
+
+.cs-grid{
+	width:100%;
+	border: 1px solid #ccc;
+	
+}
+.cs-grid caption{
+	line-height: 32px;
+}
+.cs-grid td,.cs-grid th{
+	border: 1px solid #ccc;
+	padding:5px 10px;
+	line-height: 24px;
+}
+.cs-grid th{
+	font-weight: bold;
+    background-color: #6199DF;
+    color: #FFFFFF;
+}
+/**=================================
+ * 	按钮
+ ===================================*/
+.cs-abtn{
+	padding: 2px 8px;
+	line-height: 16px;
+	height:16px;
+	font-size:12px;
+	
 }
