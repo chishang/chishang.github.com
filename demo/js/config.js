@@ -25,6 +25,13 @@ KISSY.config({
         tag: "20120324",
         charset: YH_CHARSET
     },
+    //省市区级联
+    {
+    	name:"areaselect",
+    	path:YH_JSROOT + "area/", 
+    	tag: "20120731",
+        charset: YH_CHARSET
+    },
     //值验证
     {
         name: "check",
