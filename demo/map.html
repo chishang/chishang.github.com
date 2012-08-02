@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="gbk" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>win</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="liuchaowu.pt" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/nav.css" />
+	</head>
+	<body>
+		<section>
+			<header>
+				 谷歌地图
+			</header>
+			
+		</section>
+		<div id="map" style="width:900px;height: 800px;margin: 20px auto;"></div>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
+		<script src="js/config.js"></script>
+		<script  >
+			KISSY.use("map,common",function(S){
+				var latlng = new google.maps.LatLng(38.51, 115.30),
+	mapCanvas=document.getElementById("map"),
+	myOptions={
+      zoom: 10,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    },
+    href=new S.Common.href(),
+    agid=href.get("agid")||"1000",
+    tInfoContent='<div class="infoWin">{{con}}</div><span class="J_InfoPrev">上一地点</span><span class="J_InfoNext">下一地点</span>',
+    cfg={
+    	node:mapCanvas,
+    	options:myOptions,
+    	rightclick:function(e){
+    		
+    	}
+    },
+    request=new S.Common.href(),
+    agid=request.get("agid")||1000,
+    map=new S.Map(cfg);
+			});
+		</script>
+	</body>
+</html>

@@ -7,6 +7,13 @@ YH_JSROOT = "../widdget/";
 KISSY.config({
     map: [[/(.+widdget\/.+)-min.js(\?[^?]+)?$/, "$1.js$2"], [/(.+widdget\/.+)-min.css(\?[^?]+)?$/, "$1.css$2"]],
     packages: [
+    //公共方法
+    {
+        name: "common",
+        path: "../js/",
+        tag: "20120324",
+        charset: "utf-8"
+    },
     /***===============================
 	 * 公用组件
 	 =====================================*/
@@ -43,6 +50,20 @@ KISSY.config({
     {
         name: "validation",
         path: YH_JSROOT + "validation/",
+        tag: "20120324",
+        charset: YH_CHARSET
+    },
+    //回顶部
+    {
+        name: "top",
+        path: YH_JSROOT + "top/",
+        tag: "20120324",
+        charset: YH_CHARSET
+    },
+     //google 地图
+    {
+        name: "map",
+        path: YH_JSROOT + "map/",
         tag: "20120324",
         charset: YH_CHARSET
     },
