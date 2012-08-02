@@ -4,9 +4,9 @@
 KISSY.add('common', function(S) {
     S.Common = {
         /**
-        * 图片/文字切换显示
-        * @param target {node} 目标节点
-        */
+         * 图片/文字切换显示
+         * @param target {node} 目标节点
+         */
         hoverChange: function(target) {
             if (!target || !target.length) {
                 return;
