@@ -1,5 +1,5 @@
 KISSY.add("top",function(S){
-	var template='<div id="J_GoToTop" ><a title="»Øµ½¶¥²¿" href="#">TOP</a></div>',
+	var template='<div id="J_GoToTop" ><a title="å›žé¡¶éƒ¨" href="#">TOP</a></div>',
 	nBody=S.one("body");
 	nBody.append(template);
 	var getScrollTop=function(){
@@ -9,7 +9,6 @@ KISSY.add("top",function(S){
 	if(getScrollTop()!=0){
 		nTop.fadeIn();
 	}
-	
 	S.Event.on(window, "scroll",function(e){
 		var scrollTop=getScrollTop();
 		scrollTop===0?nTop.hide():nTop.show();

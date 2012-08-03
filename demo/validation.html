@@ -13,6 +13,7 @@
 		<link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico" />
 		<link rel="stylesheet" href="../css/base.css" />
 		<link rel="stylesheet" href="../css/nav.css" />
+		<script src="http://chishang.github.com/js/html5.js"></script>
 		<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
 		<script src="js/config.js"></script>
 	</head>
@@ -63,7 +64,14 @@
 						</div>
 						<span class="input-tip"></span>
 					</div>
-					<input type="submit" class="J_subForm" value="提交" />
+					<div class="input-content default">
+						<label class="input-label" for="phone" >&nbsp;</label>
+						<div class="input-wrap">
+							<input type="submit" class="J_subForm" value="提交" />
+						</div>
+						
+					</div>
+					
 				</form> 
 			</nav>
 		
@@ -112,23 +120,7 @@
 				 		}]
 				 });
 				 var subBtn=S.one(".J_subForm");
-				 // subBtn.on("click",function(e){
-				 	// var isValid=formvalid.valid();
-				 	// var i=0;
-				 	// e.halt();
-				 	// var timer=S.later(check,100,true);
-				 	// function check(){
-				 		// console.log(formvalid.isPass);
-				 		// i++;
-				 		// if(formvalid.isPass){
-				 			// timer.cancel();
-				 			// //document.getElementById("J_ValidFrom").submit();
-				 		// }else if(i==10){
-				 			// timer.cancel();
-				 		// };
-// 				 		 
-				 	// }
-				 // });
+				 
 				 function ajaxcheck(value,obj){
 				 	var obj=obj;
 				 	
@@ -141,7 +133,7 @@
 				 	}else{
 				 		 
 				 		S.io({
-				 			url:"../data/zfb.php",
+				 			url:"data/zfb.json",
 				 			dataType:"json",
 				 			timeout:3,
 				 			data:"zfb="+value,
