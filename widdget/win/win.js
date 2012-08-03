@@ -1,25 +1,25 @@
 /**
- * µ¯³ö¿ò×é¼ş
- * ÖØ¹¹ÈË£ºÁõ³¬Îä
- * ÖØ¹¹ÈÕÆÚ£º2012-3-12
+ * å¼¹å‡ºæ¡†ç»„ä»¶
+ * é‡æ„äººï¼šåˆ˜è¶…æ­¦
+ * é‡æ„æ—¥æœŸï¼š2012-3-12
  */
 KISSY.add("win", function(S){
     var D=S.DOM,E=S.Event;
     /**
-	 * µ¯´°×é¼ş
+	 * å¼¹çª—ç»„ä»¶
 	 * @class
 	 * @name Win
 	 * @constructor
-	 * @param {String} winId  ´°¿ÚÎ¨Ò»Ö¸¶¨ID
-	 * @param {object}  config  ÅäÖÃ²ÎÊı
+	 * @param {String} winId  çª—å£å”¯ä¸€æŒ‡å®šID
+	 * @param {object}  config  é…ç½®å‚æ•°
 	 * <prev>
-	 * <br/>template {string}  Éú³É¿òhtmlÄ£°å
-	 * <br/>src:Èç¹ûÊÇiframeÒ³£¬ÅäÖÃ¸ÃÏîÉèÖÃiframeµÄsrcÊôĞÔ
-	 * <br/>content {HTML|node} Èç¹ûÊÇ×Ô¶¨ÒåÄÚÈİ£¬ÉèÖÃcontentÄÚÈİ
-	 * <br/>width µ¯´°¿í¶È
-	 * <br/>height µ¯´°¸ß¶È
-	 * <br/>sureFn  µã»÷È·¶¨°´Å¥ÊÂ¼ş°ó¶¨
-	 * <br/>cancelFn µã»÷È¡Ïû°´Å¥ÊÂ¼ş°ó¶¨
+	 * <br/>template {string}  ç”Ÿæˆæ¡†htmlæ¨¡æ¿
+	 * <br/>src:å¦‚æœæ˜¯iframeé¡µï¼Œé…ç½®è¯¥é¡¹è®¾ç½®iframeçš„srcå±æ€§
+	 * <br/>content {HTML|node} å¦‚æœæ˜¯è‡ªå®šä¹‰å†…å®¹ï¼Œè®¾ç½®contentå†…å®¹
+	 * <br/>width å¼¹çª—å®½åº¦
+	 * <br/>height å¼¹çª—é«˜åº¦
+	 * <br/>sureFn  ç‚¹å‡»ç¡®å®šæŒ‰é’®äº‹ä»¶ç»‘å®š
+	 * <br/>cancelFn ç‚¹å‡»å–æ¶ˆæŒ‰é’®äº‹ä»¶ç»‘å®š
 	 * </prev>
 	 */
     function Win(){
@@ -39,7 +39,7 @@ KISSY.add("win", function(S){
         	  };
         	  self.ID=winId;
 	        /**
-			 * ´°¿ÚÅäÖÃ
+			 * çª—å£é…ç½®
 			 * @field
 			 * @name Win#config
 			 * @type {object}
@@ -50,7 +50,7 @@ KISSY.add("win", function(S){
     	  },
     	  
     	/**
-		 * ½¨Á¢ÕÚÕÖ
+		 * å»ºç«‹é®ç½©
 		 * @function
 		 * @name Win#buildMask
 		 * @private
@@ -60,7 +60,7 @@ KISSY.add("win", function(S){
     	  	var maskId="#J_Mask";
     	  	window.__Mask=S.one(maskId);
 			if (!window.__Mask) {
-				//½¨Á¢Ò»¸öÕÚÕÖ
+				//å»ºç«‹ä¸€ä¸ªé®ç½©
 				window.__Mask = D.create('<div id="J_Mask"><iframe id="J_MaskFrame"></iframe></div>');				
 				D.get("body").appendChild(__Mask);
 			}
@@ -69,7 +69,7 @@ KISSY.add("win", function(S){
 					height:D.docHeight()+'px'
 			});
 			/**
-			 * ´°¿ÚÕÚÕÖ²ã
+			 * çª—å£é®ç½©å±‚
 			 * @field
 			 * @name Win#Mask
 			 * @type {node}
@@ -78,7 +78,7 @@ KISSY.add("win", function(S){
 			return this;
     	  },
     	/**
-		 * ÏÔÊ¾ÕÚÕÖ²ã
+		 * æ˜¾ç¤ºé®ç½©å±‚
 		 * @function
 		 * @name Win#showMask
 		 */
@@ -88,7 +88,7 @@ KISSY.add("win", function(S){
 			return this;
 		},
 		/**
-		 * Òş²ØÕÚÕÖ²ã
+		 * éšè—é®ç½©å±‚
 		 * @function
 		 * @name Win#hideMask
 		 */
@@ -98,7 +98,7 @@ KISSY.add("win", function(S){
 			return this;
 		},
 		/**
-		 * É¾³ıÕÚÕÖ²ã
+		 * åˆ é™¤é®ç½©å±‚
 		 * @function
 		 * @name Win#removeMask
 		 */
@@ -110,7 +110,7 @@ KISSY.add("win", function(S){
 		},
 		
 		/**
-		 * ½¨Á¢µ¯³ö²ã
+		 * å»ºç«‹å¼¹å‡ºå±‚
 		 * @function
 		 * @name Win#buildBox
 		 * @param
@@ -126,7 +126,7 @@ KISSY.add("win", function(S){
 				var winNode=S.one(winId);				
 		 
 			/**
-			 * ´°¿Ú¶ÔÏó
+			 * çª—å£å¯¹è±¡
 			 * @field
 			 * @name Win#box
 			 * @type {kissyNode}
@@ -135,7 +135,7 @@ KISSY.add("win", function(S){
 			self._content=winNode.one(".J_win_con");
 			var width=cfg.width||400,
 				height=cfg.height||"auto";
-			//iframe¿ò
+			//iframeæ¡†
 			self._shadowNode=winNode.one(".J_win_border");
 			self._iframe=winNode.one(".frame");
 			self._shadowNode && self._shadowNode.css({
@@ -146,27 +146,27 @@ KISSY.add("win", function(S){
 				width:width+"px",
 				height:height+"px"
 			});
-			//Èç¹ûÅäÖÃÁËcontentÊôĞÔ
+			//å¦‚æœé…ç½®äº†contentå±æ€§
 			if(cfg["content"]){
 				self.setContent(cfg["content"]);
 			}
-			//ÌáÊ¾¿ò	
+			//æç¤ºæ¡†	
 			self._titleNode =winNode.one(".J_win_title");
 			self._messageNode =winNode.one(".J_win_message");
         	self._sureNode =winNode.one(".J_win_sure");
-        	//È¡Ïû°´Å¥
+        	//å–æ¶ˆæŒ‰é’®
         	self._cancelNode =winNode.all(".J_win_cancel");	
         	self._cancelNode && self._cancelNode.on("click", function(){
         	  	self.hide();
         	  	cfg["cancelFn"] && cfg["cancelFn"]();
         	 });
-        	 //¹Ø±Õ°´Å¥
+        	 //å…³é—­æŒ‰é’®
         	self._closeNode = winNode.one(".J_win_close");	  
         	self._closeNode && self._closeNode.on("click", function(){	
         	  	  self.hide();
         	  	  cfg["cancelFn"] && cfg["cancelFn"]();
         	 }); 
-        	//È·¶¨°´Å¥ÊÂ¼ş°ó¶¨£ºÈôÓĞ»Øµ÷º¯Êı£¬ÔòÏÈÔËĞĞ»Øµ÷º¯Êı£»ÎŞ£¬ÔòÖ±½ÓÒş²Ø²Ëµ¥
+        	//ç¡®å®šæŒ‰é’®äº‹ä»¶ç»‘å®šï¼šè‹¥æœ‰å›è°ƒå‡½æ•°ï¼Œåˆ™å…ˆè¿è¡Œå›è°ƒå‡½æ•°ï¼›æ— ï¼Œåˆ™ç›´æ¥éšè—èœå•
 			self._sureNode && self._sureNode.on("click", function(){
 				self.hide(); 
 				cfg["sureFn"] && cfg["sureFn"]();	 
@@ -175,14 +175,14 @@ KISSY.add("win", function(S){
 				width:width,
 				height:height
 			});        	
-        	//´°¿ÚÊÂ¼ş°ó¶¨
+        	//çª—å£äº‹ä»¶ç»‘å®š
 			E.on(window, "resize",self.setPos,self);
 			E.on(window, "scroll",self.setPos,self);
 			self.setPos();	
 			return this;
 		},
 		/**
-		 * ÉèÖÃboxµÄcontentÄÚÈİ
+		 * è®¾ç½®boxçš„contentå†…å®¹
 		 * @function
 		 * @name Win#setContent
 		 */	
@@ -192,7 +192,7 @@ KISSY.add("win", function(S){
 			return this;
 		},
 		/**
-		 * ÏÔÊ¾µ¯³ö¿ò
+		 * æ˜¾ç¤ºå¼¹å‡ºæ¡†
 		 * @function
 		 * @name Win#showBox
 		 * @private
@@ -203,7 +203,7 @@ KISSY.add("win", function(S){
 			return this;
 		},
 		/**
-		 * Òş²Øµ¯³ö¿ò
+		 * éšè—å¼¹å‡ºæ¡†
 		 * @function
 		 * @name Win#hideBox
 		 * @private
@@ -214,7 +214,7 @@ KISSY.add("win", function(S){
 			return this;
 		},
 		/**
-		 * ¼ÆËãÎ»ÖÃ
+		 * è®¡ç®—ä½ç½®
 		 * @function
 		 * @name Win#setPos
 		 * @private
@@ -232,7 +232,7 @@ KISSY.add("win", function(S){
 			box.css({
 				"top":top+"px",
 				"left":left+"px",
-				"margin":0 //Ö÷ÒªÊÇÎªÁË¼æÈİÉèÖÃÁËmarginÎª-0.5*boxwµÄbox
+				"margin":0 //ä¸»è¦æ˜¯ä¸ºäº†å…¼å®¹è®¾ç½®äº†marginä¸º-0.5*boxwçš„box
 			});	
 			self.Mask && self.Mask.css({
 				width:D.docWidth() +'px',
@@ -241,8 +241,8 @@ KISSY.add("win", function(S){
 			return this;
 		},
 		/**
-		 * ÏÔÊ¾´°¿Ú£¬´¥·¢showÊÂ¼ş
-		 * ¼àÌıÊÂ¼ş£º"show"
+		 * æ˜¾ç¤ºçª—å£ï¼Œè§¦å‘showäº‹ä»¶
+		 * ç›‘å¬äº‹ä»¶ï¼š"show"
 		 * @function
 		 * @name  Win#show
 		 * @event  
@@ -261,8 +261,8 @@ KISSY.add("win", function(S){
 		},
 		
 		/**
-		 * Òş²Ø´°¿Ú£¬´¥·¢hideÊÂ¼ş
-		 * ¼àÌıÊÂ¼ş£º"hide"
+		 * éšè—çª—å£ï¼Œè§¦å‘hideäº‹ä»¶
+		 * ç›‘å¬äº‹ä»¶ï¼š"hide"
 		 * @function
 		 * @name  Win#hide
 		 * @event  
@@ -276,7 +276,7 @@ KISSY.add("win", function(S){
 			return this;
 		},
 		/**
-		 * ¾¯¸æ´°¿Ú
+		 * è­¦å‘Šçª—å£
 		 * @function
 		 * @name  Win#_warn
 		 * @private
@@ -285,14 +285,14 @@ KISSY.add("win", function(S){
 			var self=this;
 			self.buildBox();
 			var message=message,
-			title=title||"ÏµÍ³ÌáÊ¾";
+			title=title||"ç³»ç»Ÿæç¤º";
 			self.box.addClass("J_win_error");
 			self._sureNode && self._sureNode.hide();
 			self.show(message,title);
 			return this;
 		},
 		/**
-		 * ²Ù×÷ÕıÈ·´°¿Ú
+		 * æ“ä½œæ­£ç¡®çª—å£
 		 * @function
 		 * @name  Win#_warn
 		 * @private
@@ -301,14 +301,14 @@ KISSY.add("win", function(S){
 			var self=this;
 			self.buildBox();
 			var message=message,
-			title=title||"²Ù×÷³É¹¦";
+			title=title||"æ“ä½œæˆåŠŸ";
 			self.box.addClass("J_win_right");
 			self._sureNode && self._sureNode.hide();
 			self.show(message,title);
 			return this;
 		},
 		/**
-		 * ÏÔÊ¾È·ÈÏ´°¿Ú
+		 * æ˜¾ç¤ºç¡®è®¤çª—å£
 		 * @function
 		 * @name  Win#_confirm
 		 * @private
@@ -317,15 +317,15 @@ KISSY.add("win", function(S){
 			var self=this;
 			self.buildBox();
 			var message=message,
-			title=title||"ÏµÍ³ÌáÊ¾";
+			title=title||"ç³»ç»Ÿæç¤º";
 			self.box.addClass("J_win_confirm");
 			self.show(message,title);
 			return this;
 		},
 		/**
-		 * Ïû³ı×é¼ş
+		 * æ¶ˆé™¤ç»„ä»¶
 		 * @function
-		 * ¼àÌıÊÂ¼ş£º"destroy"
+		 * ç›‘å¬äº‹ä»¶ï¼š"destroy"
 		 * @name Win#destroy
 		 * @event 
 		 */
@@ -340,7 +340,7 @@ KISSY.add("win", function(S){
 			return this;
 		},
         /**
-		 * ÒÆ³ı°ó¶¨µÄÊÂ¼ş
+		 * ç§»é™¤ç»‘å®šçš„äº‹ä»¶
 		 * @function
 		 * @name  Win#remove
 		 * @private
@@ -355,17 +355,17 @@ KISSY.add("win", function(S){
   });
     
     /**
-	 * ÌáÊ¾/¾¯¸æ
-	 * ¾²Ì¬·½·¨£¬Ö±½Óµ÷ÓÃ£¬²»ÓÃÉú³ÉĞÂµÄÊµÀı
+	 * æç¤º/è­¦å‘Š
+	 * é™æ€æ–¹æ³•ï¼Œç›´æ¥è°ƒç”¨ï¼Œä¸ç”¨ç”Ÿæˆæ–°çš„å®ä¾‹
 	 * @function
 	 * @static
 	 * @name Win.warn
-	 * @param {String} msg ÒªÏÔÊ¾µÄÏûÏ¢
-	 * @param {String} title  ÌáÊ¾Àà±ğ
+	 * @param {String} msg è¦æ˜¾ç¤ºçš„æ¶ˆæ¯
+	 * @param {String} title  æç¤ºç±»åˆ«
 	 * @example demo
 	 * <pre>
 	 * KISSY.use("win",function(S){
-	 * 	S.Win.warn("ÒªÏÔÊ¾µÄÎÄ×Ö"£¬"ÏµÍ³ÌáÊ¾")
+	 * 	S.Win.warn("è¦æ˜¾ç¤ºçš„æ–‡å­—"ï¼Œ"ç³»ç»Ÿæç¤º")
 	 * })
 	 * </pre>
 	 */
@@ -380,26 +380,26 @@ KISSY.add("win", function(S){
 	  					'<span class="J_win_message"></span>'+
 	  				'</div>'+
 	  				'<div class="J_win_footer">'+		
-	  					'<a class="J_win_cancel" href="javascript:;">È·¶¨</a>'+
+	  					'<a class="J_win_cancel" href="javascript:;">ç¡®å®š</a>'+
 	  				'</div>'+
 	  			'</div>'
 		});
 		alertWin._warn(msg,title);
 	}
 	/**
-	 * ¶ş´ÎÈ·ÈÏ
-	 * ¾²Ì¬·½·¨£¬Ö±½Óµ÷ÓÃ£¬²»ÓÃÉú³ÉĞÂµÄÊµÀı
+	 * äºŒæ¬¡ç¡®è®¤
+	 * é™æ€æ–¹æ³•ï¼Œç›´æ¥è°ƒç”¨ï¼Œä¸ç”¨ç”Ÿæˆæ–°çš„å®ä¾‹
 	 * @static
 	 * @function
 	 * @name Win.confirm
-	 * @param {String} msg ÒªÏÔÊ¾µÄÏûÏ¢
-	 * @param {String} title ÏûÏ¢Àà±ğ
-	 * @param {Function} sureFn È·¶¨°´Å¥»Øµ÷º¯Êı
-	 * @param {function} cancelFn È¡Ïû°´Å¥ÊÂ¼ş°ó¶¨»Øµ÷º¯Êı
+	 * @param {String} msg è¦æ˜¾ç¤ºçš„æ¶ˆæ¯
+	 * @param {String} title æ¶ˆæ¯ç±»åˆ«
+	 * @param {Function} sureFn ç¡®å®šæŒ‰é’®å›è°ƒå‡½æ•°
+	 * @param {function} cancelFn å–æ¶ˆæŒ‰é’®äº‹ä»¶ç»‘å®šå›è°ƒå‡½æ•°
 	 * @example demo
 	 * <pre>
 	 * KISSY.use("win",function(S){
-	 * 	S.Win.confirm("ÒªÏÔÊ¾µÄÎÄ×Ö"£¬,"title",function(){
+	 * 	S.Win.confirm("è¦æ˜¾ç¤ºçš„æ–‡å­—"ï¼Œ,"title",function(){
 	 * 		//do something...
 	 * 	},function(){
 	 * 	//do something...
@@ -418,8 +418,8 @@ KISSY.add("win", function(S){
 		  					'<span class="J_win_message"></span>'+
 		  				'</div>'+
 		  				'<div class="J_win_footer">'+
-		  					'<a class="J_win_cancel" href="javascript:;">È¡Ïû</a>'+
-		  					'<a class="J_win_sure" href="javascript:;">È·¶¨</a>'+
+		  					'<a class="J_win_cancel" href="javascript:;">å–æ¶ˆ</a>'+
+		  					'<a class="J_win_sure" href="javascript:;">ç¡®å®š</a>'+
 		  				'</div>'+
 		  			'</div>',
 		  	sureFn:sureFun,
@@ -428,35 +428,35 @@ KISSY.add("win", function(S){
 		confirmWin._confirm(msg,title);
 	}
 	/**
-	 * ²Ù×÷³É¹¦ÌáÊ¾
-	 * ¾²Ì¬·½·¨£¬Ö±½Óµ÷ÓÃ£¬²»ÓÃÉú³ÉĞÂµÄÊµÀı
+	 * æ“ä½œæˆåŠŸæç¤º
+	 * é™æ€æ–¹æ³•ï¼Œç›´æ¥è°ƒç”¨ï¼Œä¸ç”¨ç”Ÿæˆæ–°çš„å®ä¾‹
 	 * @static
 	 * @function
 	 * @name Win.inform
-	 * @param {String} msg ÒªÏÔÊ¾µÄÏûÏ¢
-	 * @param {String} title ÏûÏ¢Àà±ğ
+	 * @param {String} msg è¦æ˜¾ç¤ºçš„æ¶ˆæ¯
+	 * @param {String} title æ¶ˆæ¯ç±»åˆ«
 	 * @example demo
 	 * <pre>
 	 * KISSY.use("win",function(S){
-	 * 	S.Win.inform("ÒªÏÔÊ¾µÄÎÄ×Ö","title")
+	 * 	S.Win.inform("è¦æ˜¾ç¤ºçš„æ–‡å­—","title")
 	 * });
 	 * </pre>
 	 */
 	Win.inform= function(msg,title){
 		var informWin=new Win("#J_informWin",{			
-		  	template:'<div class="J_win" id="{winId}">'+
-		  				'<h1 class="J_win_header">'+
-		  					'<span class="J_win_title"></span>'+
-		  					'<span class="J_win_close"></span>'+
-		  				'</h1>'+
-		  				'<div class="J_win_con">'+
-		  					'<span class="J_win_message"></span>'+
-		  				'</div>'+
-		  				'<div class="J_win_footer">'+
-		  					'<a class="J_win_cancel" href="javascript:;">È·¶¨</a>'+
-		  				'</div>'+
-		  			'</div>'
-		});
+							  	template:'<div class="J_win" id="{winId}">'+
+							  				'<h1 class="J_win_header">'+
+							  					'<span class="J_win_title"></span>'+
+							  					'<span class="J_win_close"></span>'+
+							  				'</h1>'+
+							  				'<div class="J_win_con">'+
+							  					'<span class="J_win_message"></span>'+
+							  				'</div>'+
+							  				'<div class="J_win_footer">'+
+							  					'<a class="J_win_cancel" href="javascript:;">ç¡®å®š</a>'+
+							  				'</div>'+
+							  			'</div>'
+							});
 		informWin._inform(msg,title);
 		
 	}

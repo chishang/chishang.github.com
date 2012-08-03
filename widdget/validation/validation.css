@@ -9,7 +9,7 @@
 	width: 100px;
 	text-align: right;
 }
-/** 文本框及背景盒子容器  **/
+
 .ks-tdform .input-wrap{
 	padding:3px;
 	float:left;
@@ -21,7 +21,6 @@
    background:#bfea8e;
 }
 
-/*文本框边框*/
 .ks-tdform .input-border{
 	display: inline-block;
 	border:1px solid #fff;
@@ -35,7 +34,7 @@
 .ks-tdform .right .input-border{
 	border:1px solid  #BFEA8E;
 }
-/*文本编辑框*/
+
 .ks-tdform .input-text{
 	height:24px;
 	line-height:24px;
@@ -55,13 +54,13 @@
 .ks-tdform .error .input-text{
 	border:1px solid #ee7b2f;
 }
-/*提示框*/
+
 .ks-tdform .input-tip{
 	display:inline-block;
 	margin:9px 0px 0px 5px;
 }
 .ks-tdform .error .input-tip,.ks-tdform .right .input-tip{
-	background-image:url("http://yinghuo.com/q/formvalid.png");
+	background-image:url("formvalid.png");
 	color:#FF6600;
 	background-position:0 -1674px;
 	padding-left:23px;

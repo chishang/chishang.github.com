@@ -1,13 +1,13 @@
 /**
- * check ÕýÔòÑéÖ¤
+ * check æ­£åˆ™éªŒè¯
  * @function
  * @name Check
- * @param value ´ýÑéÖ¤Öµ
- * @param reg ×Ö·û´®/ÕýÔò±í´ïÊ½/ÑéÖ¤º¯Êý
- * <br/>Èô´«Èë×Ö·û´®£¬×Ö·û´®±ØÐëÊÇÒÑ¶¨ÒåµÄÒÔÏÂ¼¸¸öÖµ£ºEmail£¨µç×ÓÓÊ¼þ£© Phone£¨ÊÖ»úºÅÂë£©Invoice£¨·¢Æ±Ì§Í·£©
- * <br/>Èô´«ÈëÕýÔò±í´ïÊ½
- * <br/>Èô´«Èëº¯Êý£¬Ôòº¯ÊýµÄ²ÎÊý±ØÐëÎªvalue,·µ»ØÖµ±ØÐëÎªÒÔÏÂ¸ñÊ½£º{isValid:true/flase,tips:"IIIII"}
- * @param obj ÉÏÏÂÎÄ
+ * @param value å¾…éªŒè¯å€¼
+ * @param reg å­—ç¬¦ä¸²/æ­£åˆ™è¡¨è¾¾å¼/éªŒè¯å‡½æ•°
+ * <br/>è‹¥ä¼ å…¥å­—ç¬¦ä¸²ï¼Œå­—ç¬¦ä¸²å¿…é¡»æ˜¯å·²å®šä¹‰çš„ä»¥ä¸‹å‡ ä¸ªå€¼ï¼šEmailï¼ˆç”µå­é‚®ä»¶ï¼‰ Phoneï¼ˆæ‰‹æœºå·ç ï¼‰Invoiceï¼ˆå‘ç¥¨æŠ¬å¤´ï¼‰
+ * <br/>è‹¥ä¼ å…¥æ­£åˆ™è¡¨è¾¾å¼
+ * <br/>è‹¥ä¼ å…¥å‡½æ•°ï¼Œåˆ™å‡½æ•°çš„å‚æ•°å¿…é¡»ä¸ºvalue,è¿”å›žå€¼å¿…é¡»ä¸ºä»¥ä¸‹æ ¼å¼ï¼š{isValid:true/flase,tips:"IIIII"}
+ * @param obj ä¸Šä¸‹æ–‡
  * @return {Object}
  */
 KISSY.add('check', function(S){

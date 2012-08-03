@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
-		<meta charset="gbk" />
+		<meta charset="UTF-8" />
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -15,9 +15,9 @@
 		<link rel="stylesheet" href="../css/nav.css" />
 	</head>
 	<body>
-		<section>
+		<section class="nav-page">
 			<header>
-				 谷歌地图
+				 璋锋瓕鍦板浘
 			</header>
 			<div id="map" style="width:96%;height:500px;margin:10px auto;"></div>
 		</section>
@@ -36,7 +36,7 @@
     },
     href=new S.Common.href(),
     agid=href.get("agid")||"1000",
-    tInfoContent='<div class="infoWin">{{con}}</div><span class="J_InfoPrev">上一地点</span><span class="J_InfoNext">下一地点</span>',
+    tInfoContent='<div class="infoWin">{{con}}</div><span class="J_InfoPrev">涓婁竴鍦扮偣</span><span class="J_InfoNext">涓嬩竴鍦扮偣</span>',
     cfg={
     	node:mapCanvas,
     	options:myOptions,

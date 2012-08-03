@@ -1,5 +1,5 @@
 /**
- * 	±¾Ò³Ãæ·Ö¸î
+ * 	æœ¬é¡µé¢åˆ†å‰²
  */
 .layerbody h1{
 	line-height: 1.2em;
@@ -15,7 +15,7 @@
 	font: 36px/1.5 bolder;
 }
 /**
- * 	layer²ã
+ * 	layerå±‚
  */
 .masklayer{
 	position: relative;
@@ -79,7 +79,7 @@
 	filter:alpha(opacity=60);
 }
 /**
- * 	¼Û¸ñ×ÔÊÊÓ¦ÏÔÊ¾
+ * 	ä»·æ ¼è‡ªé€‚åº”æ˜¾ç¤º
  * 
  */
 .masklayer .price{
@@ -101,7 +101,7 @@
 	font-family: Arial;
 }
 /**
- * Í¼Æ¬±êÌâµ×²¿¾ÓÖĞÏÔÊ¾
+ * å›¾ç‰‡æ ‡é¢˜åº•éƒ¨å±…ä¸­æ˜¾ç¤º
  */
 .masklayer .title{
 	position: absolute;
@@ -119,7 +119,7 @@
 	color: #fff;
 }
 /**
- * 	µ¯³ö¿ò
+ * 	å¼¹å‡ºæ¡†
  */
 .layer-alert{
 	position: absolute;

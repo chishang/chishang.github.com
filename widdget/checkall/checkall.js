@@ -1,14 +1,14 @@
 KISSY.add('checkall', function (S) {
 /**
- * ±íµ¥×é¼ş-chckbox È«Ñ¡
- * °ó¶¨ÊÂ¼ş£ºcheck Ñ¡Ôñ¿ò¿ò¹´Ñ¡/È¡Ïû¹´Ñ¡
+ * è¡¨å•ç»„ä»¶-chckbox å…¨é€‰
+ * ç»‘å®šäº‹ä»¶ï¼šcheck é€‰æ‹©æ¡†æ¡†å‹¾é€‰/å–æ¶ˆå‹¾é€‰
  * @constructor
  * @name Checkall
  * @param {object} cfg 
  * <prev>
- * <br/>node {node} È«Ñ¡¿ò
- * <br/>nodeList {node} È«Ñ¡¿òËù¸²¸ÇµÄcheckbox
- * <br/>inverse {node} ·´Ñ¡¿ò
+ * <br/>node {node} å…¨é€‰æ¡†
+ * <br/>nodeList {node} å…¨é€‰æ¡†æ‰€è¦†ç›–çš„checkbox
+ * <br/>inverse {node} åé€‰æ¡†
  * </prev>
  */
    function Checkall() {
@@ -16,7 +16,7 @@ KISSY.add('checkall', function (S) {
     };
     S.augment(Checkall,S.EventTarget, {
         /**
-		 * ³õÊ¼»¯×é¼ş
+		 * åˆå§‹åŒ–ç»„ä»¶
 		 * @function
 		 * @private
 		 */
@@ -28,14 +28,14 @@ KISSY.add('checkall', function (S) {
             }
             var that = this;
         /**
-		 * È«Ñ¡¿ò
+		 * å…¨é€‰æ¡†
 		 * @field
 		 * @name Checkall#node
 		 * @type {Array}
 		 */
             that.node = [];
         /**
-		 * ·´Ñ¡Ñ¡¿ò
+		 * åé€‰é€‰æ¡†
 		 * @field
 		 * @name Checkall#inverse
 		 * @type {Array}
@@ -48,7 +48,7 @@ KISSY.add('checkall', function (S) {
             }
 
         /**
-		 * checkboxÁĞ±í
+		 * checkboxåˆ—è¡¨
 		 * @field
 		 * @name Checkall#nodelist
 		 * @type {Node}
@@ -60,7 +60,7 @@ KISSY.add('checkall', function (S) {
             if (config.inverse) {
                 if (config.inverse instanceof Array) {
                     /**
-					 * ·´Ñ¡¿òÁĞ±í
+					 * åé€‰æ¡†åˆ—è¡¨
 					 * @field
 					 * @name Checkall#inverse
 					 * @type {ARRAY}
@@ -71,19 +71,19 @@ KISSY.add('checkall', function (S) {
                 }
             }
             that._bind();
-            //ÔÚÄ³Ğ©ä¯ÀÀÆ÷ÖĞ£¬checkbox»á±£ÁôË¢ĞÂÒ³ÃæÇ°µÄcheckedÊôĞÔ£¬ËùÒÔÍ³Ò»ÔÚ³õÊ¼»¯Ê±½«ËùÓĞcheckboxÉèÖÃÎªÎ´Ñ¡ÖĞ
+            //åœ¨æŸäº›æµè§ˆå™¨ä¸­ï¼Œcheckboxä¼šä¿ç•™åˆ·æ–°é¡µé¢å‰çš„checkedå±æ€§ï¼Œæ‰€ä»¥ç»Ÿä¸€åœ¨åˆå§‹åŒ–æ—¶å°†æ‰€æœ‰checkboxè®¾ç½®ä¸ºæœªé€‰ä¸­
             that.checkall(false);
             that.disable(false, "all");
             return this;
         },
         /**
-		 * »ñÈ¡ÒÑÑ¡|Î´Ñ¡ÔªËØ
+		 * è·å–å·²é€‰|æœªé€‰å…ƒç´ 
 		 * @function
 		 * @name Checkall#get
-		 * @param {string} type  »ñÈ¡ÔªËØÀàĞÍ
+		 * @param {string} type  è·å–å…ƒç´ ç±»å‹
 		 * <prev>
-		 * <br/>checked  ÒÑÑ¡ÔªËØ
-		 * <br/>unchecked  Î´Ñ¡ÔªËØ
+		 * <br/>checked  å·²é€‰å…ƒç´ 
+		 * <br/>unchecked  æœªé€‰å…ƒç´ 
 		 * </prev>
 		 * @return {Array} 
 		 */
@@ -102,11 +102,11 @@ KISSY.add('checkall', function (S) {
             return result;
         },
         /**
-		 * ÉèÖÃcheckboxµÄcheckedÊôĞÔ,Ö÷ÒªÊÇÎªÁË·½±ãÊÂ¼ş¼àÌı
+		 * è®¾ç½®checkboxçš„checkedå±æ€§,ä¸»è¦æ˜¯ä¸ºäº†æ–¹ä¾¿äº‹ä»¶ç›‘å¬
 		 * @function
 		 * @name Checkall#check
-		 * @param {node} node ¶ÔÓ¦checkbox½Úµã
-		 * @param {bool} flag inputbox½ÚµãcheckedÖµ
+		 * @param {node} node å¯¹åº”checkboxèŠ‚ç‚¹
+		 * @param {bool} flag inputboxèŠ‚ç‚¹checkedå€¼
 		 */
         check: function (node, flag) {
             var that = this;
@@ -114,7 +114,7 @@ KISSY.add('checkall', function (S) {
                 node.attr('checked', flag);
             }
             /**
-             * checkbox¹´Ñ¡/È¡Ïû¹´Ñ¡ÊÂ¼ş°ó¶¨
+             * checkboxå‹¾é€‰/å–æ¶ˆå‹¾é€‰äº‹ä»¶ç»‘å®š
              * @event
              * @name Checkall#check
              */
@@ -124,7 +124,7 @@ KISSY.add('checkall', function (S) {
             });
         },
         /**
-		 * ·´Ñ¡
+		 * åé€‰
 		 * @function
 		 * @name Checkall#invert
 		 */
@@ -139,14 +139,14 @@ KISSY.add('checkall', function (S) {
             };
         },
         /**
-		 * node½ÚµãÊÂ¼ş°ó¶¨
+		 * nodeèŠ‚ç‚¹äº‹ä»¶ç»‘å®š
 		 * @function
 		 * @private
 		 */
         _bind: function () {
             var that = this;
-            //µã»÷È«Ñ¡½Úµã£¬Í¬²½checklist
-            //ÓÉÓÚÈ«Ñ¡½Úµã¿ÉÄÜÓĞ¶à¸ö£¬ËùÒÔ»¹ÒªÖ´ĞĞ_synCheckall
+            //ç‚¹å‡»å…¨é€‰èŠ‚ç‚¹ï¼ŒåŒæ­¥checklist
+            //ç”±äºå…¨é€‰èŠ‚ç‚¹å¯èƒ½æœ‰å¤šä¸ªï¼Œæ‰€ä»¥è¿˜è¦æ‰§è¡Œ_synCheckall
             for (var i = 0; i < that.node.length; i++) {
                 that.node[i].on('click', function (e) {
                     var node = S.one(e.currentTarget),
@@ -154,14 +154,14 @@ KISSY.add('checkall', function (S) {
                     that.checkall(flag);
                 });
             }
-            //µã»÷·´Ñ¡½Úµã£¬·´Ñ¡checkbox²¢Í¬²½È«Ñ¡¿ò
+            //ç‚¹å‡»åé€‰èŠ‚ç‚¹ï¼Œåé€‰checkboxå¹¶åŒæ­¥å…¨é€‰æ¡†
             for (var i = 0; i < that.inverse.length; i++) {
                 that.inverse[i].on('click', function (e) {
                     that.invert();
                     that._synCheckall();
                 });
             }
-            //µã»÷checkbox,Í¬²½È«Ñ¡½Úµã
+            //ç‚¹å‡»checkbox,åŒæ­¥å…¨é€‰èŠ‚ç‚¹
             for (var i = 0; i < that.nodelist.length; i++) {
                 (function () {
                     var node = that.nodelist[i];
@@ -174,7 +174,7 @@ KISSY.add('checkall', function (S) {
             }
         },
         /**
-		 * Í¬²½È«Ñ¡¿ò
+		 * åŒæ­¥å…¨é€‰æ¡†
 		 * @function
 		 * @private
 		 */
@@ -201,9 +201,9 @@ KISSY.add('checkall', function (S) {
             }
         },
         /**
-		 *Í¬²½checkboxÁĞ±í
+		 *åŒæ­¥checkboxåˆ—è¡¨
 		 *@function
-		 *@param {el} event×Ô´øeÊôĞÔ
+		 *@param {el} eventè‡ªå¸¦eå±æ€§
 		 * @private
 		 */
         _synChecklist: function (flag) {
@@ -216,10 +216,10 @@ KISSY.add('checkall', function (S) {
             }
         },
         /**
-		 * È«Ñ¡
+		 * å…¨é€‰
 		 * @function 
 		 * @name Checkall#checkall
-		 * @param {bool} flag ÊÇ·ñÈ«Ñ¡(true/false)
+		 * @param {bool} flag æ˜¯å¦å…¨é€‰(true/false)
 		 */
         checkall: function (flag) {
             var that = this;
@@ -227,11 +227,11 @@ KISSY.add('checkall', function (S) {
             that._synCheckall(flag);
         },
         /**
-		 * ½ûÓÃÈ«Ñ¡°´Å¥
+		 * ç¦ç”¨å…¨é€‰æŒ‰é’®
 		 * @function 
 		 * @name Checkall#disable
-		 * @param {bool} flag   ÊÇ·ñ½ûÓÃ
-		 * @param {string} all ÊÇ·ñÈ«²¿½ûÓÃ
+		 * @param {bool} flag   æ˜¯å¦ç¦ç”¨
+		 * @param {string} all æ˜¯å¦å…¨éƒ¨ç¦ç”¨
 		 */
         disable: function (flag, all) {
             var that = this;
@@ -247,8 +247,7 @@ KISSY.add('checkall', function (S) {
     });
     S.Checkall=Checkall;
     return Checkall;
-},
-{
+},{
     attach: false,
     requires: ["sizzle"]
 });

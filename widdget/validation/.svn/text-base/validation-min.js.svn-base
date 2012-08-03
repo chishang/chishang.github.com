@@ -1,18 +1,18 @@
 KISSY.add('validation/base', function (S) {
 	/**
-	 * ±íµ¥ÑéÖ¤×é¼ş
+	 * è¡¨å•éªŒè¯ç»„ä»¶
 	 * @constructor
 	 * @name Validation
-	 * @param {id} ID form±íµ¥id ÊôĞÔÖµ
+	 * @param {id} ID formè¡¨å•id å±æ€§å€¼
 	 * @param {object} textbox:
-	 * <br/>-tipCls£ºÌáÊ¾¿òclass,Ä¬ÈÏÖµÎª "input-tip"
-	 * <br/>-contentCls:textboxËùÔÚÈİÆ÷,Ä¬ÈÏÖµÎª "input-box"
-	 * <br/>-textbox {object} ĞèÑéÖ¤µÄÎÄ±¾¿ò:
-	 * 	<br/>--contentCls input ±íµ¥ËùÔÚboxµÄclass
-	 * 	<br/>--tipCls ĞÅÏ¢ÌáÊ¾ÔªËØµÄclass
+	 * <br/>-tipClsï¼šæç¤ºæ¡†class,é»˜è®¤å€¼ä¸º "input-tip"
+	 * <br/>-contentCls:textboxæ‰€åœ¨å®¹å™¨,é»˜è®¤å€¼ä¸º "input-box"
+	 * <br/>-textbox {object} éœ€éªŒè¯çš„æ–‡æœ¬æ¡†:
+	 * 	<br/>--contentCls input è¡¨å•æ‰€åœ¨boxçš„class
+	 * 	<br/>--tipCls ä¿¡æ¯æç¤ºå…ƒç´ çš„class
 	 * 	<br/>--list
-	 * 	<br/>-checkBox ±ØĞë¹´Ñ¡µÄcheckbox ¸ñÊ½Îª[node,node,¡¤¡¤¡¤]
-	 * @description Èç¹ûÒªÓÃ×Ô´øµÄÑùÊ½£¬ÇëÔÚformÖĞÌí¼Ó×Ô´øÑ¡ÔñÈ¨ks-tdform
+	 * 	<br/>-checkBox å¿…é¡»å‹¾é€‰çš„checkbox æ ¼å¼ä¸º[node,node,Â·Â·Â·]
+	 * @description å¦‚æœè¦ç”¨è‡ªå¸¦çš„æ ·å¼ï¼Œè¯·åœ¨formä¸­æ·»åŠ è‡ªå¸¦é€‰æ‹©æƒks-tdform
 	 */
     function Validation() {
         this._init.apply(this, arguments);
@@ -23,47 +23,42 @@ KISSY.add('validation/base', function (S) {
             var self = this;
             self.form=S.one(id);
             /**
-             * ĞèÒªÑéÖ¤µÄ¸öÊı
+             * éœ€è¦éªŒè¯çš„ä¸ªæ•°
              * @field @name Validation#num
              */
             self.num=0;
             /**
-             * Í¨¹ıÑéÖ¤µÄ¸öÊı
+             * é€šè¿‡éªŒè¯çš„ä¸ªæ•°
              * @field @name Validation#passNum
              */
             self.passNum=0;
             self.config={
             	tipCls:"input-tip",
-            	contentCls:"input-content",
-            	submit:null
+            	contentCls:"input-content"
             };
             S.mix(self.config, config);
            	self._buildTextBoxList();
            	self._bind();
            },
         /**
-		 * ±íµ¥Ìá½»ÊÂ¼ş°ó¶¨
+		 * è¡¨å•æäº¤äº‹ä»¶ç»‘å®š
 		 * @function 
 		 * @name Validation#bind
 		 * @private
 		 */
 		_bind:function(){
 			var self=this,
-			form=self.form,
-			config=self.config,
-			submit=config.submit;
+			form=self.form;
 			form.on("submit",function(e){
-				var passed=self.valid();
-				if(!passed){
-					e.halt();
-				}else if(S.isFunction(submit)){
-					submit.apply(self,[e]);
-				}
 				
+				self.valid();
+				if(self.passNum!=self.num){
+					e.halt();
+				}
 			});
 		},
         /**
-		 * ¹¹½¨textboxListÊı×é
+		 * æ„å»ºtextboxListæ•°ç»„
 		 * @function 
 		 * @name Validation#buildTextBoxList
 		 * @private
@@ -71,7 +66,7 @@ KISSY.add('validation/base', function (S) {
         _buildTextBoxList: function () {
             var self = this;
 	        /**
-			 * ´ıÑéÖ¤µÄÎÄ±¾¿òÊı×é
+			 * å¾…éªŒè¯çš„æ–‡æœ¬æ¡†æ•°ç»„
 			 * @field
 			 * @name Validation#textBoxList
 			 */
@@ -98,41 +93,39 @@ KISSY.add('validation/base', function (S) {
             };
         },
         /**
-		 * ¼ì²éÊÇ·ñÍ¨¹ıÑéÖ¤
+		 * æ£€æŸ¥æ˜¯å¦é€šè¿‡éªŒè¯
 		 * @function 
 		 * @name Validation#valid
 		 */
         valid: function () {
             var self = this,
             List = self.textBoxList;
-            //ÏÈ½«ÒÑÍ¨¹ıÊıÖÃÁã
+            //å…ˆå°†å·²é€šè¿‡æ•°ç½®é›¶
             self.passNum=0;
             for (var i in List) {
             	var item=List[i];
-            	//Èç¹ûÊÇÕıÈ·Ïî£¬ÎŞĞèÔÙ×öÑéÖ¤£¬ÊÇ´íÎóÏî£¬ĞèÔÙ×öÑéÖ¤
-            	if(!item.state)
-            		item.validation();
+            	//å¦‚æœæ˜¯å¼‚æ­¥è¯·æ±‚
+            	if(item.ajax){
+            		 var timer=S.later(checkAjax,100,true);
+            		 function checkAjax(){
+            		 	
+            		 }
+            	}else{
+            		var checked = List[i].validation();
+                    if (checked) {
+                        self.passNum++;
+                      
+                    }
+            	}
+                    
                 }
-            return self.isPassed();
-        },
-        /**
-		 * ¼ì²éÊÇ·ñÍ¨¹ıÑéÖ¤
-		 * @function 
-		 * @name Validation#isPassd
-		 */
-		isPassed:function(){
-			var self=this;
-            List = self.textBoxList;
-            //ÏÈ½«ÒÑÍ¨¹ıÊıÖÃÁã
-            self.passNum=0;
-            for (var i in List) {
-            	var item=List[i];
-                    if (item.state) {
-                        self.passNum++;   
-                    } 
-                }
-			return (self.passNum===self.num);
-		}
+            if(self.passNum==self.num){
+            	return true;
+            }else{
+            	return false;
+            }
+            
+        }
     });
     return Validation;
 },
@@ -143,19 +136,19 @@ KISSY.add('validation/base', function (S) {
 
 KISSY.add('validation/textbox', function (S) {
 	/**
-     * ÎÄ±¾¿òÑéÖ¤×é¼ş
+     * æ–‡æœ¬æ¡†éªŒè¯ç»„ä»¶
      * @constructor
      * @name TextBoxValid
      * @param {Object} config
      * <prev>
-     * <br/>defVal  inputÄ¬ÈÏÖµ     
-     * <br/>contentCls Õû¸öÑéÖ¤Æ÷µÄÈİÆ÷    
-     * <br/>tipCls ÌáÊ¾¿òclass  ±ØÑ¡
-     * <br/>checkObj inputĞèÒªÑéÖ¤µÄ¹æÔò (±ØÑ¡):
-     * -reg:ÑéÖ¤º¯Êı/ÕıÔò±íµ¥Ê½/×Ö·û´®
-     * -rightMes:ÕıÈ·ÌáÊ¾
-     * -errorMes:´íÎóÌáÊ¾ÎÄ°¸
-     * <br/>allowNull ÊÇ·ñÔÊĞí¿ÕÖµ  Ä¬ÈÏÎªfalse
+     * <br/>defVal  inputé»˜è®¤å€¼     
+     * <br/>contentCls æ•´ä¸ªéªŒè¯å™¨çš„å®¹å™¨    
+     * <br/>tipCls æç¤ºæ¡†class  å¿…é€‰
+     * <br/>checkObj inputéœ€è¦éªŒè¯çš„è§„åˆ™ (å¿…é€‰):
+     * -reg:éªŒè¯å‡½æ•°/æ­£åˆ™è¡¨å•å¼/å­—ç¬¦ä¸²
+     * -rightMes:æ­£ç¡®æç¤º
+     * -errorMes:é”™è¯¯æç¤ºæ–‡æ¡ˆ
+     * <br/>allowNull æ˜¯å¦å…è®¸ç©ºå€¼  é»˜è®¤ä¸ºfalse
      * </prev>
      */
     function TextBoxValid() {
@@ -163,7 +156,7 @@ KISSY.add('validation/textbox', function (S) {
     }
     S.augment(TextBoxValid, {
         /**
-         * ³õÊ¼»¯
+         * åˆå§‹åŒ–
          * @function
          * @private
          */
@@ -175,7 +168,7 @@ KISSY.add('validation/textbox', function (S) {
             }
             var self = this;
             /**
-             * ²ÎÊıÅäÖÃ
+             * å‚æ•°é…ç½®
              * @field
 		 	 * @name TextBoxValid#config
              */
@@ -184,69 +177,60 @@ KISSY.add('validation/textbox', function (S) {
             content = node.parent('.' + config.contentCls),
             tip = content.one('.' + config.tipCls),
             defVal = config.defVal || '',
-            ajax=config.ajax||false,
             allowNull = config.allowNull || false,
-            state=allowNull?true:false,
-            nullMes=config.nullMes||'±ØÌîÏî£¬ÇëÊäÈë·ûºÏÒªÇóµÄÄÚÈİ',
+            nullMes=config.nullMes||'å¿…å¡«é¡¹ï¼Œè¯·è¾“å…¥åˆæ³•å†…å®¹',
             checkObj = config.checkObj;
             S.mix(self, {
             	/**
-	             * input½Úµã
+	             * inputèŠ‚ç‚¹
 	             * @field
 			 	 * @name TextBoxValid#node
 	             */
                 node: node,
                 /**
-	             * z×´Ì¬
-	             * @field
-			 	 * @name TextBoxValid#state
-	             */
-               state:state,
-                /**
-	             * ÑéÖ¤¿òÈİÆ÷
+	             * éªŒè¯æ¡†å®¹å™¨
 	             * @field
 			 	 * @name TextBoxValid#content
 	             */
                 content: content,
                 /**
-	             * Ä¬ÈÏÖµ
+	             * é»˜è®¤å€¼
 	             * @field
 			 	 * @name TextBoxValid#defVal
 	             */
                 defVal: defVal,
                 /**
-	             * ÊÇ·ñÔÊĞíÎª¿Õ
+	             * æ˜¯å¦å…è®¸ä¸ºç©º
 	             * @field
 			 	 * @name TextBoxValid#allowNull
 	             */
                 allowNull: allowNull,
                 /**
-	             * ÊäÈëÎª¿ÕÌáÊ¾ĞÅÏ¢
+	             * è¾“å…¥ä¸ºç©ºæç¤ºä¿¡æ¯
 	             * @field
 			 	 * @name TextBoxValid#allowNull
 	             */
                 nullMes: nullMes,
                 /**
-	             * tip½Úµã
+	             * tipèŠ‚ç‚¹
 	             * @field
 			 	 * @name TextBoxValid#tip
 	             */
                 tip: tip,
-                ajax:ajax,
                 /**
-	             * Ğ£Ñé¹æÔò
+	             * æ ¡éªŒè§„åˆ™
 	             * @field
 			 	 * @name TextBoxValid#checkObj
 	             */
                 checkObj: checkObj
             });
 	        
-            //ÏÈ½«ÎÄ±¾¿òÖÃÎªÄ¬ÈÏ×´Ì¬
-            self.setDefault();
+            //å…ˆå°†æ–‡æœ¬æ¡†ç½®ä¸ºé»˜è®¤çŠ¶æ€
+           self.setDefault();
             self._bind();
         },
         /**
-         * ÊÂ¼ş°ó¶¨
+         * äº‹ä»¶ç»‘å®š
          * @function 
          * @private
          */
@@ -256,14 +240,13 @@ KISSY.add('validation/textbox', function (S) {
             checkObj = self.checkObj;
             node.on('focus', function (e) {
                 self.setFocus();
-                
             });
             node.on('blur', function (e) {
-               self.validation();
+                self.validation();
             });
         },
         /**
-         * »ñÈ¡inputµÄÖµ
+         * è·å–inputçš„å€¼
          * @function
          * @name TextBoxValid#getVal
          */
@@ -272,25 +255,23 @@ KISSY.add('validation/textbox', function (S) {
             return S.trim(self.node.val());
         },
         /**
-         * ×Ô¶¯ÑéÖ¤
+         * éªŒè¯
          * @function
          * @name TextBoxValid#Validation
          */
         validation: function () {
             var self = this,
             node = self.node,
-            ajax=self.ajax,
             checkObj = self.checkObj,
-            val = self.getVal();
+            val = self.getVal(),
+            result=true;
             if (val == self.defVal || val == "") {
                 if (self.allowNull) {
-                	self.state=true;
                     self.resetInput();
+                    result=true;
                 } else {
-                	self.state=false;
                     self.setError(self.nullMes);
-                    
-                    
+                    result=false;
                 }
             } else {
             	if(checkObj){
@@ -299,37 +280,26 @@ KISSY.add('validation/textbox', function (S) {
 	            	rightMes=res.mes||checkObj.rightMes||"&nbsp;",
 	            	errorMes=res.mes||checkObj.errorMes||"&nbsp;";
                     if (res.isValid==false) {
-                        self.state=false;
                         self.setError(errorMes);
-     
-                    }else if(typeof res.isValid=="undefined"){
-                    	 self.state=false;
+                        result=false;
+                    }else if(res.isValid==undefined){
+                    	result=false;
                     }else{
-                    	self.state=true;
+                    	result=true;
                     	self.setRight(rightMes);
-		                if(ajax){
-		             		ajax.apply(self);
-		             	}
                     }
-             	}else{	
-             		self.state=true;
+             	}else{
+             		result=true;
              		self.setRight();
-             		if(ajax){
-		             	ajax.apply(self);
-		             }
              	}
-             	
             } 
-             return self.isPassed();
-        },
-        isPassed:function(){
-        	return this.state;
+             return result;
         },
         /**
-         * reset input¿ò
+         * reset inputæ¡†
          * @function
          * @name TextBoxValid#Validation
-         * @param message ÒªÉèÖÃµÄÌáÊ¾ĞÅÏ¢
+         * @param message è¦è®¾ç½®çš„æç¤ºä¿¡æ¯
          */
         resetInput: function (message) {
             var self = this;
@@ -337,10 +307,10 @@ KISSY.add('validation/textbox', function (S) {
             message&&self.tips(message);
         },
         /**
-         * ÖÃÎÄ±¾¿ò×´Ì¬Îª»ñµÃ½¹µã
+         * ç½®æ–‡æœ¬æ¡†çŠ¶æ€ä¸ºè·å¾—ç„¦ç‚¹
          * @function
          * @name TextBoxValid#setFocus
-         * @param message ÒªÉèÖÃµÄÌáÊ¾ĞÅÏ¢
+         * @param message è¦è®¾ç½®çš„æç¤ºä¿¡æ¯
          */
         setFocus: function (message) {
             var self = this,
@@ -353,10 +323,10 @@ KISSY.add('validation/textbox', function (S) {
             self.tips(message);
         },
         /**
-         * ÖÃÎÄ±¾¿ò×´Ì¬Îª´íÎó
+         * ç½®æ–‡æœ¬æ¡†çŠ¶æ€ä¸ºé”™è¯¯
          * @function
          * @name TextBoxValid#setError
-         * @param message ÒªÉèÖÃµÄÌáÊ¾ĞÅÏ¢
+         * @param message è¦è®¾ç½®çš„æç¤ºä¿¡æ¯
          */
         setError: function (mes) {
             var self = this,
@@ -369,10 +339,10 @@ KISSY.add('validation/textbox', function (S) {
             }
         },
         /**
-         * ÖÃÎÄ±¾¿ò×´Ì¬ÎªÕıÈ·
+         * ç½®æ–‡æœ¬æ¡†çŠ¶æ€ä¸ºæ­£ç¡®
          * @function
          * @name TextBoxValid#setRight
-         * @param message ÒªÉèÖÃµÄÌáÊ¾ĞÅÏ¢
+         * @param message è¦è®¾ç½®çš„æç¤ºä¿¡æ¯
          */
         setRight: function (message) {
             var self = this,
@@ -382,10 +352,10 @@ KISSY.add('validation/textbox', function (S) {
         	self.tips(message);
         },
         /**
-         * ÖÃÎÄ±¾¿ò×´Ì¬ÎªÄ¬ÈÏ×´Ì¬
+         * ç½®æ–‡æœ¬æ¡†çŠ¶æ€ä¸ºé»˜è®¤çŠ¶æ€
          * @function
          * @name TextBoxValid#setDefault
-         * @param message ÒªÉèÖÃµÄÌáÊ¾ĞÅÏ¢
+         * @param message è¦è®¾ç½®çš„æç¤ºä¿¡æ¯
          */
         setDefault: function (message) {
             var self = this,
@@ -395,10 +365,10 @@ KISSY.add('validation/textbox', function (S) {
             self.tips(message);
         },
         /**
-         * ÎÄ±¾ÌáÊ¾
+         * æ–‡æœ¬æç¤º
          * @function
          * @name TextBoxValid#tips
-         * @param message ÒªÉèÖÃµÄÌáÊ¾ĞÅÏ¢
+         * @param message è¦è®¾ç½®çš„æç¤ºä¿¡æ¯
          */
         tips:function(message){
         	var self=this,
@@ -414,7 +384,7 @@ KISSY.add('validation/textbox', function (S) {
 });
 
 /**
- * @description ±íµ¥ÑéÖ¤×é¼ş
+ * @description è¡¨å•éªŒè¯ç»„ä»¶
  * @constorctor
  * @name Validation
  */
