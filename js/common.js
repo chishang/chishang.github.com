@@ -60,12 +60,12 @@ KISSY.add('common', function(S) {
                 activedClass: "on",
                 type: "mouseenter",
                 callback: function(item) { }
-            }
+            };
             S.mix(config, cfg);
             var nContain = S.one(config.contain);
             if (!nContain) {
                 return false;
-            }
+            };
             var nItemList = nContain.all(config.item);
             nItemList.on(config.type, function(e) {
                 var nTarget = S.one(e.currentTarget);
@@ -193,7 +193,7 @@ KISSY.add('common', function(S) {
                 tabNode.addClass("dn");
             });
             if (isHidden) {
-                classifyhidden()
+                classifyhidden();
             }
 
         },
@@ -221,7 +221,7 @@ KISSY.add('common', function(S) {
                 this.port = port;
                 this.hash = hash;
 
-            }
+            };
             //跳转页面
             self.open = function() {
                 var search = S.param(this.search),
@@ -233,16 +233,16 @@ KISSY.add('common', function(S) {
 				url = protocol + "//" + host + pathname + "?" + search + hash;
                 //alert(url);
                 location.href = url;
-            }
+            };
             //获取请求值
             self.get = function(str) {
                 return this.search[str];
-            }
+            };
             //设置、修改请求值
             self.set = function(name, value) {
                 this.search[name] = value;
                 return this;
-            }
+            };
             self.hashHandle = function(value) {
                 if (S.isUndefined(value)) {
                     return this.hash;
@@ -251,7 +251,7 @@ KISSY.add('common', function(S) {
                     this.hash = value;
                     return this;
                 }
-            }
+            };
             self.init();
         }
 
