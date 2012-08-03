@@ -4,7 +4,7 @@
 KISSY.add("canvas", function (S) {
 	var E=S.Event;
     /**
-	 * html5 Canvas »æÍ¼
+	 * html5 Canvas ç»˜å›¾
 	 * @class S.Canvas
 	 * @param cfg
 	 */
@@ -39,7 +39,7 @@ KISSY.add("canvas", function (S) {
             self._bind();
         },
         /**
-		 * ´´½¨»­²¼
+		 * åˆ›å»ºç”»å¸ƒ
 		 * @name S.Canvas#_createCanvas
 		 * @param id,
 		 * @param width
@@ -61,12 +61,12 @@ KISSY.add("canvas", function (S) {
             self.context = context;
         },
         /**
-		 * ÊÂ¼ş°ó¶¨
+		 * äº‹ä»¶ç»‘å®š
 		 */
         _bind: function () {
             var self = this, 
             nCanvas=self.nCanvas;
-            //Êó±ê°´ÏÂ
+            //é¼ æ ‡æŒ‰ä¸‹
             nCanvas.on("mousedown", function(e) {
                 var mouseX = e.pageX - this.offsetLeft;
                 var mouseY = e.pageY - this.offsetTop;
@@ -79,7 +79,7 @@ KISSY.add("canvas", function (S) {
                 self.redraw();
                 
             });
-            //Êó±êÒÆ¶¯
+            //é¼ æ ‡ç§»åŠ¨
             nCanvas.on("mousemove", function (e) {
                 var mouseX = e.pageX - this.offsetLeft;
                 var mouseY = e.pageY - this.offsetTop;
@@ -88,18 +88,18 @@ KISSY.add("canvas", function (S) {
                     self.redraw();
                 }
             });
-            //Êó±êËÉ¿ª
+            //é¼ æ ‡æ¾å¼€
             nCanvas.on("mouseup", function (e) {
                 self.paint = false;
             });
-            //Êó±êÀë¿ª
+            //é¼ æ ‡ç¦»å¼€
             nCanvas.on("mouseleave", function (e) {
                 self.paint = false;
             });
 
         },        
         /**
-		 * ±£´æÊó±êÂ·¾¶
+		 * ä¿å­˜é¼ æ ‡è·¯å¾„
 		 */
         _addClick: function (x, y, dragging) {
             var self = this;
@@ -108,7 +108,7 @@ KISSY.add("canvas", function (S) {
             self.clickDrag.push(dragging);
         },
         /**
-         * °´´æ´¢Â·¾¶Â·¾¶
+         * æŒ‰å­˜å‚¨è·¯å¾„è·¯å¾„
          */
         redraw: function () {
             var self = this;
@@ -131,12 +131,12 @@ KISSY.add("canvas", function (S) {
             }
         },
         /**
-	     * »æÖÆ¾ØĞÎ
+	     * ç»˜åˆ¶çŸ©å½¢
 	     * @name S.Canvas#rawRect
-		 * @param x ÆğÊ¼x×ø±ê
-		 * @param y ÆğÊ¼y×ø±ê
-		 * @param width ¿í¶È
-		 * @param height ¸ß¶È
+		 * @param x èµ·å§‹xåæ ‡
+		 * @param y èµ·å§‹yåæ ‡
+		 * @param width å®½åº¦
+		 * @param height é«˜åº¦
 	     */
         drawRect: function (x,y,width,height) {
             var self = this,
@@ -148,7 +148,7 @@ KISSY.add("canvas", function (S) {
             self._addClick(x, y, false);
         },
         /**
-		 * ÉèÖÃ»­²¼¿í¶È
+		 * è®¾ç½®ç”»å¸ƒå®½åº¦
 		 * @name S.Canvas#width
 		 */
         width: function (width) {
@@ -162,7 +162,7 @@ KISSY.add("canvas", function (S) {
             }
         },
         /**
-		 * ÉèÖÃ»­²¼¸ß¶È
+		 * è®¾ç½®ç”»å¸ƒé«˜åº¦
 		 * @name S.Canvas#height
 		 */
         height: function (height) {
@@ -173,11 +173,11 @@ KISSY.add("canvas", function (S) {
                 return this;
             } else {
                 return canvas.height;
-            }
+            };
         },
 
         /**
-		 * ÉèÖÃ/»ñÈ¡Ìî³äÑÕÉ«
+		 * è®¾ç½®/è·å–å¡«å……é¢œè‰²
 		 * @name S.Canvas#fillStyle
 		 * @param color
 		 */
@@ -189,11 +189,11 @@ KISSY.add("canvas", function (S) {
                 return this;
             } else {
                 return context.fillStyle;
-            }
+            };
 
         },
         /**
-		 * ÉèÖÃ/»ñÈ¡±ß¿òÑÕÉ«
+		 * è®¾ç½®/è·å–è¾¹æ¡†é¢œè‰²
 		 * @name S.Canvas#strokeStyle
 		 * @param color
 		 */
@@ -205,11 +205,11 @@ KISSY.add("canvas", function (S) {
                 return this;
             } else {
                 return context.strokeStyle;
-            }
+            };
 
         },
         /**
-		 * ÉèÖÃ/»ñÈ¡»­±Ê´óĞ¡
+		 * è®¾ç½®/è·å–ç”»ç¬”å¤§å°
 		 * @name S.Canvas#lineWidth
 		 * @param width
 		 */
@@ -224,7 +224,7 @@ KISSY.add("canvas", function (S) {
             }
         },
         /**
-		 * ÉèÖÃ/»ñÈ¡»­±ÊĞÎ×´
+		 * è®¾ç½®/è·å–ç”»ç¬”å½¢çŠ¶
 		 * @name S.Canvas#lineJoin
 		 * @param width
 		 */
@@ -239,7 +239,7 @@ KISSY.add("canvas", function (S) {
             }
         },
         /**
-		 * »ñÈ¡/ÉèÖÃ  Ìî³ä/±ß¿ò
+		 * è·å–/è®¾ç½®  å¡«å……/è¾¹æ¡†
 		 * @name S.Canvas#type
 		 * @param type
 		 */
@@ -255,7 +255,7 @@ KISSY.add("canvas", function (S) {
         },
 
         /**
-		 * ±£´æ
+		 * ä¿å­˜
 		 * @name S.Canvas#save
 		 */
         save: function () {
@@ -264,12 +264,12 @@ KISSY.add("canvas", function (S) {
             window.open(canvas.toDataURL("image/jpeg"));
         },
         /**
-		 * ²Á³ı
+		 * æ“¦é™¤
 		 * @name S.Canvas#save
-		 * @param x ÆğÊ¼x×ø±ê
-		 * @param y ÆğÊ¼y×ø±ê
-		 * @param width ¿í¶È
-		 * @param height ¸ß¶È
+		 * @param x èµ·å§‹xåæ ‡
+		 * @param y èµ·å§‹yåæ ‡
+		 * @param width å®½åº¦
+		 * @param height é«˜åº¦
 		 */
         clear: function (x, y, width, height) {
             var self = this,

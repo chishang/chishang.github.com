@@ -1,203 +1,206 @@
 /**
- *Cubee·ÖÒ³¿Ø¼þ
- *kongyan@taobao.com
+ * åˆ†é¡µç»„ä»¶
  */
-YUI.namespace('Y.Pagenation');
-YUI.add('pagenation', function (Y) {
-    var Lang = Y.Lang,
-        Widget = Y.Widget,
-        Node = Y.Node;
-    function Pagenation(config) {
-        Pagenation.superclass.constructor.apply(this, arguments);
-    }
-    Pagenation.NAME = 'pagenation';
-    Pagenation.ATTRS = {
-        step: {
-            value: 7
-        },
-        index: {
-            value: 1
-        },
-        max: {
-            value: 7
-        },
-        jump: {
-            value: false
-        }
-    };
-    Y.extend(Pagenation, Widget, {
-        initializer: function () {
-            this.publish('trigger');
-            this._eventHandles = {
-                delegate: null
-            };
-            this.render();
-        },
-        destructor: function () {
-
-        },
-        renderUI: function () {
-            this._renderMarkup();
-            this._renderPage();
-        },
-        bindUI: function () {
-            this._bindDelegate();
-        },
-        syncUI: function () {
-            //this._updatePage();
-        },
+KISSY.add("pagenation",function(S){
+	
+	function PageNation(){
+	    	this._init.apply(this,arguments);
+	};	
+	S.augment(PageNation,S.EventTarget, {
+	    _init: function (config) {
+	    	var self=this,
+	    	cfg={
+	          	step:7,
+	          	index:1,
+	          	max:7,
+	          	jump:false
+	          };
+	          S.mix(cfg,config);
+	          if(cfg.max<cfg.index){
+	        	cfg.index=cfg.max;
+	        }
+	          S.mix(self,cfg);
+	          self._eventHandles = {
+	                delegate: null
+	            };
+	          self.renderUI();
+	          self.bindUI();
+	        },
+	        destructor: function () {
+	
+	        },
+	        renderUI: function () {
+	            this._renderMarkup();
+	            this._renderPage();
+	        },
+	        bindUI: function () {
+	            this._bindDelegate();
+	        },
+	        syncUI: function () {
+	            //this._updatePage();
+	    },
 		setMax: function(max){
-			this.set('max', max);
+			this.max=max;
 			this.renderUI();
 		},
 		setStep: function(step){
-			this.set('step', step);	
+			this.step=step;	
 			this.renderUI();
 		},
 		setIndex: function(index){
-			this.set('index', index);		  
+			this.index=index;		  
 			this.renderUI();
 		},
-        _renderMarkup: function () {
-            this.get('contentBox').append('<span></span>');
-            if (this.get('jump')) {
-                this.get('contentBox').append('<ins>µ½µÚ<input type="text" />Ò³<button>Ìø×ª</button></ins>');
-            }
-        },
-        _renderPage: function () {
-            var step = this.get('step'),
-                index = this.get('index'),
-                max = this.get('max'),
-                contentBox = this.get('contentBox');
-            var pageMain = [];
-            //render Left;
-            if (index === 1) {
-                pageMain.push('<a href="#" title="ÉÏÒ»Ò³" class="page-prev-disabled">ÉÏÒ»Ò³</a>');
-            } else {
-                pageMain.push('<a href="#" title="ÉÏÒ»Ò³" class="page-prev">ÉÏÒ»Ò³</a>');
-            }
-            pageMain.push('<span class="page-main">');
-            //render Middle
-            if (step >= max) {
-                for (var i = 1; i <= max; i++) {
-                    pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current"' : '') + ' title="µÚ' + i + 'Ò³">' + i + '</a>');
-                }
-            } else {
-                if (index < step) {
-                    for (var i = 1; i <= step; i++) {
-                        pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current"' : '') + ' title="µÚ' + i + 'Ò³">' + i + '</a>');
-                    }
-                    pageMain.push('<em>...</em>');
-                    pageMain.push('<a href="#page-' + max + '" title="µÚ' + max + 'Ò³">' + max + '</a>');
-                } else if (index > max - step) {
-                    pageMain.push('<a href="#page-1" title="µÚ1Ò³">1</a>');
-                    pageMain.push('<em>...</em>');
-                    for (var i = max - step; i <= max; i++) {
-                        pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current"' : '') + ' title="µÚ' + i + 'Ò³">' + i + '</a>');
-                    }
-                } else {
-                    pageMain.push('<a href="#page-1" title="µÚ1Ò³">1</a>');
-                    pageMain.push('<em>...</em>');
-                    for (var i = index - Math.floor(step / 2); i <= index + Math.floor(step / 2) - (step % 2 ? 0 : 1); i++) {
-                        pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current"' : '') + ' title="µÚ' + i + 'Ò³">' + i + '</a>');
-                    }
-                    pageMain.push('<em>...</em>');
-                    pageMain.push('<a href="#page-' + max + '" title="µÚ' + max + 'Ò³">' + max + '</a>');
-                }
-            }
-            pageMain.push('</span>');
-            //render Right
-            if (index === max) {
-                pageMain.push('<a href="#" title="ÏÂÒ»Ò³" class="page-next-disabled">ÏÂÒ»Ò³</a>');
-            } else {
-                pageMain.push('<a href="#" title="ÏÂÒ»Ò³" class="page-next">ÏÂÒ»Ò³</a>');
-            }
-            contentBox.one('span').setContent(pageMain.join(''));
-        },
-        _bindDelegate: function () {
-            var eventHandles = this._eventHandles;
-            if (eventHandles.delegate) {
-                eventHandles.delegate.detach();
-                eventHandles.delegate = null;
-            }
-            eventHandles.delegate = Y.on('click', Y.bind(this._onDelegateClick, this), this.get('contentBox'));
-            if (this.get('jump')) {
-                this._bindJump();
-            }
-        },
-        _bindJump: function () {
-            var s = this;
-            var contentBox = this.get('contentBox'),
-                jumpbtn = contentBox.one('button'),
-                jumpinput = contentBox.one('input');
-            if (Y.UA.ie === 6) {
-                jumpbtn.on('mouseover', function (e) {
-                    this.addClass('jumpbtn-hover');
-                });
-				jumpbtn.on('mouseout', function (e) {
-                    this.removeClass('jumpbtn-hover');
-                });
-            }
-            jumpinput.on('focus', function (e) {
-                this.select();
-            });
-            jumpinput.on('keydown', function (e) {
-                if (e.keyCode === 13) {
-                    s._jumpPage();
-                    this.select();
-                }
-            });
-        },
-        _onDelegateClick: function (e) {
-            e.halt();
-            var target = e.target;
-            if (target.hasClass('page-prev')) {
-                this._goPrevPage();
-            } else if (target.hasClass('page-next')) {
-                this._goNextPage();
-            } else if (target.get('tagName') === 'A' && target.get('parentNode').get('className') === 'page-main') {
-                this._goToPage(parseInt(target.get('innerHTML')));
-            }
-            if (this.get('jump') && target.get('tagName') === 'BUTTON') {
-                this._jumpPage();
-            }
-        },
-        _goPrevPage: function () {
-            var page = this.get('index') - 1;
-            this.set('index', page);
-            this._renderPage();
-            this.fire('trigger', {
-                'page': page,
-				'max': this.get('max')
-            });
-        },
-        _goNextPage: function () {
-            var page = this.get('index') + 1;
-            this.set('index', page);
-            this._renderPage();
-            this.fire('trigger', {
-                'page': page,
-				'max': this.get('max')
-            });
-        },
-        _goToPage: function (page) {
-            this.set('index', page);
-            this._renderPage();
-            this.fire('trigger', {
-                'page': page,
-				'max': this.get('max')
-            });
-        },
-        _jumpPage: function () {
-            var jumpinputVal = parseInt(this.get('contentBox').one('input').get('value'));
-            if (this._validatePage(jumpinputVal)) {
-                this._goToPage(jumpinputVal);
-            }
-        },
-        _validatePage: function (val) {
-            var max = this.get('max');
-            return (Lang.isNumber(val) && val >= 1 && val <= max);
-        }
-    });
-	Y.Pagenation = Pagenation;
-}, '3.4.1', {requires: ['widget', 'pagenation-skin']});
+	    _renderMarkup: function () {
+	    	var self=this,
+	    	contentBox=self.contentBox,
+	    	jump=self.jump;
+	        contentBox.append('<span></span>');
+	        if (jump) {
+	            contentBox.append('<ins>åˆ°ç¬¬<input type="text" />é¡µ<button class="jump">è·³è½¬</button></ins>');
+	        }
+	    },
+	    _renderPage: function () {
+	        var step = parseInt(this.step),
+	            index = parseInt(this.index),
+	            max = parseInt(this.max),
+	            contentBox = this.contentBox;
+	        var pageMain = [];
+	        
+	        //render Left;
+	        if (index === 1) {
+	            pageMain.push('<a href="#" title="ä¸Šä¸€é¡µ" class="page-prev-disabled">ä¸Šä¸€é¡µ</a>');
+	        } else {
+	            pageMain.push('<a href="#" title="ä¸Šä¸€é¡µ" class="page-prev">ä¸Šä¸€é¡µ</a>');
+	        }
+	        pageMain.push('<span class="page-main">');
+	        //render Middle
+	        if (step >= max) {
+	            for (var i = 1; i <= max; i++) {
+	                pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current num"' : ' class="num"') + ' title="ç¬¬' + i + 'é¡µ">' + i + '</a>');
+	            }
+	        } else {
+	            if (index < step) {
+	                for (var i = 1; i <= step; i++) {
+	                    pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current num"' : ' class="num"') + ' title="ç¬¬' + i + 'é¡µ">' + i + '</a>');
+	                }
+	                pageMain.push('<em>...</em>');
+	                pageMain.push('<a href="#page-' + max + '" class="num" title="ç¬¬' + max + 'é¡µ">' + max + '</a>');
+	            } else if (index > max - step) {
+	                pageMain.push('<a href="#page-1"  class="num" title="ç¬¬1é¡µ">1</a>');
+	                pageMain.push('<em>...</em>');
+	                for (var i = max - step; i <= max; i++) {
+	                    pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current num"' : ' class="num"') + ' title="ç¬¬' + i + 'é¡µ">' + i + '</a>');
+	                }
+	            } else {
+	                pageMain.push('<a href="#page-1"  class="num" title="ç¬¬1é¡µ">1</a>');
+	                pageMain.push('<em>...</em>');
+	                for (var i = index - Math.floor(step / 2); i <= index + Math.floor(step / 2) - (step % 2 ? 0 : 1); i++) {
+	                    pageMain.push('<a href="#page-' + i + '"' + (index === i ? ' class="current num"' : ' class="num"') + ' title="ç¬¬' + i + 'é¡µ">' + i + '</a>');
+	                }
+	                pageMain.push('<em>...</em>');
+	                pageMain.push('<a href="#page-' + max + '"  class="num" title="ç¬¬' + max + 'é¡µ">' + max + '</a>');
+	            }
+	        }
+	        pageMain.push('</span>');
+	        //render Right
+	        if (index ==max) {
+	            pageMain.push('<a href="#" title="ä¸‹ä¸€é¡µ" class="page-next-disabled">ä¸‹ä¸€é¡µ</a>');
+	        } else {
+	            pageMain.push('<a href="#" title="ä¸‹ä¸€é¡µ" class="page-next">ä¸‹ä¸€é¡µ</a>');
+	        }
+	        contentBox.one('span').html(pageMain.join(''));
+	    },
+	    _bindDelegate: function () {
+	    	var self=this;
+	        var eventHandles =self._eventHandles,
+	        contentBox=self.contentBox,
+	        jump=self.jump;
+	        if (eventHandles.delegate) {
+	            eventHandles.delegate.detach();
+	            eventHandles.delegate = null;
+	        }
+	        eventHandles.delegate =contentBox.on("click",function(e){
+	        	self._onDelegateClick(e);
+	        })
+	        
+	        if (this.jump) {
+	            this._bindJump();
+	        }
+	    },
+	    _bindJump: function () {
+	        var s = this;
+	        var contentBox = this.contentBox,
+	            jumpbtn = contentBox.one('button'),
+	            jumpinput = contentBox.one('input');
+	        if (S.UA.ie === 6) {
+	            jumpbtn.on('mouseenter', function (e) {
+	                this.addClass('jumpbtn-hover');
+	            });
+				jumpbtn.on('mouseleave', function (e) {
+	                this.removeClass('jumpbtn-hover');
+	            });
+	        }
+	        jumpinput.on('focusin', function (e) {
+	            this.select();
+	        });
+	        jumpinput.on('keydown', function (e) {
+	            if (e.keyCode === 13) {
+	                s._jumpPage();
+	                this.select();
+	            }
+	        });
+	    },
+	    _onDelegateClick: function (e) {
+	    	var self=this;
+	        e.halt();
+	        var target =S.one(e.target);
+	        if (target.hasClass('page-prev')) {
+	            self._goPrevPage();
+	        } else if (target.hasClass('page-next')) {
+	            self._goNextPage();
+	        } else if (target.hasClass('num')&&!target.hasClass('current')) {
+	           self._goToPage(parseInt(target.html()));
+	        }
+	        if (self.jump && target.hasClass("jump")) {
+	            self._jumpPage();
+	        }
+	    },
+	    _goPrevPage: function () {
+	    	var self=this;
+	        var page =self.index - 1;
+	          self._goToPage(page);
+	    },
+	    _goNextPage: function () {
+	    	var self=this;
+	        var page =parseInt(self.index)  + 1;
+	        self._goToPage(page);
+	    },
+	    _goToPage: function (page) {
+	    	var self=this;
+	        self.index=page;
+	        self._renderPage();
+	        self.fire('trigger', {
+	            'page': page,
+				'max': self.max
+	        });
+	    },
+	    _jumpPage: function () {
+	    	var self=this,
+	    	contentBox=self.contentBox;
+	        var jumpinputVal = parseInt(contentBox.one('input').val());
+	        if (this._validatePage(jumpinputVal)) {
+	            this._goToPage(jumpinputVal);
+	        }
+	    },
+	    _validatePage: function (val) {
+	        var max = this.max;
+	        return (S.isNumber(val) && val >= 1 && val <= max);
+	    }
+	});
+	S.PageNation=PageNation;
+	return PageNation;
+},{
+	attach:"false",
+	requires:['sizzle','pagenation.css']
+});

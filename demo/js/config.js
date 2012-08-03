@@ -2,12 +2,12 @@
  * @author liuchaowu.pt
  */
 
-var YH_CHARSET = "gbk",
+var YH_CHARSET = "utf-8",
 YH_JSROOT = "../widdget/";
 KISSY.config({
     map: [[/(.+widdget\/.+)-min.js(\?[^?]+)?$/, "$1.js$2"], [/(.+widdget\/.+)-min.css(\?[^?]+)?$/, "$1.css$2"]],
     packages: [
-    //¹«¹²·½·¨
+    //å…¬å…±æ–¹æ³•
     {
         name: "common",
         path: "../js/",
@@ -15,59 +15,66 @@ KISSY.config({
         charset: "utf-8"
     },
     /***===============================
-	 * ¹«ÓÃ×é¼ş
+	 * å…¬ç”¨ç»„ä»¶
 	 =====================================*/
 
-    //µ¯´°
+    //å¼¹çª—
     {
         name: "win",
         path: YH_JSROOT + "win/",
         tag: "20120324",
         charset: YH_CHARSET
     },
-    //È«Ñ¡
+    //å…¨é€‰
     {
         name: "checkall",
         path: YH_JSROOT + "checkall/",
         tag: "20120324",
         charset: YH_CHARSET
     },
-    //Ê¡ÊĞÇø¼¶Áª
+    //çœå¸‚åŒºçº§è”
     {
     	name:"areaselect",
     	path:YH_JSROOT + "area/", 
     	tag: "20120731",
         charset: YH_CHARSET
     },
-    //ÖµÑéÖ¤
+    //å€¼éªŒè¯
     {
         name: "check",
         path: YH_JSROOT + "validation/",
         tag: "20120324",
         charset: YH_CHARSET
     },
-    //±íµ¥ÑéÖ¤
+    //åˆ†é¡µ
+    {
+        name: "pagenation",
+        path: YH_JSROOT + "pagenation/",
+        tag: "20120324",
+        charset: YH_CHARSET
+    },
+    //è¡¨å•éªŒè¯
     {
         name: "validation",
         path: YH_JSROOT + "validation/",
         tag: "20120324",
         charset: YH_CHARSET
     },
-    //»Ø¶¥²¿
+    //å›é¡¶éƒ¨
     {
         name: "top",
         path: YH_JSROOT + "top/",
         tag: "20120324",
         charset: YH_CHARSET
     },
-     //google µØÍ¼
+     //google åœ°å›¾
     {
         name: "map",
         path: YH_JSROOT + "map/",
         tag: "20120324",
         charset: YH_CHARSET
     },
-    //Éí·İÖ¤Ğ£Ñé
+    //èº«ä»½è¯æ ¡éªŒ
     {
         name: "idcardreg",
         path: YH_JSROOT + "validation/",

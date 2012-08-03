@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 	<head>
-		<meta charset="gbk" />
+		<meta charset="UTF-8" />
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -15,21 +15,21 @@
 		<link rel="stylesheet" href="../css/nav.css" />
 	</head>
 	<body>
-		<section>
+		<section class="nav-page">
 			<header>
-				 弹窗组件
+				 寮圭獥缁勪欢
 			</header>
 			<nav>
 				<p>
 				 
 			</nav>
 			<div>
-				<input type="button" value="二次确认" class="J_confirm"/>
-				<input type="button" value="警告" class="J_warn"/>
-				<input type="button" value="提示" class="J_inform"/>
+				<input type="button" value="浜屾纭" class="J_confirm"/>
+				<input type="button" value="璀﹀憡" class="J_warn"/>
+				<input type="button" value="鎻愮ず" class="J_inform"/>
 				<input type="button" value="iframe" class="J_box"/>
 				<p><select>
-					<option>我是干扰物</option>
+					<option>鎴戞槸骞叉壈鐗�</option>
 				</select></p>
 			</div>
 			</section>
@@ -42,17 +42,17 @@
 				informBtn=S.one(".J_inform"),
 				boxBtn=S.one(".J_box");
 				confirmBtn.on("click",function(e){
-					S.Win.confirm("你确定要付款吗","系统提示",function(){
-						S.Win.inform("付款成功");
+					S.Win.confirm("浣犵‘瀹氳浠樻鍚�","绯荤粺鎻愮ず",function(){
+						S.Win.inform("浠樻鎴愬姛");
 					},function(){
-						S.Win.warn("请记得回来付款哦~");
+						S.Win.warn("璇疯寰楀洖鏉ヤ粯娆惧摝~");
 					});
 				});
 				warnBtn.on("click",function(e){
-					S.Win.warn("付款失败","系统提示");
+					S.Win.warn("浠樻澶辫触","绯荤粺鎻愮ず");
 				});
 				informBtn.on("click",function(e){
-					S.Win.inform("付款成功","系统提示");
+					S.Win.inform("浠樻鎴愬姛","绯荤粺鎻愮ず");
 				});
 			boxBtn.on("click",function(e){
 					 var box=new S.Win("#J_boxWin",{

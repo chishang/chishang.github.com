@@ -1,6 +1,3 @@
-/**
- * @author DZ
- */
 KISSY.add("areaselect", function (S) {
     function AreaSelect() {
         this._init.apply(this, arguments);
