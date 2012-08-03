@@ -1,6 +1,6 @@
 KISSY.add("map",function(S){
 	/**
-	 * googleµØÍ¼
+	 * googleåœ°å›¾
 	 * @class S.Map
 	 */
 	function Map(){
@@ -19,7 +19,7 @@ KISSY.add("map",function(S){
 			}
 		},
 		/*
-		 * ³õÊ¼»¯µØÍ¼
+		 * åˆå§‹åŒ–åœ°å›¾
 		 * @memberOf S.Map
 		 * @param node
 		 * @param options
@@ -37,7 +37,7 @@ KISSY.add("map",function(S){
 			});
 		},
 		/*
-		 * Ìí¼Ó±ê¼Ç
+		 * æ·»åŠ æ ‡è®°
 		 * @memberOf S.Map
 		 * @param node
 		 * @param {array|object} cfg
@@ -50,7 +50,7 @@ KISSY.add("map",function(S){
 			
 		},
 		/*
-		 * ÌáÊ¾´°¿Ú
+		 * æç¤ºçª—å£
 		 */
 		_addInfoWin:function(cfg){
 			var self=this,
@@ -68,21 +68,21 @@ KISSY.add("map",function(S){
 			var index=group.infoWin.length;
 			group.infoWin.push(win);
 			
-			//Êó±êÒÆÈëmarkerÊ±£¬ÏÔÊ¾µ¯´°
+			//é¼ æ ‡ç§»å…¥markeræ—¶ï¼Œæ˜¾ç¤ºå¼¹çª—
 			google.maps.event.addListener(marker, 'mouseover', function(e){ 
 				    win.open(map);
 			});
-			//Êó±êÒÆ¿ªmarker £¬¹Ø±Õµ¯´°
+			//é¼ æ ‡ç§»å¼€marker ï¼Œå…³é—­å¼¹çª—
 			google.maps.event.addListener(marker, 'mouseout', function(e){
 				S.later(win.close,later,false,win);
 			});   
-			//ÏÔÊ¾µ¯´°Ê±£¬°ó¶¨ÊÂ¼ş
+			//æ˜¾ç¤ºå¼¹çª—æ—¶ï¼Œç»‘å®šäº‹ä»¶
 			google.maps.event.addListener(win, 'domready', function(e){ 
 				    open&&open(win,index);
 			});
 		},
 		/*
-		 * Ìí¼Ó±ê¼Ç
+		 * æ·»åŠ æ ‡è®°
 		 */
 		_addMark:function(cfg){
 			var self=this,
@@ -120,7 +120,7 @@ KISSY.add("map",function(S){
 			 
 		},
 		/*
-		 * ÒÆ³ı±ê¼Ç
+		 * ç§»é™¤æ ‡è®°
 		 * @memberOf S.Map
 		 * @param node
 		 * @param {array|object} cfg
@@ -129,7 +129,7 @@ KISSY.add("map",function(S){
 			marker.setMap(null);
 		},
 		/*
-		 * ÒÆ³ıµ¯´°
+		 * ç§»é™¤å¼¹çª—
 		 * @memberOf S.Map
 		 * @param node
 		 * @param {array|object} cfg
@@ -138,7 +138,7 @@ KISSY.add("map",function(S){
 			win.close();
 		},
 		/*
-		 * ÒÆ¶¯½¹µã
+		 * ç§»åŠ¨ç„¦ç‚¹
 		 * @memberOf S.Map
 		 * @param latlng
 		 */
@@ -148,7 +148,7 @@ KISSY.add("map",function(S){
 			map.setCenter(latlng);
 		},
 		/*
-		 * ÉèÖÃËõ·Å¼¶±ğ
+		 * è®¾ç½®ç¼©æ”¾çº§åˆ«
 		 * @memberOf S.Map
 		 * @param latlng
 		 */
@@ -158,7 +158,7 @@ KISSY.add("map",function(S){
 			map.setZoom(size);
 		},
 		/*
-		 * À©´óËõ·Å¼¶±ğ
+		 * æ‰©å¤§ç¼©æ”¾çº§åˆ«
 		 * @memberOf S.Map
 		 * @param latlng
 		 */
@@ -169,7 +169,7 @@ KISSY.add("map",function(S){
 			self.zoom(zoom);
 		},
 		/*
-		 * ÏÔÊ¾Â·¾¶
+		 * æ˜¾ç¤ºè·¯å¾„
 		 */
 		showLine:function(group){
 			var self=this,
@@ -196,7 +196,7 @@ KISSY.add("map",function(S){
 			return group[name];
 		},
 		/*
-		 * ÒÆ³ı±ê¼Ç
+		 * ç§»é™¤æ ‡è®°
 		 * @param group
 		 */
 		remove:function(group){
@@ -205,11 +205,11 @@ KISSY.add("map",function(S){
 			mark=group.mark,
 			infoWin=group.infoWin,
 			path=group.path;
-			//ÒÆ³ıÔ­À´µÄmarker
+			//ç§»é™¤åŸæ¥çš„marker
 			S.each(mark,function(marker,index,o){
 				self.removeMark(marker);
 			});
-			//ÒÆ³ıÔ­À´µÄinfoWin
+			//ç§»é™¤åŸæ¥çš„infoWin
 			S.each(infoWin,function(win,index,o){
 				self.removeInfoWin(win);
 			});
@@ -219,7 +219,7 @@ KISSY.add("map",function(S){
 			
 		},
 		/*
-		 * ÒÆ³ı±ê¼Ç
+		 * ç§»é™¤æ ‡è®°
 		 * @param markarr
 		 */
 		drawLine:function(markarr){

@@ -1,9 +1,9 @@
 KISSY.add("comment",function(S){
 	/**
-	 * ÆÀÂÛ
+	 * è¯„è®º
 	 * @class S.Conmment
-	 * @param selector textarea½Úµãid/class Ñ¡Ôñ·û
-	 * @param nNumber ÏÔÊ¾×ÖÊıÏŞÖÆ½Úµã
+	 * @param selector textareaèŠ‚ç‚¹id/class é€‰æ‹©ç¬¦
+	 * @param nNumber æ˜¾ç¤ºå­—æ•°é™åˆ¶èŠ‚ç‚¹
 	 */
 	function Comment(){
 		this._init.apply(this,arguments);
@@ -29,12 +29,12 @@ KISSY.add("comment",function(S){
 			});
 		},
 		/**
-		 * ×ÖÊıÏŞÖÆ
+		 * å­—æ•°é™åˆ¶
 		 * @function
 		 * @name Comment#strLimt
-		 * @param {node}  area textarea½Úµã
-		 * @param {number}  max ×î´óÊı×Ö
-		 * @param  {node}  numWrap ÏÔÊ¾Ê£Óà×Ö·ûÊıµÄ½Úµã
+		 * @param {node}  area textareaèŠ‚ç‚¹
+		 * @param {number}  max æœ€å¤§æ•°å­—
+		 * @param  {node}  numWrap æ˜¾ç¤ºå‰©ä½™å­—ç¬¦æ•°çš„èŠ‚ç‚¹
 		 */
 		strLimt:function(area,max,numWrap){
 			

@@ -226,7 +226,7 @@ KISSY.add('validation/textbox', function (S) {
             });
 	        
             //先将文本框置为默认状态
-            self.setDefault();
+           self.setDefault();
             self._bind();
         },
         /**
@@ -391,7 +391,6 @@ KISSY.add('validation/textbox', function (S) {
 KISSY.add("validation", function (S, Validation, TextBoxValid) {
     S.Validation = Validation;
     S.TextBoxValid = TextBoxValid;
-},
-{
+},{
     requires: ["validation/base", "validation/textbox", "validation.css"]
 });

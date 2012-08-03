@@ -5,7 +5,7 @@
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>±íµ¥ÑéÖ¤</title>
+		<title>è¡¨å•éªŒè¯</title>
 		<meta name="description" content="" />
 		<meta name="generator" content="Studio 3 http://aptana.com/" />
 		<meta name="author" content="liuchaowu.pt" />
@@ -17,14 +17,14 @@
 		<script src="js/config.js"></script>
 	</head>
 	<body>
-		<section>
+		<section class="nav-page">
 			<header>
-				 ±íµ¥ÑéÖ¤
+				 è¡¨å•éªŒè¯
 			</header>
 			<nav>
 				<form id="J_ValidForm" class="ks-tdform">
 					<div class="input-content default">
-						<label class="input-label" for="phone" >ÊÖ»úºÅ£º</label>
+						<label class="input-label" for="phone" >æ‰‹æœºå·ï¼š</label>
 						<div class="input-wrap">
 							
 							<span class="input-border">
@@ -34,7 +34,7 @@
 						<span class="input-tip"></span>
 					</div>
 					<div class="input-content default">
-						<label class="input-label" for="phone" >ÓÊÏä£º</label>
+						<label class="input-label" for="phone" >é‚®ç®±ï¼š</label>
 						<div class="input-wrap">
 							
 							<span class="input-border">
@@ -44,7 +44,7 @@
 						<span class="input-tip"></span>
 					</div>
 					<div class="input-content default">
-						<label class="input-label" for="phone" >Éí·İÖ¤£º</label>
+						<label class="input-label" for="phone" >èº«ä»½è¯ï¼š</label>
 						<div class="input-wrap">
 							
 							<span class="input-border">
@@ -54,7 +54,7 @@
 						<span class="input-tip"></span>
 					</div>
 					<div class="input-content default">
-						<label class="input-label" for="phone" >Ö§¸¶±¦£º</label>
+						<label class="input-label" for="phone" >æ”¯ä»˜å®ï¼š</label>
 						<div class="input-wrap">
 							
 							<span class="input-border">
@@ -63,7 +63,7 @@
 						</div>
 						<span class="input-tip"></span>
 					</div>
-					<input type="submit" class="J_subForm" value="Ìá½»" />
+					<input type="submit" class="J_subForm" value="æäº¤" />
 				</form> 
 			</nav>
 		
@@ -74,40 +74,40 @@
 				 var formvalid=new S.Validation("#J_ValidForm",{
 				 		list:[{
 				 			node:".J_phone",
-				 			defVal:"ÇëÊäÈëÊÖ»úºÅÂë",
+				 			defVal:"è¯·è¾“å…¥æ‰‹æœºå·ç ",
 				 			allowNull:false,
 				 			checkObj:{
 				 				reg:"Phone",
 				 				rightMes:"",
-				 				errorMes:"ÊÖ»úºÅ¸ñÊ½²»ÕıÈ·"
+				 				errorMes:"æ‰‹æœºå·æ ¼å¼ä¸æ­£ç¡®"
 				 			}
 				 		},{
 				 			node:".J_email",
-				 			defVal:"ÇëÊäÈëÓÊÏä",
+				 			defVal:"è¯·è¾“å…¥é‚®ç®±",
 				 			allowNull:false,
 				 			checkObj:{
 				 				reg:"Email",
 				 				rightMes:"",
-				 				errorMes:"ÓÊÏä¸ñÊ½²»ÕıÈ·"
+				 				errorMes:"é‚®ç®±æ ¼å¼ä¸æ­£ç¡®"
 				 			}
 				 		},{
 				 			node:".J_idcard",
-				 			defVal:"ÇëÊäÈëÉí·İÖ¤",
+				 			defVal:"è¯·è¾“å…¥èº«ä»½è¯",
 				 			allowNull:false,
 				 			checkObj:{
 				 				reg: S.isIdCardNo,
 				 				rightMes:"",
-				 				errorMes:"Éí·İÖ¤¸ñÊ½²»ÕıÈ·"
+				 				errorMes:"èº«ä»½è¯æ ¼å¼ä¸æ­£ç¡®"
 				 			}
 				 		},{
 				 			node:".J_alipay",
-				 			defVal:"ÇëÊäÈëÖ§¸¶±¦ÕËºÅ",
+				 			defVal:"è¯·è¾“å…¥æ”¯ä»˜å®è´¦å·",
 				 			ajax:true,
 				 			allowNull:false,
 				 			checkObj:{
 				 				reg: ajaxcheck,
 				 				rightMes:"",
-				 				errorMes:"Ö§¸¶±¦ÕËºÅ¸ñÊ½²»¶Ô"
+				 				errorMes:"æ”¯ä»˜å®è´¦å·æ ¼å¼ä¸å¯¹"
 				 			}
 				 		}]
 				 });
@@ -133,7 +133,7 @@
 				 	var obj=obj;
 				 	
 				 	formvalid.isPass=false;
-				 	//Èç¹û¸ñÊ½²»¶Ô£¬Ö±½ÓÌáÊ¾´íÎóĞÅÏ¢
+				 	//å¦‚æœæ ¼å¼ä¸å¯¹ï¼Œç›´æ¥æç¤ºé”™è¯¯ä¿¡æ¯
 				 	if(!S.Check(value,"Email").isValid && !S.Check(value,"Phone").isValid){
 				 		return {
 				 			isValid:false

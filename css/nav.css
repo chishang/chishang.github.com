@@ -10,7 +10,7 @@ a:hover{
 a:visited{
 	color:red;
 }
-section{
+.nav-page{
 	width: 50%;
 	padding:20px;
 	margin: 60px auto;
