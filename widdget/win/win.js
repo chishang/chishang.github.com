@@ -444,19 +444,19 @@ KISSY.add("win", function(S){
 	 */
 	Win.inform= function(msg,title){
 		var informWin=new Win("#J_informWin",{			
-		  	template:'<div class="J_win" id="{winId}">'+
-		  				'<h1 class="J_win_header">'+
-		  					'<span class="J_win_title"></span>'+
-		  					'<span class="J_win_close"></span>'+
-		  				'</h1>'+
-		  				'<div class="J_win_con">'+
-		  					'<span class="J_win_message"></span>'+
-		  				'</div>'+
-		  				'<div class="J_win_footer">'+
-		  					'<a class="J_win_cancel" href="javascript:;">确定</a>'+
-		  				'</div>'+
-		  			'</div>'
-		});
+							  	template:'<div class="J_win" id="{winId}">'+
+							  				'<h1 class="J_win_header">'+
+							  					'<span class="J_win_title"></span>'+
+							  					'<span class="J_win_close"></span>'+
+							  				'</h1>'+
+							  				'<div class="J_win_con">'+
+							  					'<span class="J_win_message"></span>'+
+							  				'</div>'+
+							  				'<div class="J_win_footer">'+
+							  					'<a class="J_win_cancel" href="javascript:;">确定</a>'+
+							  				'</div>'+
+							  			'</div>'
+							});
 		informWin._inform(msg,title);
 		
 	}

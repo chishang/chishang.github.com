@@ -1,6 +1,3 @@
-/**
- * @author dongzhu
- */
 KISSY.add("top",function(S){
 	var template='<div id="J_GoToTop" ><a title="»Øµ½¶¥²¿" href="#">TOP</a></div>',
 	nBody=S.one("body");

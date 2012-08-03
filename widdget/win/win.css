@@ -1,5 +1,4 @@
 /* ÌáÊ¾¿ò*/
-
 .J_win_header,.J_win_close,.J_win_con,.J_win_footer a{
 	 background-image:url("http://img04.taobaocdn.com/tps/i4/T1MsLxXXJgXXcAA_cv-65-800.gif");
 	 background-repeat:no-repeat;
@@ -62,7 +61,6 @@
 	  padding:10px;
 	  border-top:1px solid #c3d5e7; 
 }
-
 .J_win_footer a{
 	  float:right;
 	  display:inline;
@@ -139,7 +137,6 @@
 	top: 4px;
 	right: 4px;
 }
-
 /*Í¸Ã÷±ß¿ò*/
 .J_win .J_win_border{
 	position:absolute;

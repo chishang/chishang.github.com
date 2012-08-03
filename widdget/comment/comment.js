@@ -1,6 +1,3 @@
-/**
- * @author dongzhu
- */
 KISSY.add("comment",function(S){
 	/**
 	 * фюбш

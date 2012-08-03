@@ -247,8 +247,7 @@ KISSY.add('checkall', function (S) {
     });
     S.Checkall=Checkall;
     return Checkall;
-},
-{
+},{
     attach: false,
     requires: ["sizzle"]
 });

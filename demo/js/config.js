@@ -2,7 +2,7 @@
  * @author liuchaowu.pt
  */
 
-var YH_CHARSET = "gbk",
+var YH_CHARSET = "utf-8",
 YH_JSROOT = "../widdget/";
 KISSY.config({
     map: [[/(.+widdget\/.+)-min.js(\?[^?]+)?$/, "$1.js$2"], [/(.+widdget\/.+)-min.css(\?[^?]+)?$/, "$1.css$2"]],

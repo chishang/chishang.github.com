@@ -1,0 +1,20 @@
+
+.pagenation{font:normal 12px/1.5 'Tahoma','simsun';clear:both;}
+.yui-pagenation-focused{outline:none;}
+.pagenation em{font-style:normal;color:#818181;float:left;}
+.pagenation ins{text-decoration:none;color:#989898;margin-left:10px;margin-top:6px;float:left;}
+.pagenation ins input{width:40px; border:1px solid #D4D4D4;margin:0 5px;}
+.pagenation ins button{border:1px solid #808080; background:#ffffff;color:#989898;cursor:pointer;margin-left:5px;padding:0;width:36px;height:20px;}
+.pagenation ins button:hover, .pagenation ins button.jumpbtn-hover{background:#009FE8;color:#ffffff;}
+.pagenation a{float:left;height:20px;border:1px solid #D3D3D3; padding:0 6px;line-height:20px;margin: 3px;color:#808080;text-decoration:none;cursor:pointer;}
+.pagenation a:hover{border-color:#019FE8; color:#009EE8;}
+.pagenation .current{background:#00A0E9; border-color:#00A0E9; color:#FFFFFF !important;}
+.pagenation .page-prev, .pagenation .page-prev-disabled, .pagenation .page-next, .pagenation .page-next-disabled{background:url(http://img01.taobaocdn.com/tps/i1/T1_PVrXaNfXXXXXXXX-4-88.png) no-repeat 8px -20px;}
+
+.pagenation .page-prev-disabled, .pagenation .page-next-disabled{background-position: 8px 7px;cursor:text;border-color:#D4D4D4 !important; color:#D4D4D4 !important;}
+.pagenation .page-prev, .pagenation .page-prev-disabled{width:8px;text-indent:20px;overflow:hidden;}
+.pagenation .page-next, .pagenation .page-next-disabled{background-position:42px -74px; padding-right: 10px;padding-left:3px;}
+.pagenation .page-next-disabled{background-position: 42px -47px;}
+.pagenation .current{
+	cursor: default;
+}

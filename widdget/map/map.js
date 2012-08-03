@@ -1,7 +1,3 @@
-/**
- * @author DZ
- */
-
 KISSY.add("map",function(S){
 	/**
 	 * googleµØÍ¼

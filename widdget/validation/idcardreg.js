@@ -151,7 +151,6 @@ KISSY.add('idcardreg', function(S) {
 				};
 
 	}
-
 }, {
 	attach : false
 });

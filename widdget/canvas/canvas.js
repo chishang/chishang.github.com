@@ -173,7 +173,7 @@ KISSY.add("canvas", function (S) {
                 return this;
             } else {
                 return canvas.height;
-            }
+            };
         },
 
         /**
@@ -189,7 +189,7 @@ KISSY.add("canvas", function (S) {
                 return this;
             } else {
                 return context.fillStyle;
-            }
+            };
 
         },
         /**
@@ -205,7 +205,7 @@ KISSY.add("canvas", function (S) {
                 return this;
             } else {
                 return context.strokeStyle;
-            }
+            };
 
         },
         /**

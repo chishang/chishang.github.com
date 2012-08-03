@@ -226,7 +226,7 @@ KISSY.add('validation/textbox', function (S) {
             });
 	        
             //先将文本框置为默认状态
-            self.setDefault();
+           self.setDefault();
             self._bind();
         },
         /**
