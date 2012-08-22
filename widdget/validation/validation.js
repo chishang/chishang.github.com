@@ -48,12 +48,16 @@ KISSY.add('validation/base', function (S) {
 		 */
 		_bind:function(){
 			var self=this,
+			cfg=self.config,
 			form=self.form;
 			form.on("submit",function(e){
-				
 				self.valid();
 				if(self.passNum!=self.num){
 					e.halt();
+				}else{
+					if(cfg.submit){
+						cfg.submit(e);
+					}
 				}
 			});
 		},
@@ -114,10 +118,8 @@ KISSY.add('validation/base', function (S) {
             		var checked = List[i].validation();
                     if (checked) {
                         self.passNum++;
-                      
                     }
             	}
-                    
                 }
             if(self.passNum==self.num){
             	return true;
