@@ -21,7 +21,9 @@
 	3. 执行 git revert HEAD 反转最新提交。
 	4. 执行 git commit --amend 进行修补提交。
 
->只是修正提交说明，用git commit --amend
+> 只是修正提交说明，用git commit --amend
+
+> 1操作会产生新的提交，不可取
 
 3.如果项目中文件 Hello.js 被不小心从工作区删除了，下面哪个命令可以找回该文件？ _____
 
@@ -29,6 +31,10 @@
     2. git update Hello.js
     3. git checkout HEAD -- Hello.js
     4. git reset -- Hello.js
+
+> git revert 是撤销某次操作，此次操作之前的commit都会被保留
+
+> git reset 是撤销某次提交，但是此次之后的修改都会被退回到暂存区
 
 4.修补提交导致之前提交中的文件 addressbook.txt 的重要数据丢失，能找回么？什么方法最好？ _____
 
