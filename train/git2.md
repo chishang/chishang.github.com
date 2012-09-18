@@ -1,5 +1,5 @@
 # 深入理解git（第二讲）
-
+阅读progit (http://git-scm.com/book/zh ) 前3章，回答以下问题。
 ## Git测验-基础部分
 
 ### 一，选择题
