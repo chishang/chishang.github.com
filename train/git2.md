@@ -51,6 +51,8 @@
     3. 能找回。用 git fsck 找到处于悬空状态的对象，其中一个就是 addressbook.txt 文件。
     4. 能找回。用 git checkout HEAD^ -- addressbook.txt 命令。
 
+> 修补提交的内容，只有最后一次的修改会被提交
+
 5.向版本库中添加一个 .gitignore 文件，其中包含 *.txt 的内容。若版本库中已有文件 README.txt 。则下列说法正确的是： _____
 
     1. 文件 README.txt 被删除。

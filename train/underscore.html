@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>underscore</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="DZ" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<style>
+			em{
+				display:inline-block;
+				width:10em;
+			}
+			span{
+				color:red;
+				padding: 0 20px;
+			}
+		</style>
+		<script>
+		 	function log(val,id){
+		 		console&&console.log(val);
+		 		node=document.getElementById(id);
+		 		node.innerHTML=val;
+		 	}
+		 </script>
+	</head>
+	<body>
+		 <h1>underscore </h1>
+		 <h2> 很有意思的代码 </h2>
+		 <ul>
+		 	<li>
+		 		<em>void 0:</em><span id="0"></span>
+		 		<script>
+		 			log((void 0),"0");
+		 		</script>
+		 	</li>
+		 	<li>
+		 		<em>+{a:"a"}.length:</em><span id="1-1"></span>
+		 		<br />
+		 		<em>+[1,2,3].length:</em><span id="1-2"></span>
+		 		<script>
+		 			log((+{a:"a"}.length),"1-1");
+		 			log((+[1,2,3].length),"1-2");
+		 		</script>
+		 	</li>
+		 	<li>
+		 		<em>a||a=[]</em><span id="2"></span>
+		 		<script>
+		 		    var result;
+		 		 
+		 			log(result,"2");
+		 		</script>
+		 	</li>
+		 </ul>
+		 
+		 
+	</body>
+</html>
