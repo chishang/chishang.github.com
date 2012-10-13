@@ -48,8 +48,8 @@ YUI.add("yh-parse",function(Y){
 		iframe?input.set("value",str):(function(){
 			iframe =createIframe();
 			iframe.on('load',function(){
-				Y.log(window[iframe.getAttribute('name')].location);
-				getQuery(window[iframe.getAttribute('name')].location.toString().split('gbk=')[1]);
+				var search=window[iframe.getAttribute('name')].location.search;
+				getQuery(search.split('gbk=')[1]);
 			});
 			form=createForm();
 		})();
