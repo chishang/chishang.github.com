@@ -63,7 +63,7 @@ YUI.add('p-parse',function(Y){
 			var gbk=P.gbk(data);
 			return {
 				utf8:utf8,
-				gbk:"计算中，请稍等……",
+				gbk:"waiting......",
 				uri:uri,
 				uric:uric
 			}

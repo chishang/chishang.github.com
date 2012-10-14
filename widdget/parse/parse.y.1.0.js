@@ -35,7 +35,7 @@ YUI.add("yh-parse",function(Y){
 		};
 		var createForm=function(){
 			var d_form = Y.DOM.create([
-			'<form method="GET" target="J_ParseGbkFrame"  id="J_ParseGbkForm" style="display:none;">',
+			'<form method="GET" target="J_ParseGbkFrame"  id="J_ParseGbkForm" accept-charset="gbk" style="display:none;">',
 			'<input name="gbk" id="J_ParseGbkInput" value="'+str+'" />',
 			'</form>'
 			].join(''));
