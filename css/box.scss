@@ -1,0 +1,8 @@
+@mixin box($width:100px,$height:100px,$padding:10px,$border:1px solid #ccc,$margin:20px){
+	width:$width;
+	height:$height;
+	padding:$padding;
+	border:$border;
+	margin:$margin;
+}
+
