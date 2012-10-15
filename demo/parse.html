@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="gbk" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>字符串解析</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="liuchaowu.pt" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" href="../css/nav.css" />
+		<style>
+			textarea{
+				width:100%;
+				height: 40px;
+				display: block;
+				margin: 10px 0;
+			}
+		</style>
+		<script src="http://chishang.github.com/js/html5.js"></script>
+	</head>
+	<body>
+		<section class="nav-page">
+			<header>
+				字符串解析
+			</header>
+			<div>
+				<input class="J_Src" type="text" /><input type="button" class="J_Parse"  value="解析"/>
+				<div>
+					<h2>escape(不解码@*/+):</h2>
+					<textarea id="J_UTF8">
+						
+					</textarea>
+					
+					<h2>encodeURI(不解码!@#$&*()=:/;?+'):</h2>
+					<textarea id="J_URI">
+						
+					</textarea>
+					
+					<h2>encodeURIComponent(不解码!*()'):</h2>
+					<textarea id="J_URIC">
+						
+					</textarea>
+					
+					<h2>gbk:</h2>
+					<textarea id="J_GBK">
+						
+					</textarea>
+				</div>
+			</div>
+		</section> 
+		<script src="http://a.tbcdn.cn/??s/yui/3.5.1/build/yui/yui-min.js"></script>
+		<script src="js/config.y.1.0.js"></script>
+		<script>
+		 YH.use("p-parse",function(Y){
+		 	var parse=new Y.Pparse();
+		 });
+		</script>
+	</body>
+</html>
