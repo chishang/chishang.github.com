@@ -6,3 +6,10 @@
 	margin:$margin;
 }
 
+@mixin title($size:14px,$height:2em,$back:blue,$color:#fff,$weight:bold){
+  font-size:$size;
+  line-height:$height;
+  color:$color;
+  background-color:$back;
+  font-weight:$weight;
+}
