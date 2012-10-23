@@ -1,4 +1,10 @@
 @import "box.scss";
+$w:150px;
+$h:100px;
+$p:10px;
+$b:1px solid #000;
+$m:20px;
+$l:2em;
 
 *{
   margin:0;
@@ -16,10 +22,9 @@ h2{
   @include title(16px);
 }
 .box{
- @include box;
+ @include box($w,$h,$p,$b,$m);
 }
-
-.inline{
- 
+.inline-block{
+ @include inline-block($w,$h,$p,$b,$m,3em);
 }
 
