@@ -13,7 +13,7 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="stylesheet" type="text/css" href="../css/box-test.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/box-test.css" />
 	</head>
 	<body>
 		 <h1>基本盒模型</h1>
@@ -25,10 +25,18 @@
 		 <span class="inline-block">我是内联-块状的span，一堵围墙把我困住了。width和height都来欺负我，好不容易逃出生天，那个overflow却横插一脚</span>
 		 <h2>表格</h2>
 		 <table class="box">
-		 	<caption>我是table</caption>
+		 	<caption>我是table。width和height定义的是我的边框外围</caption>
 		 	<thead></thead>
 		 	<tbody></tbody>
 		 	<tfoot></tfoot>
 		 </table>
+		  <h2>浮动</h2>
+		 <div class="flwrap box">
+		 	<div class="fl box"> 浮动</div>个好法国恢复供货<div class="fl box"> 让他一人体内浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 让他一人体内浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 让他一人体内浮动</div><div class="fl box"> 浮动</div>
+		 </div>
+		  <h2>绝对定位</h2>
+		  <div class="flwrap box">
+		 	<div class="fl box"> 浮动</div>个好法国恢复供货<div class="fl box"> 让他一人体内浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 让他一人体内浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 浮动</div><div class="fl box"> 让他一人体内浮动</div><div class="fl box"> 浮动</div>
+		 </div>
 	</body>
 </html>

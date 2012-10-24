@@ -27,4 +27,12 @@ h2{
 .inline-block{
  @include inline-block($w,$h,$p,$b,$m,3em);
 }
+.fl{
+  @include fl(30px);
+}
 
+
+
+.flwrap{
+width:300px;
+}

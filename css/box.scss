@@ -28,3 +28,9 @@
   display:inline-block;
   @include box($width,$height,$padding,$border,$margin,$line-height);
 }
+@mixin fl($w:auto ,$h:auto){
+  float:left;
+  display:inline;
+  width:$w;
+  height:$h;
+}
