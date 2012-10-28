@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>box</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="CS" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="stylesheet" type="text/css" href="box-stretch.css" />
+	</head>
+	<body>
+		 <h1>拉伸</h1>
+		 <h2>内联元素</h2>
+		 <div class="stretchbox">
+		 	 <span class="box">内联元素无法拉伸，因为width和height对它不起作用</span>
+		 </div>
+		
+		 <h2>块状元素</h2>
+		 <div class="stretchbox">
+			 <div class="box box-auto">块状元素水平方向默认(auto)是拉伸的，竖直方向{height:100%}</div>
+			 <div class="box box-percent">当然，你也可以设置{width:100%}。但是，这个时候，box不会自动调整其宽度。比如：像现在这样有边框时，会溢出</div>
+		  </div>
+		 <h2>内联-块状元素</h2>
+		 <div class="stretchbox">
+		 <span class="inline-block ib-no">设置{width:100%}，只要没有水平外边距，它就能起作用。</span>
+		 <span class="inline-block ib-m">否则他会溢出到父元素外面。</span>
+		 <span class="inline-block ib-bp">如果设置的水平边框或内边距时，也会造成溢出父元素</span>
+		 </div>
+		 <h2>表格</h2>
+		 <div class="stretchbox">
+		 <table class="box box-table">
+		 	<caption>和内联-块状元素一样，margin会使{width:100%}的表格溢出，但边框和内边距不影响</caption>
+		 	<thead></thead>
+		 	<tbody>
+		 		<tr>
+		 			<th>元素</th><th>拉伸实现</th>
+		 		</tr>
+		 		<tr>
+		 			<td>浮动元素</td><td>{width:100%;height:100%}</td>
+		 		</tr>
+		 		<tr>
+		 			<td>静态内联元素</td><td>无法拉伸</td>
+		 		</tr>
+		 		<tr>
+		 			<td>静态内联-块状元素</td><td>{width:100%;height:100%}</td>
+		 		</tr>
+		 		<tr>
+		 			<td>静态块状元素</td><td><p>auto or 100%</p></td>
+		 		</tr>
+		 		<tr>
+		 			<td>表格元素</td><td>{width:100%;height:100%}</td>
+		 		</tr>
+		 		<tr>
+		 			<td>绝对定位</td>
+		 			<td>
+		 				<p>水平拉伸：{width:auto;left:0;right:0}</p>
+		 				<p>竖直拉伸：{top:0;bottom:0;height:auto;}</p>
+		 				<p>ie6不能对绝对定位元素进行拉伸？</p>
+	 				</td>
+		 		</tr>
+		 	</tbody>
+		 	<tfoot></tfoot>
+		 </table>
+		 </div>
+		  <h2>浮动</h2>
+		 <div class="stretchbox  clearfix">
+		 	<div class="fl box">浮动元素和内联-块状元素一样</div>
+		 	
+		 </div>
+		  <h2>绝对定位</h2>
+		 
+	  		<a class="masklayer">
+	    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+	    		<div class="title">
+					<span class="s-opacity"></span>
+					<span class="text">水平拉伸</span>
+				</div> 
+	    	</a>
+		  	<a class="masklayer">
+		    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+		    		<p class="layer bglayer">背景色</p>
+					<p class="layer fglayer"><span class="text">全面拉伸</span></p>
+		    </a>
+	</body>
+</html>

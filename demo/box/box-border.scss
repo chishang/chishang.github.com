@@ -1,0 +1,76 @@
+@import "box.scss";
+@import "box-base.scss";
+
+.borderbox{
+  width:400px;
+  margin:10px;
+  background:#eee;
+}
+
+.box{
+  @include box(auto,auto,$p,$b,0 );
+}
+.inline-block{
+width:auto;
+height:auto;
+margin:0;
+line-height:1em;
+}
+.box-auto{
+  width:auto;
+}
+.box-size{
+  width:300px;
+}
+.box-percent{
+  width:100%;
+}
+.margin-negative{
+  background:#333;
+  color:#fff;
+  border-color:red;
+  margin:-20px;
+}
+.margin-tn{
+  margin-top:-20px;
+}
+.margin-tp{
+  margin-top:20px;
+}
+.margin-bn{
+  margin-bottom:-20px;
+}
+.margin-bp{
+  margin-bottom:20px;
+}
+.margin-la{
+  margin-left:auto;
+  margin-right:0;
+}
+.ib-no{
+  width:100%;
+  padding:0;
+  margin:0;
+  border:0;
+  height:auto;
+  background:#333;
+  color:#fff;
+}
+.ib-m{
+  @extend .ib-no;
+  margin:20px;
+}
+.ib-bp{
+   @extend .ib-no;
+   padding:0 10px;
+}
+.masklayer{
+  padding:10px;
+}
+
+.masklayer .title {
+  margin:10px;
+}
+.bglayer{
+  margin:10px;
+}

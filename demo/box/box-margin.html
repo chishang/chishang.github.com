@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>box</title>
+		<meta name="description" content="" />
+		<meta name="generator" content="Studio 3 http://aptana.com/" />
+		<meta name="author" content="CS" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="stylesheet" type="text/css" href="box-margin.css" />
+	</head>
+	<body>
+		 <h1>边距</h1>
+		 <h2>内联元素</h2>
+		 <div class="marginbox">
+		 	 <span class="box">对于内联元素来说,水平外边距让元素偏离原来的位置 </span><span class="box margin-negative">负margin会使元素重叠 </span><span class="box">margin-top和margin-bottom的值是被忽略的</span>
+		 </div>
+		
+		 <h2>块状元素</h2>
+		 <div class="marginbox">
+			 <div class="box box-size">浏览器会抵消临近块状元素的上下边距</div>
+			 <div class="box box-size margin-la">对于静态块状元素来说，auto会增大外边距，这与0是不相等的(可参考绝对定位水平居中)</div>
+			 <div class="box box-size margin-negative">对设定了尺寸的块状元素来说,正/负的margin-left/right都会让元素偏离原来的位置,正的margin-top/bottom会把临近的块状元素挤远，负值会把它们拉近</div>
+			 <div class="box box-auto">对被拉伸（auto）的块状元素来说，正的外边距会令四条边缩进</div>
+		 	<div class="box box-auto  margin-negative">负值会令它们凸出来</div>
+		 	 <div class="box box-percent">同样实现拉伸效果的{width:100%}，正的外边距会令其右侧溢出容器</div>
+		 	<div class="box box-percent  margin-negative">负值会令其左侧溢出</div>
+			
+		  </div>
+		 <h2>内联-块状元素</h2>
+		 <div class="marginbox">
+		  <span class="inline-block">对内联-块状元素来说</span><br>	
+		  1<span class="inline-block margin-tp">正的margin-top会扩展行高</span><br>
+		  2<span class="inline-block  margin-tn">负值会缩小行高</span><br>
+		  3<span class="inline-block  margin-bp">正的margin-bottom会升高元素</span><br>
+		  4<span class="inline-block  margin-bn">负值会令元素降低</span><br>
+		 </div>
+		 <h2>表格</h2>
+		 <div class="marginbox">
+		 <table class="box box-table box-percent">
+		 	<caption>对于被拉伸的表格来说，它的外边距不会令表格缩进，但会令表格溢出。</caption>
+		 	<thead></thead>
+		 	<tbody>
+		 		<tr>
+		 			<th>元素</th><th>margin效应</th>
+		 		</tr>
+		 		
+		 		<tr>
+		 			<td>内联元素</td>
+		 			<td>
+		 				<p>竖直方向的边距被忽略</p>
+		 				<p>水平外边距让元素偏离原来的位置</p>
+		 			</td>
+		 		</tr>
+		 		<tr>
+		 			<td>静态内联-块状元素</td><td>{width:100%;height:100%}</td>
+		 		</tr>
+		 		<td>静态块状元素</td>
+				 <td>
+					 <p>浏览器会抵消临近块状元素的上下边距</p>
+					 <p>对于静态块状元素来说，auto会增大外边距，这与0是不相等的</p>
+					<p> 对设定了尺寸的块状元素来说,正/负的margin-left/right都会让元素偏离原来的位置,正的margin-top/bottom会把临近的块状元素挤远，负值会把它们拉近</p>
+					<p> 同样实现拉伸效果的{width:100%}，正的外边距会令其右侧溢出容器负值会令其左侧溢出</p>
+				</td>
+		 		<tr>
+		 			<td>浮动元素</td>
+		 			<td>正的margin会令它偏离原本的排列位置,负值则正好相反。对于被拉伸的元素来说，它的外边距不会令其缩进，而是溢出父容器。</td>
+		 		</tr>
+		 		<tr>
+		 			<td>表格元素</td><td>正的margin会令它偏离原本的排列位置,负值则正好相反。对于被拉伸的元素来说，它的外边距不会令其缩进，而是溢出父容器。</td>
+		 		</tr>
+		 		<tr>
+		 			<td>绝对定位</td>
+		 			<td>
+		 				<p></p>
+		 				<p></p>
+	 				</td>
+		 		</tr>
+		 	</tbody>
+		 	<tfoot></tfoot>
+		 </table>
+		 </div>
+		  
+		  <h2>浮动</h2>
+		 <div class="marginbox  clearfix">
+		 	<div class="fl box">正的margin会令它偏离原本的排列位置</div>
+		 	并使其父元素和其他内容与它远离
+		 	<div class="fl box margin-negative" style="width:80%"><p>负值则正好相反</p></div>
+		 	<div class="fl box box-percent">对于被拉伸的浮动元素来说，它的外边距不会令其缩进。而是会溢出父元素</div>
+		 	<div class="fl box "><div class="box "><div class="box ">请看这里，你发现什么了吗？(click here)</div></div></div>
+		 </div>
+		  <h2>绝对定位</h2>
+		 <a class="masklayer">
+	    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+	    		<div class="title">
+					<span class="s-opacity"></span>
+					<span class="text">margin调整内盒大小</span>
+				</div> 
+	    	</a>
+		  	<a class="masklayer">
+	    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+	    		<div class="price">
+					<span class="s-opacity"></span>
+					<span class="text">水平居中</span>
+				</div> 
+	    	</a>
+	</body>
+</html>

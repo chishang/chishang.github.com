@@ -1,0 +1,131 @@
+@import "box.scss";
+$w:150px;
+$h:100px;
+$p:10px;
+$b:1px solid #000;
+$m:20px;
+$l:2em;
+body{
+  width:80%;
+  margin:40px auto;
+}
+h1{
+  @include title(24px);
+}
+h2{
+  @include title(16px);
+}
+
+.box-table{ 
+  border-collapse:separate;
+  
+  line-height:2em;
+  td,th{
+  padding:10px;
+  border:1px solid #666;
+  }
+}
+.box{
+ @include box($w,$h,$p,$b,$m);
+}
+.inline-block{
+ @include inline-block($w,$h,$p,$b,$m,3em);
+}
+.fl{
+  @include fl($w);
+}
+
+.flwrap{
+width:300px;
+}
+
+.masklayer {
+    display: block;
+    height: 235px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    width: 235px;
+    z-index: 1;
+    margin:10px;
+}
+.layer {
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+}
+.s-opacity {
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    @include opa(0.6);
+    position: absolute;
+    z-index: -1;
+}
+.masklayer:hover .layer, .masklayer-on .layer {
+    cursor: pointer;
+    display: block;
+}
+.masklayer-leave .layer {
+    visibility: hidden;
+}
+.fglayer {
+    overflow: hidden;
+}
+.fglayer .text {
+    bottom: 10px;
+    color: yellow;
+    display: inline;
+    left: 0;
+    margin-left: 10%;
+    position: absolute;
+    text-align: center;
+    width: 80%;
+}
+.bglayer {
+    background: none repeat scroll 0 0 #000000;
+    color: #000000;
+    display:none;
+    @include opa(0.6);
+}
+.masklayer .price {
+    bottom: 0;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    height: 29px;
+   
+    line-height: 29px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+}
+.masklayer .price .text {
+    background: none repeat scroll 0 0 transparent;
+    color: #FF6600;
+    font-family: Arial;
+    padding: 0 20px;
+}
+.masklayer .title {
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    height: 29px;
+    line-height: 29px;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+}
+.masklayer .title .text {
+    color: #FFFFFF;
+}
