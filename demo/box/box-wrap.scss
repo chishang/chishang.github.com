@@ -1,0 +1,39 @@
+@import "box.scss";
+@import "box-base.scss";
+$w:auto;
+$h:auto;
+.box{
+ @include box($w,$h,$p,$b,$m);
+}
+.flwrap{
+  width:100%;
+}
+.pawrap{
+  position:relative;
+  width:300px;
+  height:300px;
+}
+.pa-vw-l{
+  left:0;
+  right:auto;
+}
+.pa-vw-r{
+  right:0;
+  left:auto;
+}
+.pa-hw-b{
+  bottom:0;
+  top:auto;
+  right:100px;
+  left:100px;
+}
+.pa-hw-t{
+  right:100px;
+  left:100px;
+  top:0;
+  bottom:auto;
+}
+.pa-hv{
+    top:30%;
+    left:30%;
+}
