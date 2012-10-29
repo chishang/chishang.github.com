@@ -15,10 +15,13 @@ h1{
 h2{
   @include title(16px);
 }
-
+h3{
+  border-bottom:1px dashed green;
+  line-height:2em;
+  margin:20px 0;
+}
 .box-table{ 
   border-collapse:separate;
-  
   line-height:2em;
   td,th{
   padding:10px;
@@ -29,7 +32,7 @@ h2{
  @include box($w,$h,$p,$b,$m);
 }
 .inline-block{
- @include inline-block($w,$h,$p,$b,$m,3em);
+ @include inline-block(auto,auto,$p,$b,$m,3em);
 }
 .fl{
   @include fl($w);
@@ -42,7 +45,7 @@ width:300px;
 .masklayer {
     display: block;
     height: 235px;
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
     text-decoration: none;
     width: 235px;
@@ -54,8 +57,11 @@ width:300px;
     right: 0;
     top: 0;
     left: 0;
+    _width:100%;
+    _height:0;
     display: none;
-    overflow: hidden;
+    _display:block;
+    //overflow: hidden;
     position: absolute;
     z-index: 2;
 }
@@ -68,16 +74,20 @@ width:300px;
     @include opa(0.6);
     position: absolute;
     z-index: -1;
+    _width:100%;
+    _height:100%;
 }
 .masklayer:hover .layer, .masklayer-on .layer {
     cursor: pointer;
     display: block;
+    _width:100%;
+    _height:100%;
 }
 .masklayer-leave .layer {
     visibility: hidden;
 }
 .fglayer {
-    overflow: hidden;
+    //overflow: hidden;
 }
 .fglayer .text {
     bottom: 10px;
@@ -101,9 +111,8 @@ width:300px;
     font-size: 14px;
     font-weight: bold;
     height: 29px;
-   
     line-height: 29px;
-    overflow: hidden;
+   // overflow: hidden;
     position: absolute;
     text-align: center;
     z-index: 100;
@@ -118,10 +127,11 @@ width:300px;
     bottom: 0; 
     left: 0;
     right: 0;
+    _width:100%;
     font-size: 14px;
     height: 29px;
     line-height: 29px;
-    overflow: hidden;
+    //overflow: hidden;
     position: absolute;
     text-align: center;
     z-index: 100;

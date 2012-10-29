@@ -29,6 +29,8 @@
 @mixin inline-block($width:100px,$height:100px,$padding:10px,$border:1px solid #000,$margin:20px,$line-height:2em){
   display:inline-block;
   @include box($width,$height,$padding,$border,$margin,$line-height);
+  // _zoom:1;
+  // _diaplay:inline;
 }
 @mixin fl($w:auto ,$h:auto){
   float:left;
