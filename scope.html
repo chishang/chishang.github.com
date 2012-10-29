@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>scope</title>
+		<meta name="description" content="" />
+		<meta name="author" content="chishang.lcw" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+	</head>
+
+	<body>
+		<div>
+			<header>
+				<h1>scope</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+
+			<div>
+
+			</div>
+
+			<footer>
+				<p>
+					&copy; Copyright  by chishang.lcw
+				</p>
+			</footer>
+		</div>
+		<script>
+			/*
+*@class contact
+*@param node联系信息节点
+*/
+var contact = function (node) {
+this.init(node);
+}
+
+contact.prototype = {
+/*
+*初始化
+*@function contact#init
+*
+*/
+init: function (node) {
+var self = this;
+
+self.submit = $(".submit");
+self.bind();
+},
+/*
+*验证信息
+*@function contact#validate
+*/
+validate: function () {
+var self = this;
+if (self.topic == "" || self.email == "" || self.content == "" || self.validateCode == "") {
+alert("请完善您的信息！");
+return false;
+}
+else if (!((/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/).test(self.email))) {
+alert("邮箱格式不正确！");
+return false;
+}
+return true;
+},
+
+bind: function () {
+var self = this,
+topic = $(":input[name='topic']").val(),
+email = $(":input[name='email']").val(),
+content = $(":input[name='content']").val(),
+validateCode = $(":input[name='validate']").val();
+self.topic = topic;
+self.email = email;
+self.content = content;
+self.validateCode = validate;
+
+self.submit.click(function (e) {
+if (self.validate()) {
+$.ajax({
+url:"handler/contactHandler.ashx",
+datatype:"text",
+type:"get",
+data:{"topic":self.topic},
+
+success:function(result){
+if(result=="true"){
+alert("留言成功！");
+}
+else{
+alert("留言失败！");
+}
+}
+});
+}
+});
+}
+}
+			 
+		</script>
+	</body>
+</html>
