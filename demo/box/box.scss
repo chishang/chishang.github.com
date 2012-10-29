@@ -9,7 +9,7 @@
 	line-height:$line-height
 }
 
-@mixin title($size:14px,$height:2em,$back:#ccc,$color:#fff,$weight:bold){
+@mixin title($size:14px,$height:2em,$back:#ccc,$color:#000,$weight:bold){
   font-size:$size;
   line-height:$height;
   color:$color;
