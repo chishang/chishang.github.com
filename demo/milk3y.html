@@ -31,6 +31,15 @@
 					margin: 0 auto;
 					position: relative;
 				}
+				#curtain{
+					width:1280px;
+					height: 2235px;
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					z-index: 1;
+					background:  #f8efde;
+				}
 				#tree{
 					position: absolute;
 					top:1px;
@@ -54,6 +63,7 @@
 					background: url("http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg") no-repeat -655px -210px;
 					top:48px;
 					left:634px;
+					display:none;
 				}
 				.leaf1211{
 					 background-position: -55px -308px;
@@ -189,6 +199,7 @@
 			
 			<div id="page">
 				<div id="container">
+					<div id="curtain"></div>
 					<div id="tree"></div>
 					<div class="leaf  leaf1212"></div>
 					<div class="leaf  leaf1211"></div>
@@ -217,28 +228,27 @@
 	
 		<script>
 			KISSY.use("sizzle,anim",function(S,$,A){
-				var hpage = '2235px',
-				htree = '2249px',
-				nTree = S.one("#tree"),
-				nHeader = S.one("header");
-				var aHeader = new A('#page',{
-					height:hpage
-				},5, 'easeNone',function(){
-					S.later(function(){
-						nHeader.fadeIn(0.2);
-					},3);
-					
-				}),
-				aTree =  new A('#page',{
-					height:htree
-				},8, 'easeNone',function(){
-					
-					
+				S.ready(function(){
+						var hpage = '2235px',
+						htree = '2249px',
+						tree = S.one("#tree"),
+						header = S.one("header");
+						var showTree = new A('#curtain',{
+							height:0
+						},5, 'easeNone',function(){
+							S.later(function(){
+								header.fadeIn(0.2);
+							},3);
+							
+						});
+						window.scrollTo(0,2235);
+						S.later(function(){
+								showTree.run();
+							},5);
+						
+						
+						var leafs = S.all(".leaf")
 				});
-				// aHeader.run();
-				// S.later(function(){
-					 // aTree.run();
-					// },0.2);
 			});
 		</script>
 	</body>
