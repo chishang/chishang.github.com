@@ -37,16 +37,27 @@
 					position: absolute;
 					top: 0px;
 					left: 0px;
-					z-index: 1;
+					z-index: 2;
 					background:  #f8efde;
 				}
 				#tree{
 					position: absolute;
+					display:none;
 					top:1px;
 					left: 565px;
 					width:108px;
 					height: 2249px;
 					background: url("http://img04.taobaocdn.com/tps/i4/T16QE5XaJaXXb3oHQv-108-2249.jpg") no-repeat;
+				}
+				#treeleaf{
+					position: absolute;
+					display:none;
+					top:1px;
+					left: 564px;
+					width:108px;
+					height: 2234px;
+					background: #f8efde url("http://img01.taobaocdn.com/tps/i1/T1zi34Xi4eXXca_...-14-1.jpg") center repeat-y;
+					z-index: 1;
 				}
 				footer{
 					width:100%;
@@ -193,14 +204,17 @@
 	</head>
 	<body>
 		
-			<header>
-			 
+			<header id="header">
+			 <img  id="img" src="http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg" width="0" height="0" border="0"/>
 			</header>
 			
 			<div id="page">
 				<div id="container">
 					<div id="curtain"></div>
-					<div id="tree"></div>
+					<div id="tree">
+					
+					</div>	
+					<div id="treeleaf"></div>
 					<div class="leaf  leaf1212"></div>
 					<div class="leaf  leaf1211"></div>
 					<div class="leaf  leaf1210"></div>
@@ -228,26 +242,64 @@
 	
 		<script>
 			KISSY.use("sizzle,anim",function(S,$,A){
-				S.ready(function(){
-						var hpage = '2235px',
+					var TIME = 20000,
+						hpage = '2235px',
 						htree = '2249px',
 						tree = S.one("#tree"),
-						header = S.one("header");
+						treeleaf = S.one("#treeleaf"),
+						img = S.one("#img"),
+						leafs = S.all(".leaf"),
+						header = S.one("#header"),
+						showTreeTime =  TIME/10,
+						showTreeLeafTime = TIME/10*2,
+						showLeafTime = TIME/10*4;
 						var showTree = new A('#curtain',{
 							height:0
-						},5, 'easeNone',function(){
-							S.later(function(){
-								header.fadeIn(0.2);
-							},3);
+						},TIME/1000, 'easeNone',function(){
+							
+							
+						}),
+						showTreeLeaf = new A('#treeleaf',{
+							height:0
+						},TIME/1000, 'easeNone',function(){
+							
 							
 						});
+						var len =leafs.length,
+						sep = TIME/len;
 						window.scrollTo(0,2235);
+						var beforeLoadTime = new Date().getTime();
 						S.later(function(){
+								treeleaf.show();
 								showTree.run();
-							},5);
+						},showTreeTime);
+						S.later(function(){
+								tree.show();
+								showTreeLeaf.run();
+						},showTreeLeafTime); 
+				img.on("load",function(){
+					var loadTime = new Date().getTime();
+					var time = beforeLoadTime - loadTime;
+					  showLeafTime = time > showLeafTime ? time : showLeafTime ;
+					console.log(time)
+						S.later(function(){
+								 leafs.each(function (leaf,index,obj){
+								 	var node = leaf;
+								 	var later = TIME -sep*(index+1);
+								 	(function (){
+									 			S.later(function(){
+									 				   index % 2 == 0 ?node.fadeIn(0.2):
+														node.slideDown(0.1);
+														//node.scrollIntoView();
+														if(index == 0){
+															header.slideDown();
+														}
+												},later);
+								 	})();
+								 });
+						}, showLeafTime );
 						
 						
-						var leafs = S.all(".leaf")
 				});
 			});
 		</script>
