@@ -36,6 +36,9 @@ var YH;
 	                modules: {
 	                	'yh-parse':{
 	                		path:'parse/parse.y.1.0.js'
+	                	},
+	                	'print' :{
+	                		path:'print/print.js'
 	                	}
 	                 }
 	        	}

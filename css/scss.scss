@@ -1,0 +1,75 @@
+$st:"\5B8B\4F53";
+$wryh:"\5FAE\8F6F\96C5\9ED1";
+$textcolor:#404040;
+$hovercolor:#f60;
+@mixin font-hidden{
+  text-indent:-9999px;
+}
+@mixin fl{
+  float:left;
+  display:inline;
+}
+@mixin fr{
+  float:right;
+  display:inline;
+}
+@mixin opacity($color:#000,$num:0.6){
+  background:$color;
+  opacity:$num;
+  filter: Alpha(Opacity=#{$num*100});
+}
+@mixin height($height:2em){
+  height:$height;
+  line-height:$height;
+}
+@mixin title($size:14px,$weight:bold){
+  font-size:$size;
+  font-weight:$weight;
+}
+@mixin  inlineblock{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}
+@mixin btn($width:auto,$height:auto){
+  display:block;
+  @include box($width,$height);
+  cursor:pointer;
+  text-decoration:none;
+}
+@mixin btn-bg($width:auto,$height:auto,$bgcolor:transparent,$bgimg:none,$x:0,$y:0){
+  @include box($width,$height);
+  background:$bgcolor url($bgimg) no-repeat $x $y; 
+}
+@mixin btn-shade($width:auto,$height:30px,$fcolor:$textcolor,$bcolor:#d4d4d4,$scolor:#fff,$ecolor:#ebebeb,$radius:0){
+  display:inline-block;
+  width:$width;
+  @include height($height);
+  border:1px solid $bcolor;
+  border-radius:$radius;
+  @include colornochange($fcolor);
+  cursor:pointer;
+  text-align:center;
+  background:-webkit-gradient(linear, 0 0, 0 100%, from($scolor), to($ecolor));
+  background:-moz-linear-gradient(top, $scolor,$ecolor);
+  background: -o-linear-gradient(top,  $scolor,$ecolor);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$scolor}', endColorstr='#{$ecolor}'); 
+}
+@mixin box($width:auto,$height:auto){
+  width:$width;
+  height:$height;
+}
+@mixin colornochange($color:$textcolor){
+  &,&:hover,&:visited{
+    color:$color;
+    text-decoration:none;
+  }
+}
+@mixin colorhoverchange($color:$textcolor,$hcolor:$hovercolor){
+  a{
+    color:$color;
+  }
+  a:hover{
+      color:$hcolor;
+    }
+}
