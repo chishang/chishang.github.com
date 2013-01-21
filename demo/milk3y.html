@@ -27,7 +27,7 @@
 					background: #f8efde url("http://img01.taobaocdn.com/tps/i1/T1zi34Xi4eXXca_...-14-1.jpg") center repeat-y;
 				}
 				#container{
-					width:1280px;
+					width:880px;
 					margin: 0 auto;
 					position: relative;
 				}
@@ -44,7 +44,7 @@
 					position: absolute;
 					display:none;
 					top:1px;
-					left: 565px;
+					left: 386px;
 					width:108px;
 					height: 2249px;
 					background: url("http://img04.taobaocdn.com/tps/i4/T16QE5XaJaXXb3oHQv-108-2249.jpg") no-repeat;
@@ -53,7 +53,7 @@
 					position: absolute;
 					display:none;
 					top:1px;
-					left: 564px;
+					left: 386px;
 					width:108px;
 					height: 2234px;
 					background: #f8efde url("http://img01.taobaocdn.com/tps/i1/T1zi34Xi4eXXca_...-14-1.jpg") center repeat-y;
@@ -72,18 +72,19 @@
 					width:580px;
 					height: 200px;
 					background: url("http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg") no-repeat -655px -210px;
+					left:455px;
 					top:48px;
-					left:634px;
+					
 					display:none;
 				}
 				.leaf1211{
 					 background-position: -55px -308px;
-					left: 34px;
+					 left: -145px;
    					 top: 146px;
 				}
 				.leaf1210{
 					background-position: -650px -450px;
-					left: 629px;
+					left: 449px;
     				top: 288px;
 				}
 				
@@ -92,28 +93,28 @@
 					width:465px;
 					height:75px;
 					background-position: -150px  -552px;
-					left:129px;
+					left:-50px;
     				top:390px;
 				}
 				.leaf1204{
 					width:230px;
 					height:70px;
 					background-position: -666px  -672px;
-					left:645px;
+					left:466px;
     				top:510px;
 				}
 				
 				.leaf1202{	
 					width:465px;
 					background-position: -153px  -653px;
-					left:132px;
+					left:-47px;
     				top:491px;
 					
 				}
 				.leaf1201{
 					height:205px;
 					background-position: -672px  -847px;
-					left:651px;
+					left:472px;
     				top:685px;
 				}
 				
@@ -121,39 +122,39 @@
 					width:525px;
 					height:292px;
 					background-position: -91px  -890px;
-					left:70px;
+					left:-109px;
     				top:728px;
 				}
 				.leaf1109{
 					width:285px;
 					height:75px;
 					background-position: -661px  -1099px;
-					left:640px;
+					left:461px;
     				top:937px;
 				}
 				.leaf1107{
 					width:285px;
 					height:75px;
 					background-position: -326px  -1208px;
-					left:305px;
+					left:102px;
     				top:1046px;
 				}
 				.leaf1106{
 					width:285px;
 					height:75px;
 					background-position: -663px  -1298px;
-					left:642px;
+					left:463px;
     				top:1136px;
 				}
 				.leaf1105{
 					width:465px;
 					background-position: -155px  -1352px;
-					left:134px;
+					left:-45px;
     				top:1190px;
 				}
 				.leaf1104{
 					background-position: -659px  -1457px;
-					left:638px;
+					left:459px;
     				top:1295px;
     				height: 270px;
 				}
@@ -163,39 +164,39 @@
 				
 				.leaf1103{
 					background-position: -51px  -1562px;
-					left:30px;
+					left:-149px;
     				top:1400px;
 				}
 				.leaf1102{
 					width:375px;
 					height:115px;
 					background-position: -673px  -1815px;
-					left:652px;
+					left:473px;
     				top:1653px;
 				}
 				.leaf10{
 					height:382px;
 					background-position: -74px  -1775px;
-					left: 53px;
+					left: -126px;
     				top: 1613px;
 				}
 				.leaf1010{
 					background-position: -654px  -2001px;
-					left: 633px;
+					left: 454px;
     				top:1839px;
 				}
 				.leaf0912{
 					width: 400px;
 					height: 110px;
 					background-position: -222px  -2175px;
-					left: 201px;
+					left: 22px;
     				top: 2013px;
 				}
 				.leaf0911{
 					width:210px;
 					height: 80px;
 					background-position: -675px  -2304px;
-					left: 654px;
+					left: 475px;
     				top: 2142px;
 				}
 				
@@ -242,7 +243,7 @@
 	
 		<script>
 			KISSY.use("sizzle,anim",function(S,$,A){
-					var TIME = 20000,
+					var TIME = 10000,
 						hpage = '2235px',
 						htree = '2249px',
 						tree = S.one("#tree"),
@@ -252,7 +253,7 @@
 						header = S.one("#header"),
 						showTreeTime =  TIME/10,
 						showTreeLeafTime = TIME/10*2,
-						showLeafTime = TIME/10*4;
+						showLeafTime = TIME/10*3;
 						var showTree = new A('#curtain',{
 							height:0
 						},TIME/1000, 'easeNone',function(){
