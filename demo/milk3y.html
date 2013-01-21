@@ -199,18 +199,51 @@
 					left: 475px;
     				top: 2142px;
 				}
+				embed{
+					 
+					 position:absolute;
+					 top:0px;
+					 right:0px;
+					 z-index: 4;
+				}
+				nav{
+					position: fixed;
+					bottom:120px;
+					right:20px;
+					width:100px;
+					height: 20px;
+					padding-top:95px;
+					background:#e10000 url("http://img02.taobaocdn.com/tps/i2/T1kXs6XeNaXXbCFbsb-100-100.jpg") no-repeat;
+					text-align:center;
+					z-index: 5;
+					color:#fff;
+					font-size: 12px;
+				}
+				nav a{
+					position: absolute;
+					width:100px;
+					height:100px;
+					top:0;
+					left:0;
+				}
 				
 		</style>
 		<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js"></script>
 	</head>
 	<body>
-		
+		    <nav>
+		    	<a href="http://v.youku.com/v_show/id_XNTAyNjk4NTg0.html" target="_blank"></a>
+		    	密码：13579
+		    </nav>
 			<header id="header">
+				
 			 <img  id="img" src="http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg" width="0" height="0" border="0"/>
 			</header>
 			
 			<div id="page">
 				<div id="container">
+					<!-- <embed id="film" src="http://player.youku.com/player.php/sid/XNTAyNjk4NTg0/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+		 -->
 					<div id="curtain"></div>
 					<div id="tree">
 					
@@ -253,7 +286,8 @@
 						header = S.one("#header"),
 						showTreeTime =  TIME/10,
 						showTreeLeafTime = TIME/10*2,
-						showLeafTime = TIME/10*3;
+						film =S.one("#film"),
+						showLeafTime = TIME/10*2.5;
 						var showTree = new A('#curtain',{
 							height:0
 						},TIME/1000, 'easeNone',function(){
@@ -278,6 +312,21 @@
 								tree.show();
 								showTreeLeaf.run();
 						},showTreeLeafTime); 
+						var hsp = (2249 / 2000),
+						sindex = 2000,
+						sto;
+						 
+						S.later(function(){
+							sindex -- ;
+							sto = sindex * hsp;
+							(function(){
+								console.log(sto)
+								 
+								sto>0 && window.scrollTo(0,sto);
+							})()
+							
+						},5,true);
+						
 				img.on("load",function(){
 					var loadTime = new Date().getTime();
 					var time = beforeLoadTime - loadTime;
@@ -285,15 +334,19 @@
 					console.log(time)
 						S.later(function(){
 								 leafs.each(function (leaf,index,obj){
-								 	var node = leaf;
-								 	var later = TIME -sep*(index+1);
+								 	var node = leaf,
+								 	later = TIME -sep*(index+1);
 								 	(function (){
 									 			S.later(function(){
-									 				   index % 2 == 0 ?node.fadeIn(0.2):
-														node.slideDown(0.1);
-														//node.scrollIntoView();
+									 				   index % 2 == 0 ?node.fadeIn(0.4):
+														node.slideDown(0.4);
+														
 														if(index == 0){
-															header.slideDown();
+															header.scrollIntoView();
+																
+															header.addClass("show");
+															
+															
 														}
 												},later);
 								 	})();
