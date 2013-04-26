@@ -54,8 +54,8 @@
 			 			<option value="2">2</option>
 			 		</select>
 			 		<input type="checkbox"  data-target="checkbox" />
-					<input class="event" type="button" data-events="fireSelectChange" data-target="模拟select的change事件" value="模拟select的change事件" />
-					<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="fireCheckboxClick" value="模拟checkbox的click事件" />
+					<input class="event" type="button" data-events="simulateSelectChange" data-target="模拟select的change事件" value="模拟select的change事件" />
+					<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="simulateCheckboxClick" value="模拟checkbox的click事件" />
 					<input class="event" type="button" data-target="clear" data-events="clear" value="clear" />
 			 	</span>
 			 </p>
@@ -76,50 +76,52 @@
 			</tbody>
 		</table>
 		
-		<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js"></script>
+		<script type="text/javascript" src="http://a.tbcdn.cn/??s/yui/3.7.3/build/yui/yui-min.js"></script>
 		<script>
-			KISSY.use("sizzle,core",function(S){
-				var doms = S.all("*");
-				var doc = S.one(document);
+			YUI({
+				charset:"utf8"
+			}).use('dom', 'node', 'event', 'event-custom','node-event-simulate', function(Y){
+				var doms = Y.all("*");
+				var doc = Y.one(document);
 				doc.targetName ="document";
-				
-				var win = S.one(window);
+				var win = Y.one(window);
 				win.targetName ="window";
-				var noteBox = S.one("#tbody");
+				var noteBox = Y.one("#tbody");
 				var listTpl = '<tr><td>{type}</td><td>{eventPhase}</td><td>{currentTarget}</td><td>{target}</td></tr>';
 				function listenEvent(e){
-					var srcnode = S.one(e.target),
-					curnode = S.one(e.currentTarget),
-					target= srcnode.attr('data-target')|| e.target.tagName || this.targetName,
-					curtarget = this.targetName || curnode.attr('data-target') || e.currentTarget.tagName;
+					var srcnode = e.target,
+					curnode = e.currentTarget,
+					target= srcnode.getAttribute('data-target')|| e.target._node.tagName || this.targetName ,
+					curtarget =  curnode.getAttribute('data-target') || e._currentTarget.tagName || this.targetName;
 						var obj = {
 							type:e.type ,
-							eventPhase:e.eventPhase ,
+							eventPhase:e._event.eventPhase ,
 							currentTarget: curtarget  ,
 							target: target 
 						};
-						var list = S.substitute(listTpl,obj);
+						var list = Y.Lang.sub(listTpl,obj);
 						noteBox.append(list);
 				}
-				function fireEvent(e){
+				function simulateEvent(e){
 					e.halt();
-					var node = S.one(e.currentTarget),
-					events = node.attr('data-events');
+					var node = Y.one(e.currentTarget),
+					events = node.getAttribute('data-events');
 					switch(events){
-						case "fireCheckboxClick":
-							S.all('input[type="checkbox"]').fire('click');break;
-						case "fireSelectChange":
-							S.all('select').fire('change');break;
+						case "simulateCheckboxClick":
+							Y.one('input[type="checkbox"]').simulate('click');break;
+						case "simulateSelectChange":
+							Y.one('select').simulate('change');break;
 						case 'clear':
-						noteBox.html('');
+						noteBox.setContent('');
 						default :
 						break;
 					}
 				}
-				doms.on('click change blur focus',listenEvent,doms);
-				doc.on('click change blur focus',listenEvent,doc);
-				win.on('click change blur focus',listenEvent,win);
-				S.one('span').delegate('click','.event',fireEvent);
+				Y.log(doms)
+				doms.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,doms);
+				doc.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,doc);
+				win.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,win);
+				Y.one('span').delegate('click',simulateEvent,'.event');
 			});
 		</script>
 	</body>
