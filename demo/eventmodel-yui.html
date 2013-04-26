@@ -7,7 +7,7 @@
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-		<title>eventmodel</title>
+		<title>eventmodel-yui</title>
 		<meta name="description" content="" />
 		<meta name="author" content="chishang.lcw" />
 
@@ -57,6 +57,7 @@
 					<input class="event" type="button" data-events="simulateSelectChange" data-target="模拟select的change事件" value="模拟select的change事件" />
 					<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="simulateCheckboxClick" value="模拟checkbox的click事件" />
 					<input class="event" type="button" data-target="clear" data-events="clear" value="clear" />
+					<input class="event" type="button" data-target="添加" data-events="add" value="添加" />
 			 	</span>
 			 </p>
 		</div>
@@ -112,7 +113,10 @@
 						case "simulateSelectChange":
 							Y.one('select').simulate('change');break;
 						case 'clear':
-						noteBox.setContent('');
+						noteBox.setContent('');break;
+						case 'add':
+						Y.one('span').append('<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="simulateCheckboxClick" value="模拟checkbox的click事件" />');
+						break;
 						default :
 						break;
 					}

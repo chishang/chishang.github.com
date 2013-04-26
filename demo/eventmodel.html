@@ -57,6 +57,7 @@
 					<input class="event" type="button" data-events="fireSelectChange" data-target="模拟select的change事件" value="模拟select的change事件" />
 					<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="fireCheckboxClick" value="模拟checkbox的click事件" />
 					<input class="event" type="button" data-target="clear" data-events="clear" value="clear" />
+			 		<input class="event" type="button" data-target="添加" data-events="add" value="添加" />
 			 	</span>
 			 </p>
 		</div>
@@ -111,7 +112,10 @@
 						case "fireSelectChange":
 							S.all('select').fire('change');break;
 						case 'clear':
-						noteBox.html('');
+						noteBox.html('');break;
+						case 'add':
+						S.one('span').append('<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="simulateCheckboxClick" value="模拟checkbox的click事件" />');
+						break;
 						default :
 						break;
 					}
