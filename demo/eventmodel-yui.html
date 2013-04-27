@@ -40,7 +40,7 @@
 	</head>
 
 	<body>
-		<div class="demo-box">
+		<div class="demo-box" id="J_Delegate">
 			div
 			 <p>
 			 	p
@@ -82,7 +82,7 @@
 			YUI({
 				charset:"utf8"
 			}).use('dom', 'node', 'event', 'event-custom','node-event-simulate', function(Y){
-				var doms = Y.all("*");
+				var doms = Y.all("html,body,div,p,span,a,input,select,option");
 				var doc = Y.one(document);
 				doc.targetName ="document";
 				var win = Y.one(window);
@@ -90,6 +90,9 @@
 				var noteBox = Y.one("#tbody");
 				var listTpl = '<tr><td>{type}</td><td>{eventPhase}</td><td>{currentTarget}</td><td>{target}</td></tr>';
 				function listenEvent(e){
+					console.log("listenEvent");
+					console.log(this);
+					console.log(e);
 					var srcnode = e.target,
 					curnode = e.currentTarget,
 					target= srcnode.getAttribute('data-target')|| e.target._node.tagName || this.targetName ,
@@ -104,6 +107,9 @@
 						noteBox.append(list);
 				}
 				function simulateEvent(e){
+					console.log("simulateEvent");
+					console.log(this);
+					console.log(e);
 					e.halt();
 					var node = Y.one(e.currentTarget),
 					events = node.getAttribute('data-events');
@@ -121,11 +127,10 @@
 						break;
 					}
 				}
-				Y.log(doms)
 				doms.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,doms);
 				doc.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,doc);
 				win.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,win);
-				Y.one('span').delegate('click',simulateEvent,'.event');
+				Y.one('#J_Delegate').delegate('click',simulateEvent,'.event');
 			});
 		</script>
 	</body>
