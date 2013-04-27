@@ -56,6 +56,7 @@
 			 		<input type="checkbox"  data-target="checkbox" />
 					<input class="event" type="button" data-events="fireSelectChange" data-target="模拟select的change事件" value="模拟select的change事件" />
 					<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="fireCheckboxClick" value="模拟checkbox的click事件" />
+					<input class="event" type="button" data-target="dispatch" data-events="dispatch" id="J_Dispatch" value="dispatch" />
 					<input class="event" type="button" data-target="clear" data-events="clear" value="clear" />
 			 		<input class="event" type="button" data-target="添加" data-events="add" value="添加" />
 			 	</span>
@@ -105,6 +106,18 @@
 						var list = S.substitute(listTpl,obj);
 						noteBox.append(list);
 				}
+				document.getElementById("J_Delegate").addEventListener('alert',function(){
+				},true);
+				document.getElementById("J_Delegate").addEventListener('alert',function(){
+				},false);
+				// 创建
+				var evt = document.createEvent("HTMLEvents");
+				// 初始化
+				evt.initEvent("alert", true, true);
+				function dispatchEvent(e){
+					// 触发, 即弹出文字
+					document.getElementById("J_Dispatch").dispatchEvent(evt);
+				}
 				function fireEvent(e){
 					console.log("fireEvent");
 					console.log(this);
@@ -117,6 +130,8 @@
 							S.all('input[type="checkbox"]').fire('click');break;
 						case "fireSelectChange":
 							S.all('select').fire('change');break;
+						case 'dispatch':
+						dispatchEvent(e);break;
 						case 'clear':
 						noteBox.html('');break;
 						case 'add':
@@ -126,9 +141,9 @@
 						break;
 					}
 				}
-				doms.on('click change blur focus',listenEvent,doms);
-				doc.on('click change blur focus',listenEvent,doc);
-				win.on('click change blur focus',listenEvent,win);
+				doms.on('click change blur focus alert',listenEvent,doms);
+				doc.on('click change blur focus  alert',listenEvent,doc);
+				win.on('click change blur focus  alert',listenEvent,win);
 				S.one('#J_Delegate').delegate('click','.event',fireEvent);
 			});
 		</script>
