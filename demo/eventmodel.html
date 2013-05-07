@@ -96,7 +96,7 @@
 				listenEvent = function(e){
 					log("listenEvent");
 					log(this);
-					log(e);e.halt();
+					log(e);
 					var srcnode = S.one(e.target),
 					curnode = S.one(e.currentTarget),
 					target= srcnode.attr('data-target')|| e.target.tagName || this.targetName,
