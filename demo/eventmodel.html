@@ -94,9 +94,6 @@
 				var noteBox = S.one("#tbody");
 				var listTpl = '<tr><td>{type}</td><td>{eventPhase}</td><td>{currentTarget}</td><td>{target}</td></tr>';
 				listenEvent = function(e){
-					log("listenEvent");
-					log(this);
-					log(e);
 					var srcnode = S.one(e.target),
 					curnode = S.one(e.currentTarget),
 					target= srcnode.attr('data-target')|| e.target.tagName || this.targetName,
@@ -121,9 +118,6 @@
 					Dispatch.dispatchEvent && Dispatch.dispatchEvent(evt);
 				}
 				function fireEvent(e){
-					log("fireEvent");
-					log(this);
-					log(e);
 					var node = S.one(e.currentTarget),
 					events = node.attr('data-events');
 					switch(events){
@@ -148,6 +142,12 @@
 				Dispatch.addEventListener && Dispatch.addEventListener('alert',listenEvent);
 				Dispatch.addEventListener && Dispatch.addEventListener('alert',listenEvent);
 				S.one('#J_Delegate').delegate('click','.event',fireEvent);
+				S.one('#J_Delegate').on('click',function(){
+					log("click1");
+				});
+				S.one('#J_Delegate').on('click',function(){
+					log("click2");
+				});
 			});
 		</script>
 	</body>

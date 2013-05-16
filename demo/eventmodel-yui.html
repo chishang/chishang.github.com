@@ -82,6 +82,9 @@
 			YUI({
 				charset:"utf8"
 			}).use('dom', 'node', 'event', 'event-custom','node-event-simulate', function(Y){
+				function log(s){
+					console && console.log(s);
+				}
 				var doms = Y.all("html,body,div,p,span,a,input,select,option");
 				var doc = Y.one(document);
 				doc.targetName ="document";
@@ -90,9 +93,6 @@
 				var noteBox = Y.one("#tbody");
 				var listTpl = '<tr><td>{type}</td><td>{eventPhase}</td><td>{currentTarget}</td><td>{target}</td></tr>';
 				function listenEvent(e){
-					console.log("listenEvent");
-					console.log(this);
-					console.log(e);
 					var srcnode = e.target,
 					curnode = e.currentTarget,
 					target= srcnode.getAttribute('data-target')|| e.target._node.tagName || this.targetName ,
@@ -107,9 +107,7 @@
 						noteBox.append(list);
 				}
 				function simulateEvent(e){
-					console.log("simulateEvent");
-					console.log(this);
-					console.log(e);
+					log("simulateEvent");
 					var node = Y.one(e.currentTarget),
 					events = node.getAttribute('data-events');
 					switch(events){
@@ -130,6 +128,12 @@
 				doc.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,doc);
 				win.on(['click' ,'change' ,'blur' ,'focus'],listenEvent,win);
 				Y.one('#J_Delegate').delegate('click',simulateEvent,'.event');
+				Y.one('#J_Delegate').on('click',function(){
+					log("click1");
+				});
+				Y.one('#J_Delegate').on('click',function(){
+					log("click2");
+				});
 			});
 		</script>
 	</body>
