@@ -10,11 +10,7 @@ demo文件夹存放组件的示例。目前只是存放了简单的展示。
 
 你可以直接点击[这里](http://chishang.github.com/demo/index.html "组件列表")查看
 
-##train
 
-train文件夹存放魔鬼训练营的课程和课后的反馈总结。会实时更新课程内容和作业。
-
-你可以直接点击[这里](http://chishang.github.com/train/index.html "组件列表")查看
 
 
 
