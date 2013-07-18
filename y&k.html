@@ -78,13 +78,14 @@
        			<li class="y">
 <pre>
 YUI().use('module1', 'module2',function (Y) {
-   Y.foo.bar()
+   new Y.M1();
+   new Y.M2();
 });
 </pre>
        			</li>
        			<li>
 <pre>
-KISSY.use('module1', 'module2',function (S,M1,M2) {
+KISSY.use('module1,module2',function (S,M1,M2) {
    new M1();
 });
 </pre>
