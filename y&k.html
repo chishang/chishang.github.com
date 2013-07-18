@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="gbk"/>
+        <title>Y vs K</title>
+       	<style type="text/css">
+       	body{
+       		background: #FCF4E9;
+       		color:#785013;
+       		 font: 12px/2 tahoma,arial,"宋体";
+       	}
+       	section{
+       		margin: 1em 0;
+       	}
+   		ul:after {
+		    clear: both;
+		    content: ".";
+		    display: block;
+		    height: 0;
+		    visibility: hidden;
+		}
+   		li{
+   			float:left;
+   			width:40%;
+   			padding:0.5em 2em;
+   			margin-right:2em;
+   			list-style: none;
+   			background: #FFFAEA;
+   			color:#b39441;
+   			border:1px dashed #ad9b7a;
+   			position: relative;
+   			overflow: hidden;
+   		}
+   		li:after {
+		    clear: both;
+		    content: "KISSY";
+		    display: block;
+		    height: 4em;
+		    line-height:5em;
+		    width:3em;
+		    padding-left:1em;
+		    background:#BEAE10; 
+		    color:#fff;
+		    text-align:center;
+		    position:absolute;
+		    right:0;
+		    bottom:0;
+		    border-radius: 48px 0px 0px 0px;
+		}
+		li.y:after{
+		    content: "YUI";
+		}
+		a,a:link,a:hover,a:visited{
+			color:#643f17;
+			font-weight:bold;
+			margin:0 0.2em;
+			text-decoration:none;
+		}
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			border:1px solid #ccc;
+		}
+		th,td{
+			border:1px solid #ccc;
+			text-align: center;
+		}
+       	</style>
+    </head>
+    <body>
+    	<h1>YUI和KISSY的API接口对比</h1>
+    	<header>
+    		YUI的版本更新比较快，小编整理的时候已经是3.10.3了，KISYY是以最新的1.3.0为准。
+    	</header>
+       	<section>
+       		<h2>配置参数和使用方法</h2>
+       		<ul>
+       			<li class="y">
+<pre>
+YUI().use('module1', 'module2',function (Y) {
+   Y.foo.bar()
+});
+</pre>
+       			</li>
+       			<li>
+<pre>
+KISSY.use('module1', 'module2',function (S,M1,M2) {
+   new M1();
+});
+</pre>
+       			</li>
+       		</ul>
+       	</section>
+       	
+       	<section>
+       		<h2>工具包</h2>
+       		<ul>
+       			<li class="y">
+       				YUI的工具条通过Y.Lang访问，主要是对数组类等的操作：<br/>
+       				Y.Lang.isArray <br/>
+					Y.Lang.isBoolean <br/>
+					Y.Lang.isDate <br/>
+					Y.Lang.isFunction <br/>
+					Y.Lang.isNull <br/>
+					Y.Lang.isNumber <br/>
+					Y.Lang.isObject <br/>
+					Y.Lang.isString <br/>
+					Y.Lang.isUndefined <br/>
+					Y.Lang.isValue <br/>
+					Y.Lang.now <br/>
+					Y.Lang.sub <br/>
+					Y.Lang.trim <br/>
+					Y.Lang.trimLeft <br/>
+					Y.Lang.trimRight <br/>
+					Y.Lang.type <br/>
+       			</li>
+       			<li>
+					KISSY的工具条在核心模块，可以直接访问：<br/>
+					S.isArray <br/>
+					S.isBoolean <br/>
+					S.isDate <br/>
+					S.isFunction <br/>
+					S.isNull <br/>
+					S.isNumber <br/>
+					S.isObject <br/>
+					S.isString <br/>
+					S.isUndefined <br/>
+					-- <br/>
+					S.now <br/>
+					S.substitute <br/>
+					S.trim <br/>
+					-- <br/>
+					-- <br/>
+					-- <br/>
+					
+       			</li>
+       		</ul>
+       	</section>
+       	
+       	<section>
+       		<h2>Array</h2>
+       		<ul>
+       			<li class="y">
+       				YUI有专门的<a href="http://yuilibrary.com/yui/docs/api/classes/Array.html">Array</a>类,可以做很多操作：<br/>
+					Y.Array.dedupe <br/>
+					Y.Array.each <br/>
+					Y.Array.every <br/>
+					Y.Array.filter <br/>
+					Y.Array.find <br/>
+					Y.Array.flatten <br/>
+					Y.Array.forEach <br/>
+					Y.Array.grep <br/>
+					Y.Array.hash <br/>
+					Y.Array.indexOf <br/>
+					Y.Array.invoke <br/>
+					Y.Array.lastIndexOf <br/>
+					Y.Array.map <br/>
+					Y.Array.numericSort <br/>
+					Y.Array.partition <br/>
+					Y.Array.reduce <br/>
+					Y.Array.reject <br/>
+					Y.Array.some <br/>
+					Y.Array.test <br/>
+					Y.Array.unique <br/>
+					Y.Array.zip <br/>
+       			</li>
+       			<li>
+					KISSY就没有这么幸运了，你只能去核心模块<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/index.html">Lang</a> 中找到对应的函数：<br/>
+					--<br/>
+					S.each<br/>
+					--<br/>
+					S.filter<br/>
+					--<br/>
+					--<br/>
+					--<br/>
+					S.inArray<br/>
+					S.indexof<br/>
+       			</li>
+       		</ul>
+       	</section>
+       	
+       	<section>
+       		<h2>Object</h2>
+       		<ul>
+       			<li class="y">
+       				不仅仅是Array，<a href="http://yuilibrary.com/yui/docs/api/classes/Object.html">Object</a>也一样有单独的类：<br/>
+					Y.Object.each <br/>
+					Y.Object.getValue <br/>
+					Y.Object.hasKey <br/>
+					Y.Object.hasValue <br/>
+					Y.Object.isEmpty <br/>
+					Y.Object.keys <br/>
+					Y.Object.owns <br/>
+					Y.Object.setValue <br/>
+					Y.Object.size <br/>
+					Y.Object.some <br/>
+					Y.Object.values <br/>
+       			</li>
+       			<li>
+					同样的，KISSY在这方面就没去费这功夫了,还是在<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/index.html">Lang</a>：<br/>
+					S.each<br/>
+       			</li>
+       		</ul>
+       	</section>
+       	
+       		<section>
+       		<h2>DOM/NODE</h2>
+       		<ul>
+       			<li class="y">
+       				<p>YUI的DOM/NODE接口，方法名相对更规范一些(比如getAttribute,get('value'),setStyle)。</p>
+       				<p>对YUI，比较令人疑惑的是NODE的get和set这两个“黑盒子”。目前已知的有：</p>
+       				<table>
+       					<thead>
+       						<tr>
+       							<th>get('xxx')</th><th>功能</th><th>KISSY对应函数</th>
+       						</tr>
+       					</thead>
+       					<tbody>
+       						<tr>
+       							<td>get('value')</td><td>input获取value值</td><td>val()</td>
+       						</tr>
+       					</tbody>
+       				</table>
+       				
+       			</li>
+       			<li>
+					<p>相对而言，KISSY在这方面，接口更接近于JQuery(简洁，比如attr,val,css)。</p>
+					
+       			</li>
+       		</ul>
+       	</section>	
+       	
+       	<section>
+       		<h2>事件</h2>
+       		<ul>
+       			<li class="y">
+       				EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟DOM Event(等同于 YUI 的 simulate)
+       			</li>
+       			<li>
+					相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
+					
+       			</li>
+       		</ul>
+       	</section>
+       		
+       	
+       	<section>
+       		<h2>事件</h2>
+       		<ul>
+       			<li class="y">
+       				EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟DOM Event(等同于 YUI 的 simulate)
+       			</li>
+       			<li>
+					相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
+					
+       			</li>
+       		</ul>
+       	</section>
+       	
+       	<section>
+       		<h2>事件</h2>
+       		<ul>
+       			<li class="y">
+       				EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟DOM Event(等同于 YUI 的 simulate)
+       			</li>
+       			<li>
+					相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
+					
+       			</li>
+       		</ul>
+       	</section>
+       	
+       	<section>
+       		<h2>延迟执行指定函数 later</h2>
+       		<ul>
+       			<li class="y">
+       				YUI的延迟函数<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_later">later</a>,参数顺序如下：<br/>
+					Y.later( when,o ,fn ,data,periodic )<br/>
+					when (number) – 延迟时间, 单位是毫秒.<br/>
+					o (object) – fn 上下文对象<br/>
+					fn (function) – 延迟执行的函数.<br/>
+					data (Array) – 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.<br/>
+					periodic (boolean) – 是不是周期性执行. 默认为 false.<br/>
+       			</li>
+       			<li>
+					KISSY的延迟函数<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/later.html">later</a>,参数顺序如下：<br/>
+					S.later ( fn[, when, periodic, o, data] )<br/>
+					fn (function) – 延迟执行的函数.<br/>
+					when (number) – 延迟时间, 单位是毫秒.<br/>
+					periodic (boolean) – 是不是周期性执行. 默认为 false.<br/>
+					o (object) – fn 上下文对象<br/>
+					data (Array) – 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.<br/>
+       			</li>
+       		</ul>
+       	</section>
+       	
+       	<section>
+       		<h2>异步请求</h2>
+       		<ul>
+       			<li class="y">
+       				在YUI里面 ，<a href="http://yuilibrary.com/yui/docs/api/classes/Get.html">Get</a>是一个类而非方法，主要功能是用来加载js和css文件;<br/>
+       				<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_jsonp">jsonp</a>和<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_io">io</a>却是两个静态方法;<br/>
+       				当然，<a href="http://yuilibrary.com/yui/docs/api/classes/IO.html">IO</a>这个类还是存在的，而且提供的方法和事件接口也非常详尽<br/>
+       				相比之下，jsonp对应的<a href="http://yuilibrary.com/yui/docs/api/classes/JSONPRequest.html">JSONPRequest</a>类就简单得多了，就提供了一个send方法。
+       			</li>
+       			<li>
+<pre>
+	
+	IO.get(url, data, callback, dataType)
+get<		
+	IO({
+	    type:"get",
+	    url: url,
+	    data: data,
+	    success: callback,
+	    dataType: dataType
+	});
+
+	IO.jsonp(url, data, callback)
+jsonp<		
+	IO({
+	    type:"get",
+	    url: url,
+	    data: data,
+	    success: callback,
+	    dataType: "jsonp"
+	});
+</pre>
+       			</li>
+       		</ul>
+       	</section>
+       	
+       		<section>
+       		<h2>Base</h2>
+       		<ul>
+       			<li class="y">
+       				 怎么说呢，<a href="http://yuilibrary.com/yui/docs/api/classes/Base.html">Base</a> 是一个很牛逼的基础类，继承了Attribute和EventTarget。一般我们创建新类，都会选择继承Base：
+<pre>
+function NewClass (config) {
+	NewClass.superclass.constructor.apply(this, arguments);
+}
+NewClass.NAME = 'NewClass';
+NewClass.ATTRS = {
+    score : {
+        value : 11,
+        setter:function(str){return parseInt(str);},
+        validator:function(str){
+        	return str<=100?true:false;
+        }
+    },
+    b : {
+        value : 12
+    }
+};
+Y.extend(NewClass, Y.Base, {
+    initializer       : function () {
+       var that = this;
+       var score = that.get('score'); 
+    }
+ }
+</pre>
+       			</li>
+       			<li>
+					一般我们add一个模块，都会让构造函数继承 <a href="http://docs.kissyui.com/docs/html/api/core/base/"> Base </a>。 KISSY 的 base 提供给我们一个基类, 整合了 attribute 功能, 让继承 base 的子类自动具有 attribute 的功能。
+					当一个子类继承了base，我们就可以通过get、set来操作属性，并通过“*change”来监听属性的改变。至于用法，和YUI基本没啥区别。虽然它没有提供create方法，但我们可以用augment模拟。唯一让人不爽的是，没有 initializer 供我们自动初始化，所以我们要自己动手调用：
+<pre>
+function NewClassr(){
+	NewClassr.superclass.constructor.apply(this, arguments);
+	this.init.apply(this, arguments);
+}
+NewClassr.NAME = 'NewClass';
+
+NewClassr.ATTRS = {
+    
+};
+S.extend(NewClassr, S.Base, {
+	init:function(){
+		this.setDoms();
+		this.bindEvent();
+	},
+	setDoms:function(){
+		
+	},
+	bindEvent:function(){
+		var that = this;
+		var doms = that.get('doms');
+	}
+});
+</pre>
+       			</li>
+       		</ul>
+       	</section>
+    </body>
+</html>
