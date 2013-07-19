@@ -73,28 +73,73 @@
     		YUI的版本更新比较快，小编整理的时候已经是3.10.3了，KISYY是以最新的1.3.0为准。
     	</header>
        	<section>
-       		<h2>配置参数和使用方法</h2>
+       		<h2 id="config">配置参数和使用方法</h2>
        		<ul>
        			<li class="y">
+       			包使用：
 <pre>
 YUI().use('module1', 'module2',function (Y) {
    new Y.M1();
    new Y.M2();
 });
 </pre>
+包配置<a href="http://yuilibrary.com/yui/docs/api/classes/config.html">config</a>:
+<pre>
+var  _YUI3_CONFIG_ = {
+	combine   : true,
+	comboBase : 'http://a.tbcdn.cn/??',
+	root      : 's/yui/3.7.3/build/',
+	charset   : 'gbk',
+	groups    : {
+	    util    : {
+	        root    : 'apps/et/common/',
+	        modules : {
+	            'trip-mustache'       : {
+	                path : 'js/mustache.js',
+	                requires : ['node-base']
+	            }
+	        }
+	    },
+	    widgets : {
+	        root    : 'apps/et/common/widgets/',
+	        modules : {
+	            'trip-autocomplete-skin'    : {
+	                path : 'suggest/css/trip-autocomplete-min.css',
+	                type : 'css'
+	            }
+	        }
+	    }
+	}
+};
+var YTRIP = YUI(_YUI3_CONFIG_);	
+</pre>
        			</li>
        			<li>
+       				包使用：
 <pre>
 KISSY.use('module1,module2',function (S,M1,M2) {
    new M1();
 });
+</pre>
+包配置 <a href="http://docs.kissyui.com/docs/html/api/seed/loader/config.html" >config</a>：
+<pre>
+KISSY.config({
+combine	   : true,
+charset    : 'gbk',
+packages   : [{
+	name : 'mods',
+	path : path
+},{
+    name : 'widgets',
+    path : path 
+}]
 </pre>
        			</li>
        		</ul>
        	</section>
        	
        	<section>
-       		<h2>工具包</h2>
+       		<h2 id="lang">工具包</h2>
        		<ul>
        			<li class="y">
        				YUI的工具条通过Y.Lang访问，主要是对数组类等的操作：<br/>
@@ -139,7 +184,7 @@ KISSY.use('module1,module2',function (S,M1,M2) {
        	</section>
        	
        	<section>
-       		<h2>Array</h2>
+       		<h2 id="array">Array</h2>
        		<ul>
        			<li class="y">
        				YUI有专门的<a href="http://yuilibrary.com/yui/docs/api/classes/Array.html">Array</a>类,可以做很多操作：<br/>
@@ -168,7 +213,7 @@ KISSY.use('module1,module2',function (S,M1,M2) {
        			<li>
 					KISSY就没有这么幸运了，你只能去核心模块<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/index.html">Lang</a> 中找到对应的函数：<br/>
 					--<br/>
-					S.each<br/>
+					S.each  <strong>可以用 return false退出</strong><br/>
 					--<br/>
 					S.filter<br/>
 					--<br/>
