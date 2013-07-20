@@ -2,12 +2,32 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Y vs K</title>
+        <title>YUI 和  KISSY 对比</title>
        	<style type="text/css">
        	body{
        		background: #FCF4E9;
        		color:#785013;
        		font: 12px/2 tahoma,arial,"宋体";
+       	}
+       	nav{
+       		position: fixed;
+       		bottom:0;
+       		width:100%;
+       		background: #845A07;
+       		font-size:16px;
+       		z-index: 1000;
+       		text-align: center;
+       		height:4em;
+       	}
+       	nav a,nav a:link,nav a:visited{
+       		display: inline-block;
+       		line-height: 4em;
+       		margin: 0 5px;
+       		color:#fff;
+       	}
+       	nav a:hover{
+       		position: relative;
+       		top:-2px;
        	}
        	section{
        		margin: 1em 2em;
@@ -70,8 +90,16 @@
     <body>
     	<h1>YUI和KISSY的API接口对比</h1>
     	<header>
-    		YUI的版本更新比较快，小编整理的时候已经是3.10.3了，KISYY是以最新的1.3.0为准。
+    		YUI的版本更新比较快，整理的时候已经是3.10.3了，KISYY是以最新的1.3.0为准。
+    		参考：<a href="http://cyj.me/jquery-kissy-rosetta/ ">
+                    jquery kissy 入门对比</a>；<a href="http://www.jsrosettastone.com/">jQuery - YUI Rosetta Stone</a>
     	</header>
+    	<nav>
+    		<a href="#config">config</a>
+    		<a href="#Lang">Lang</a>
+    		<a href="#Array">Array</a>
+    		<a href="#Object">Object</a>
+    	</nav>
        	<section>
        		<h2 id="config">配置参数和使用方法</h2>
        		<ul>
@@ -139,7 +167,7 @@ packages   : [{
        	</section>
        	
        	<section>
-       		<h2 id="lang">工具包</h2>
+       		<h2 id="Lang">工具包</h2>
        		<ul>
        			<li class="y">
        				YUI的工具条通过Y.Lang访问，主要是对数组类等的操作：<br/>
@@ -184,7 +212,7 @@ packages   : [{
        	</section>
        	
        	<section>
-       		<h2 id="array">Array</h2>
+       		<h2 id="Array">Array</h2>
        		<ul>
        			<li class="y">
        				YUI有专门的<a href="http://yuilibrary.com/yui/docs/api/classes/Array.html">Array</a>类,可以做很多操作：<br/>
@@ -226,7 +254,7 @@ packages   : [{
        	</section>
        	
        	<section>
-       		<h2>Object</h2>
+       		<h2 id="Object">Object</h2>
        		<ul>
        			<li class="y">
        				不仅仅是Array，<a href="http://yuilibrary.com/yui/docs/api/classes/Object.html">Object</a>也一样有单独的类：<br/>
