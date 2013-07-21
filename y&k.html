@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8"/>
         <title>YUI 和  KISSY 对比</title>
+        <base target="_blank" />
        	<style type="text/css">
        	body{
        		background: #FCF4E9;
        		color:#785013;
        		font: 12px/2 tahoma,arial,"宋体";
+       		padding-bottom:8em;
        	}
        	nav{
        		position: fixed;
@@ -17,7 +19,6 @@
        		font-size:16px;
        		z-index: 1000;
        		text-align: center;
-       		height:4em;
        	}
        	nav a,nav a:link,nav a:visited{
        		display: inline-block;
@@ -95,13 +96,18 @@
                     jquery kissy 入门对比</a>；<a href="http://www.jsrosettastone.com/">jQuery - YUI Rosetta Stone</a>
     	</header>
     	<nav>
-    		<a href="#config">config</a>
-    		<a href="#Lang">Lang</a>
-    		<a href="#Array">Array</a>
-    		<a href="#Object">Object</a>
+    		<a href="#Config" target="_self">Config</a>
+    		<a href="#Lang" target="_self">Lang</a>
+    		<a href="#Array" target="_self">Array</a>
+    		<a href="#Object" target="_self">Object</a>
+    		<a href="#Dom" target="_self">Dom</a>
+    		<a href="#Event" target="_self">Event</a>
+    		<a href="#Later" target="_self">Later</a>
+    		<a href="#Io" target="_self">Io</a>
+    		<a href="#Base" target="_self">Base</a>
     	</nav>
        	<section>
-       		<h2 id="config">配置参数和使用方法</h2>
+       		<h2 id="Config">Config 配置参数和使用方法</h2>
        		<ul>
        			<li class="y">
        			包使用：
@@ -167,7 +173,7 @@ packages   : [{
        	</section>
        	
        	<section>
-       		<h2 id="Lang">工具包</h2>
+       		<h2 id="Lang">Lang 工具包</h2>
        		<ul>
        			<li class="y">
        				YUI的工具条通过Y.Lang访问，主要是对数组类等的操作：<br/>
@@ -212,7 +218,7 @@ packages   : [{
        	</section>
        	
        	<section>
-       		<h2 id="Array">Array</h2>
+       		<h2 id="Array">Array 数组</h2>
        		<ul>
        			<li class="y">
        				YUI有专门的<a href="http://yuilibrary.com/yui/docs/api/classes/Array.html">Array</a>类,可以做很多操作：<br/>
@@ -254,7 +260,7 @@ packages   : [{
        	</section>
        	
        	<section>
-       		<h2 id="Object">Object</h2>
+       		<h2 id="Object">Object 对象</h2>
        		<ul>
        			<li class="y">
        				不仅仅是Array，<a href="http://yuilibrary.com/yui/docs/api/classes/Object.html">Object</a>也一样有单独的类：<br/>
@@ -278,10 +284,10 @@ packages   : [{
        	</section>
        	
        		<section>
-       		<h2>DOM/NODE</h2>
+       		<h2 id="Dom">Dom/NODE 元素操作</h2>
        		<ul>
        			<li class="y">
-       				<p>YUI的DOM/NODE接口，方法名相对更规范一些(比如getAttribute,get('value'),setStyle)。</p>
+       				<p>YUI的Dom/NODE接口，方法名相对更规范一些(比如getAttribute,get('value'),setStyle)。</p>
        				<p>对YUI，比较令人疑惑的是NODE的get和set这两个“黑盒子”。目前已知的有：</p>
        				<table>
        					<thead>
@@ -305,47 +311,20 @@ packages   : [{
        	</section>	
        	
        	<section>
-       		<h2>事件</h2>
+       		<h2 id="Event">Event 事件</h2>
        		<ul>
        			<li class="y">
-       				EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟DOM Event(等同于 YUI 的 simulate)
+       				相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
        			</li>
        			<li>
-					相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
-					
-       			</li>
-       		</ul>
-       	</section>
-       		
-       	
-       	<section>
-       		<h2>事件</h2>
-       		<ul>
-       			<li class="y">
-       				EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟DOM Event(等同于 YUI 的 simulate)
-       			</li>
-       			<li>
-					相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
+					EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟Dom Event(等同于 YUI 的 simulate)
 					
        			</li>
        		</ul>
        	</section>
        	
        	<section>
-       		<h2>事件</h2>
-       		<ul>
-       			<li class="y">
-       				EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟DOM Event(等同于 YUI 的 simulate)
-       			</li>
-       			<li>
-					相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
-					
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section>
-       		<h2>延迟执行指定函数 later</h2>
+       		<h2 id="Later">Later 延迟执行指定函数</h2>
        		<ul>
        			<li class="y">
        				YUI的延迟函数<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_later">later</a>,参数顺序如下：<br/>
@@ -369,7 +348,7 @@ packages   : [{
        	</section>
        	
        	<section>
-       		<h2>异步请求</h2>
+       		<h2 id="Io">IO 异步请求</h2>
        		<ul>
        			<li class="y">
        				在YUI里面 ，<a href="http://yuilibrary.com/yui/docs/api/classes/Get.html">Get</a>是一个类而非方法，主要功能是用来加载js和css文件;<br/>
@@ -405,7 +384,7 @@ jsonp<
        	</section>
        	
        		<section>
-       		<h2>Base</h2>
+       		<h2 id="Base">Base 基类</h2>
        		<ul>
        			<li class="y">
        				 怎么说呢，<a href="http://yuilibrary.com/yui/docs/api/classes/Base.html">Base</a> 是一个很牛逼的基础类，继承了Attribute和EventTarget。一般我们创建新类，都会选择继承Base：
@@ -431,7 +410,7 @@ Y.extend(NewClass, Y.Base, {
        var that = this;
        var score = that.get('score'); 
     }
- }
+});
 </pre>
        			</li>
        			<li>
@@ -443,21 +422,18 @@ function NewClassr(){
 	this.init.apply(this, arguments);
 }
 NewClassr.NAME = 'NewClass';
-
 NewClassr.ATTRS = {
-    
+    score : {
+        value : 11,
+        setter:function(str){return parseInt(str);},
+        validator:function(str){
+        	return str<=100?true:false;
+        }
+    }
 };
 S.extend(NewClassr, S.Base, {
 	init:function(){
-		this.setDoms();
-		this.bindEvent();
-	},
-	setDoms:function(){
-		
-	},
-	bindEvent:function(){
-		var that = this;
-		var doms = that.get('doms');
+		var score = this.get('score'); 
 	}
 });
 </pre>
