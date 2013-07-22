@@ -71,6 +71,10 @@
 		li.y:after{
 		    content: "YUI";
 		}
+		pre{
+			border-left:0.2em solid #00A4C3;
+			padding-left: 1em;
+		}
 		a,a:link,a:hover,a:visited{
 			color:#643f17;
 			font-weight:bold;
@@ -98,6 +102,7 @@
     	<nav>
     		<a href="#Config" target="_self">Config</a>
     		<a href="#Lang" target="_self">Lang</a>
+    		<a href="#JSON" target="_self">JSON</a>
     		<a href="#Array" target="_self">Array</a>
     		<a href="#Object" target="_self">Object</a>
     		<a href="#Dom" target="_self">Dom</a>
@@ -218,6 +223,27 @@ packages   : [{
        	</section>
        	
        	<section>
+       		<h2 id="JSON">JSON json格式数据处理</h2>
+       		<ul>
+       			<li>
+       				Y.JSON.customTransport <br/>
+					Y.JSON.defaultTransport <br/>
+					Y.JSON.notify<br/>
+					Y.JSON.parse <br/>
+					Y.JSON.stringify <br/>
+       			</li>
+       			<li>
+       				kISSY对将字符串转换成obj的格式要求比较严格
+       				--<br/>
+					--<br/>
+					--<br/>
+					S.JSON.parse 将字符串解析为json对象，解析器<br/>
+					S.JSON.stringify 将json对象或者数组转化为字符串，序列化器<br/>
+       			</li>
+       		</ul>
+       	</section>
+       	
+       	<section>
        		<h2 id="Array">Array 数组</h2>
        		<ul>
        			<li class="y">
@@ -290,22 +316,40 @@ packages   : [{
        				<p>YUI的Dom/NODE接口，方法名相对更规范一些(比如getAttribute,get('value'),setStyle)。</p>
        				<p>对YUI，比较令人疑惑的是NODE的get和set这两个“黑盒子”。目前已知的有：</p>
        				<table>
+       					<caption>YUI的get和set</caption>
        					<thead>
        						<tr>
-       							<th>get('xxx')</th><th>功能</th><th>KISSY对应函数</th>
+       							<th>方法</th><th>功能</th><th>KISSY对应函数</th>
        						</tr>
        					</thead>
        					<tbody>
        						<tr>
        							<td>get('value')</td><td>input获取value值</td><td>val()</td>
        						</tr>
+       						<tr>
+       							<td>set('text')</td><td>给符合选择器的所有元素设置文本值</td><td>text(value)</td>
+       						</tr>
        					</tbody>
        				</table>
-       				
        			</li>
        			<li>
 					<p>相对而言，KISSY在这方面，接口更接近于JQuery(简洁，比如attr,val,css)。</p>
-					
+					<table>
+       					<caption>KISSY-YUI Node接口差异对比</caption>
+       					<thead>
+       						<tr>
+       							<th>KISSY</th><th>YUI</th><th>说明</th>
+       						</tr>
+       					</thead>
+       					<tbody>
+       						<tr>
+       							<td>html()</td><td>getHTML()/setHTML()</td><td>获取/设置符合选择器的(KISSY:第一个元素的) innerHTML。YUI不赞成用getContent</td>
+       						</tr>
+       						<tr>
+       							<td>text()</td><td>get('text')/set('text',value)</td><td>获取/设置节点的文本值</td>
+       						</tr>
+       					</tbody>
+       				</table>
        			</li>
        		</ul>
        	</section>	
@@ -314,11 +358,17 @@ packages   : [{
        		<h2 id="Event">Event 事件</h2>
        		<ul>
        			<li class="y">
-       				相比于KISSY，YUI有全局的广播事件。即可以用Y.on & Y.fire来作为全局事件通信机制；
+       				相比于KISSY，YUI有全局的广播事件（KISSY模拟方法：var globalEvent=S.mix({},S.EventTarget);）；对应方法及参数（基于node）:<br/>
+       				on ( type , fn , [context] , [arg*] ) <br/>
+       				delegate ( type , fn , spec , context , args )<br/>
+       				fire ( type , arguments ) 只能触发自定义事件<br/>
+       				simulate ( type , options ) 触发DOM事件
        			</li>
        			<li>
-					EventObj.fire 不仅可以作为事件类的事件触发，还可以模拟Dom Event(等同于 YUI 的 simulate)
-					
+       				  对应方法及参数（基于node）：<br/>
+					 on (eventType , fn [ , scope ] ) 用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用<br/>
+					 delegate (eventType , filter , fn [ , scope ] ) 参数顺序和YUI有差别<br/>
+					 fire ( eventType [ , domEvent ] ) 可以触发DOM事件<br/>
        			</li>
        		</ul>
        	</section>
@@ -355,8 +405,69 @@ packages   : [{
        				<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_jsonp">jsonp</a>和<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_io">io</a>却是两个静态方法;<br/>
        				当然，<a href="http://yuilibrary.com/yui/docs/api/classes/IO.html">IO</a>这个类还是存在的，而且提供的方法和事件接口也非常详尽<br/>
        				相比之下，jsonp对应的<a href="http://yuilibrary.com/yui/docs/api/classes/JSONPRequest.html">JSONPRequest</a>类就简单得多了，就提供了一个send方法。
+<pre>
+Y.io('https://somedomain.com/url', {
+    method: 'PUT',
+    data: '?foo=bar',
+    request: {
+        maxRedirects: 100,
+        strictSSL: true,
+        multipart: [
+            {
+                'content-type': 'application/json',
+                body: JSON.stringify({
+                    foo: 'bar',
+                    _attachments: {
+                        'message.txt': {
+                            follows: true,
+                            length: 18,
+                            'content_type': 'text/plain'
+                        }
+                    }
+                })
+            },
+            {
+                body: 'I am an attachment'
+            }
+        ]
+    },
+    on: {
+        success: function(id, e) {
+            Y.log(e.responseText);
+        }
+    }
+});	
+</pre>
        			</li>
        			<li>
+       				new IO(cfg):<br/>
+       				cfg.url<br/>
+					cfg.accepts<br/>
+					cfg.dataType<br/>
+					cfg.processData<br/>
+					cfg.async<br/>
+					cfg.cache<br/>
+					cfg.contentType<br/>
+					cfg.context<br/>
+					cfg.crossDomain<br/>
+					cfg.data<br/>
+					cfg.serializeArray<br/>
+					cfg.error<br/>
+					cfg.success<br/>
+					cfg.complete<br/>
+					cfg.headers<br/>
+					cfg.jsonp<br/>
+					cfg.jsonpCallback<br/>
+					cfg.mimeType<br/>
+					cfg.password<br/>
+					cfg.username<br/>
+					cfg.scriptCharset<br/>
+					cfg.timeout<br/>
+					cfg.type<br/>
+					cfg.xdr<br/>
+					cfg.xhrFields<br/>
+					cfg.form<br/>
+					cfg.beforeSend<br/>
 <pre>
 	
 	IO.get(url, data, callback, dataType)
