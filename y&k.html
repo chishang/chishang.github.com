@@ -20,6 +20,15 @@
        		z-index: 1000;
        		text-align: center;
        	}
+       	aside{
+       		position:fixed;
+       		top:10em;
+       		right:0;
+       		width: 1em; 
+       		line-height: 1.2em;
+       		padding: 0.5em;
+       		background: #BEAE10;
+       	}
        	nav a,nav a:link,nav a:visited{
        		display: inline-block;
        		line-height: 4em;
@@ -90,6 +99,11 @@
 			border:1px solid #ccc;
 			text-align: center;
 		}
+		
+		dt{
+			display:inline;
+			margin: 0 2em;
+		}
        	</style>
     </head>
     <body>
@@ -111,6 +125,9 @@
     		<a href="#Io" target="_self">Io</a>
     		<a href="#Base" target="_self">Base</a>
     	</nav>
+    	<aside>
+    		<a href="#ksth" target="_self">快速替换一览表</a>
+    	</aside>
        	<section>
        		<h2 id="Config">Config 配置参数和使用方法</h2>
        		<ul>
@@ -550,6 +567,21 @@ S.extend(NewClassr, S.Base, {
 </pre>
        			</li>
        		</ul>
+       	</section>
+       	
+       	<section id="ksth">
+       		<h2>快速替换一览表</h2>
+       		<dl>
+       			<dt>getAttribute - attr</dt> 
+       			<dt>getHTML - html</dt> 
+       			<dt>get('value') - val</dt>
+       			<dt>get('checked') - ?</dt>
+       			<dt>getContent - html</dt>
+       			<dt>setAttribute - attr</dt> 
+       			<dt>setHTML - html</dt>
+       			<dt>setContent - html</dt>
+       			<dt>set('value',str) - val(str)</dt>
+       		</dl>
        	</section>
     </body>
 </html>
