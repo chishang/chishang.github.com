@@ -4,6 +4,14 @@
         <meta charset="UTF-8"/>
         <title>YUI 和  KISSY 对比</title>
         <base target="_blank" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <!-- 响应式设计代码 -->
+	    <!-- html5reset and css3 -->
+    <link rel="stylesheet" href="http://a.tbcdn.cn/??p/global/1.0/global-min.css"/>
+    <link rel="stylesheet" href="http://a.tbcdn.cn/??app/dp/s/html5/css/common-min.css"/>
+    <!--[if lt IE 9]><script src="http://a.tbcdn.cn/app/dp/s/html5/js/??html5shiv-min.js,modernizr-v2.5.3-min.js"></script><![endif]-->
+    <!--[if gte IE 9]><!--><script src="http://a.tbcdn.cn/app/dp/s/html5/js/modernizr-v2.5.3-min.js"></script><!--<![endif]-->
+
        	<style type="text/css">
        	body{
        		background: #FCF4E9;
@@ -375,14 +383,14 @@ packages   : [{
        		<h2 id="Event">Event 事件</h2>
        		<ul>
        			<li class="y">
-       				相比于KISSY，YUI有全局的广播事件（KISSY模拟方法：var globalEvent=S.mix({},S.EventTarget);）；对应方法及参数（基于node）:<br/>
+       				相比于KISSY，YUI有全局的广播事件；YUI的simulate有兼容性问题（比如checkbox的click事件，在ie7/6下不能改变状态，而KISSY的fire可以）；对应方法及参数（基于node）:<br/>
        				on ( type , fn , [context] , [arg*] ) <br/>
        				delegate ( type , fn , spec , context , args )<br/>
        				fire ( type , arguments ) 只能触发自定义事件<br/>
        				simulate ( type , options ) 触发DOM事件
        			</li>
        			<li>
-       				  对应方法及参数（基于node）：<br/>
+       				 KISSY本身实例化对象没有继承事件类（KISSY模拟方法：var globalEvent=S.mix({},S.EventTarget);）。 对应方法及参数（基于node）：<br/>
 					 on (eventType , fn [ , scope ] ) 用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用<br/>
 					 delegate (eventType , filter , fn [ , scope ] ) 参数顺序和YUI有差别<br/>
 					 fire ( eventType [ , domEvent ] ) 可以触发DOM事件<br/>
@@ -570,13 +578,18 @@ S.extend(NewClassr, S.Base, {
        	</section>
        	
        	<section id="ksth">
-       		<h2>快速替换一览表</h2>
+       		<h2>快速替换一览表 : YUI - KISSY</h2>
        		<dl>
+       			<dt>Array.each - each</dt>
+       			<dt>delegate(type,fn,spec,context,args) - delegate(type,spec,fn[,context])</dt>
+       			<dt>e.currentTarget - S.one(e.currentTarget)</dt>
        			<dt>getAttribute - attr</dt> 
        			<dt>getHTML - html</dt> 
        			<dt>get('value') - val</dt>
        			<dt>get('checked') - attr('checked')</dt>
        			<dt>getContent - html</dt>
+       			<dt>later (when,o,fn,data,periodic) - later(fn[,when,periodic,o,data])</dt>
+       			<dt>mix - mix</dt>
        			<dt>setAttribute - attr</dt> 
        			<dt>setHTML - html</dt>
        			<dt>setContent - html</dt>
