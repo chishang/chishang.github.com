@@ -214,6 +214,7 @@ packages   : [{
     path : path 
 }]
 </pre>
+<p>KISSY的这种包配置，虽然给使用的时候带来了便利，但出问题的时候系统不会报bug,这时可能要靠自己的“火眼金睛”了。有没有更好的解决办法呢？当然……</p>
        			</li>
        		</ul>
        	</section>
@@ -322,6 +323,17 @@ packages   : [{
 					--<br/>
 					S.inArray<br/>
 					S.indexof<br/>
+					--<br/>
+					S.lastIndexOf<br/>
+					--<br/>
+					--<br/>
+					--<br/>
+					--<br/>
+					--<br/>
+					--<br/>
+					--<br/>
+					--<br/>
+					--<br/>
        			</li>
        		</ul>
        	</section>
@@ -597,18 +609,24 @@ S.extend(NewClassr, S.Base, {
        		<h2>快速替换一览表 : YUI - KISSY</h2>
        		<dl>
        			<dt>Array.each - each</dt>
+       			<dt>Array.indexOf - index</dt>
+       			<dt>ancestor - parent</dt>
        			<dt>delegate(type,fn,spec,context,args) - delegate(type,spec,fn[,context])</dt>
        			<dt>e.currentTarget - S.one(e.currentTarget)</dt>
        			<dt>getAttribute - attr</dt> 
        			<dt>getHTML - html</dt> 
        			<dt>get('value') - val</dt>
        			<dt>get('checked') - attr('checked')</dt>
+       			<dt>get('offsetHeight') ? outerHeight</dt>
        			<dt>getContent - html</dt>
+       			<dt>Lang.trim - trim</dt>
        			<dt>later (when,o,fn,data,periodic) - later(fn[,when,periodic,o,data])</dt>
        			<dt>mix - mix</dt>
+       			<dt>remove - remove</dt>
        			<dt>setAttribute - attr</dt> 
        			<dt>setHTML - html</dt>
        			<dt>setContent - html</dt>
+       			<dt>setStyle - css</dt>
        			<dt>set('value',str) - val(str)</dt>
        		</dl>
        	</section>
