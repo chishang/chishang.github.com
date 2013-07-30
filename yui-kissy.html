@@ -304,8 +304,8 @@ packages   : [{
 					Y.Array.dedupe <br/>
 					Y.Array.each <br/>
 					Y.Array.every <br/>
-					Y.Array.filter <br/>
-					Y.Array.find <br/>
+					Y.Array.filter 过滤得到符合条件的数组 <br/>
+					Y.Array.find 找到第一个符合条件的项<br/>
 					Y.Array.flatten <br/>
 					Y.Array.forEach <br/>
 					Y.Array.grep <br/>
@@ -621,24 +621,30 @@ S.extend(NewClassr, S.Base, {
        		<dl>
        			<dt>Array.each - each</dt>
        			<dt>Array.indexOf - index</dt>
-       			<dt>ancestor - parent</dt>
+       			<dt>Array.find - filter()[0]</dt>
+       			<dt>ancestor - parent [n]</dt>
        			<dt>delegate(type,fn,spec,context,args) - delegate(type,spec,fn[,context])</dt>
-       			<dt>e.currentTarget - S.one(e.currentTarget)</dt>
-       			<dt>getAttribute - attr</dt> 
-       			<dt>getHTML - html</dt> 
-       			<dt>get('value') - val</dt>
-       			<dt>get('checked') - attr('checked')</dt>
-       			<dt>get('offsetHeight') ? outerHeight</dt>
-       			<dt>getContent - html</dt>
+       			<dt>e.currentTarget - S.one(e.currentTarget) </dt>
+       			<dt>getAttribute - attr [n]</dt> 
+       			<dt>getHTML - html [n]</dt> 
+       			<dt>get('value') - val() [n]</dt>
+       			<dt>get('checked') - attr('checked') [n]</dt>
+       			<dt>get('children') - children()[n]</dt>
+       			<dt>get('region') ? offset [n]</dt>
+       			<dt>get('offsetHeight') ? outerHeight [n]</dt>
+       			<dt>scrollTop() - scrollTop()</dt>
+       			<dt>getContent - html [n] [n]</dt>
        			<dt>Lang.trim - trim</dt>
        			<dt>later (when,o,fn,data,periodic) - later(fn[,when,periodic,o,data])</dt>
        			<dt>mix - mix</dt>
-       			<dt>remove - remove</dt>
+       			<dt>remove - remove [n]</dt>
+       			<dt>removeAttribute - removeAttr[n]</dt>
        			<dt>setAttribute - attr</dt> 
        			<dt>setHTML - html</dt>
        			<dt>setContent - html</dt>
        			<dt>setStyle - css</dt>
        			<dt>set('value',str) - val(str)</dt>
+       			<dt>size() - ['length'] [n]</dt> 
        		</dl>
        	</section>
     </body>
