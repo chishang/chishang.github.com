@@ -1,180 +1,208 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>YUI 和  KISSY 对比</title>
-		<link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico" />
-        <base target="_blank" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-       	<style type="text/css">
-       	*{
-       		padding: 0;margin:0;border:0;
-       	}
-       	body{
-       		background: #FCF4E9;
-       		color:#785013;
-       		font: 12px/2 tahoma,arial,"宋体";
-       		padding-bottom:8em;
-       	}
-       	nav{
-       		position: fixed;
-       		bottom:0;
-       		width:100%;
-       		background: #845A07;
-       		font-size:16px;
-       		z-index: 1000;
-       		text-align: center;
-       	}
-       	aside{
-       		position:fixed;
-       		top:10em;
-       		right:0;
-       		width: 1em; 
-       		line-height: 1.2em;
-       		padding: 0.5em;
-       		background: #BEAE10;
-       		z-index: 2;
-       	}
-       	nav a,nav a:link,nav a:visited{
-       		display: inline-block;
-       		line-height: 4em;
-       		margin: 0 5px;
-       		color:#fff;
-       	}
-       	nav a:hover{
-       		position: relative;
-       		top:-2px;
-       	}
-       	section{
-       		margin: 1em 2em;
-       	}
-   		ul:after {
-		    clear: both;
-		    content: ".";
-		    display: block;
-		    height: 0;
-		    visibility: hidden;
-		}
-   		li{
-   			float:left;
-   			width:38%;
-   			padding:0.5em 2em;
-   			margin-left:5%;
-   			margin-bottom:1em;
-   			list-style: none;
-   			background: #FFFAEA;
-   			color:#b39441;
-   			border:1px dashed #ad9b7a;
-   			position: relative;
-   			overflow: hidden;
-   		}
-   		li:after {
-		    clear: both;
-		    content: "KISSY";
-		    display: block;
-		    height: 4em;
-		    line-height:5em;
-		    width:3em;
-		    padding-left:1em;
-		    background:#BEAE10; 
-		    color:#fff;
-		    text-align:center;
-		    position:absolute;
-		    right:0;
-		    bottom:0;
-		    border-radius: 48px 0px 0px 0px;
-		}
-		li.y:after{
-		    content: "YUI";
-		}
-		pre{
-			border-left:0.2em solid #00A4C3;
-			padding-left: 1em;
-			background: #eee;
-			margin: 0.5em 0 1em 0;
-			overflow-x: scroll;
-		}
-		a,a:link,a:hover,a:visited{
-			color:#643f17;
-			font-weight:bold;
-			margin:0 0.2em;
-			text-decoration:none;
-		}
-		table{
-			width: 100%;
-			border-collapse: collapse;
-			border:1px solid #ccc;
-		}
-		th,td{
-			border:1px solid #ccc;
-			text-align: center;
-		}
-		
-		dt{
-			display:inline-block;
-			margin-left:2em;
-			border-bottom: 1px dashed #BEAE10;
-			width:30%;
-		}
-		
-		/* 仅iPhone 横版，包括某些平板电脑的竖版 */
-		@media only screen and (max-width: 780px) {
-			section{
-	       		margin: 1em;
-	       	}
-			li{
-				width:90%;
-				margin-left: 1%;
-			}
-			nav a,nav a:link,nav a:visited{
-				line-height:1.2em;
-				font-size:12px;
-				font-weight: normal;
-				margin:0 0 0 5px;
-			}
-			dt{
-				width:100%;
-				margin-left: 0;
-			}
-		}
-       	</style>
-    </head>
-    <body>
-    	<h1>YUI和KISSY的API接口对比</h1>
-    	<header>
-    		YUI的版本更新比较快，整理的时候已经是3.10.3了，KISYY是以最新的1.3.0为准。
-    		参考：<a href="http://cyj.me/jquery-kissy-rosetta/ ">
-                    jquery kissy 入门对比</a>；<a href="http://www.jsrosettastone.com/">jQuery - YUI Rosetta Stone</a>
-    	</header>
-    	<nav>
-    		<a href="#Config" target="_self">Config</a>
-    		<a href="#Lang" target="_self">Lang</a>
-    		<a href="#JSON" target="_self">JSON</a>
-    		<a href="#Array" target="_self">Array</a>
-    		<a href="#Object" target="_self">Object</a>
-    		<a href="#Dom" target="_self">Dom</a>
-    		<a href="#Event" target="_self">Event</a>
-    		<a href="#Later" target="_self">Later</a>
-    		<a href="#Io" target="_self">Io</a>
-    		<a href="#Base" target="_self">Base</a>
-    	</nav>
-    	<aside>
-    		<a href="#ksth" target="_self">快速替换一览表</a>
-    	</aside>
-       	<section>
-       		<h2 id="Config">Config 配置参数和使用方法</h2>
-       		<ul>
-       			<li class="y">
-       			包使用：
+<head>
+    <meta charset="UTF-8"/>
+    <title>YUI 和 KISSY 对比</title>
+    <link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico"/>
+    <base target="_blank"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        body {
+            background: #FCF4E9;
+            color: #785013;
+            font: 12px/2 tahoma, arial, "宋体";
+            padding-bottom: 8em;
+        }
+
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #845A07;
+            font-size: 16px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        aside {
+            position: fixed;
+            top: 10em;
+            right: 0;
+            width: 1em;
+            line-height: 1.2em;
+            padding: 0.5em;
+            background: #BEAE10;
+            z-index: 2;
+        }
+
+        nav a, nav a:link, nav a:visited {
+            display: inline-block;
+            line-height: 4em;
+            margin: 0 5px;
+            color: #fff;
+        }
+
+        nav a:hover {
+            position: relative;
+            top: -2px;
+        }
+
+        section {
+            margin: 1em 2em;
+        }
+
+        ul:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden;
+        }
+
+        li {
+            float: left;
+            width: 38%;
+            padding: 0.5em 2em;
+            margin-left: 5%;
+            margin-bottom: 1em;
+            list-style: none;
+            background: #FFFAEA;
+            color: #b39441;
+            border: 1px dashed #ad9b7a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        li:after {
+            clear: both;
+            content: "KISSY";
+            display: block;
+            height: 4em;
+            line-height: 5em;
+            width: 3em;
+            padding-left: 1em;
+            background: #BEAE10;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-radius: 48px 0px 0px 0px;
+        }
+
+        li.y:after {
+            content: "YUI";
+        }
+
+        pre {
+            border-left: 0.2em solid #00A4C3;
+            padding-left: 1em;
+            background: #eee;
+            margin: 0.5em 0 1em 0;
+            overflow-x: scroll;
+        }
+
+        a, a:link, a:hover, a:visited {
+            color: #643f17;
+            font-weight: bold;
+            margin: 0 0.2em;
+            text-decoration: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        dt {
+            display: inline-block;
+            margin-left: 2em;
+            border-bottom: 1px dashed #BEAE10;
+            width: 30%;
+        }
+
+            /* 仅iPhone 横版，包括某些平板电脑的竖版 */
+        @media only screen and (max-width: 780px) {
+            section {
+                margin: 1em;
+            }
+
+            li {
+                width: 90%;
+                margin-left: 1%;
+            }
+
+            nav a, nav a:link, nav a:visited {
+                line-height: 1.2em;
+                font-size: 12px;
+                font-weight: normal;
+                margin: 0 0 0 5px;
+            }
+
+            dt {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>YUI和KISSY的API接口对比</h1>
+<header>
+    YUI的版本更新比较快，整理的时候已经是3.11.0了，KISYY是以最新的1.3.1为表准。
+    参考：<a href="http://cyj.me/jquery-kissy-rosetta/ ">
+    jquery kissy 入门对比</a>；<a href="http://www.jsrosettastone.com/">jQuery - YUI Rosetta Stone</a>
+</header>
+<nav>
+    <a href="#Config" target="_self">Config</a>
+    <a href="#Lang" target="_self">Lang</a>
+    <a href="#JSON" target="_self">JSON</a>
+    <a href="#Array" target="_self">Array</a>
+    <a href="#Object" target="_self">Object</a>
+    <a href="#Dom" target="_self">Dom</a>
+    <a href="#Event" target="_self">Event</a>
+    <a href="#Later" target="_self">Later</a>
+    <a href="#Io" target="_self">Io</a>
+    <a href="#Base" target="_self">Base</a>
+</nav>
+<aside>
+    <a href="#ksth" target="_self">快速替换一览表</a>
+</aside>
+<section>
+    <h2 id="Config">Config 配置参数和使用方法</h2>
+    <ul>
+        <li class="y">
+            和KISSY不同，YUI必须先实例化然后再调用use方法：
 <pre>
 YUI(config).use('module1', 'module2',function (Y) {
    new Y.M1();
    new Y.M2();
 });
 </pre>
-包配置<a href="http://yuilibrary.com/yui/docs/api/classes/config.html">config</a>:
+
+    实例的时候，需要传config参数。config的配置参数很多，这里只例举几个常见的场景，具体的可以参考：<a href="http://yuilibrary.com/yui/docs/api/classes/config.html">config</a>。<br/>
+            base:YUI 框架所在的基地址 <br/>
+            charset:指明编码<br/>
+            groups：包配置 。groups下面可以有多个包，每个包可以指定自己的特殊配置（比如base、charset、root等）和对应的模块（modules）<br/>
+            combine:是否开启自动 combo 模式，默认 false 不开启. 自动 combo 模式要求 use 前配置好依赖关系<br/>
+            filter:url参数过滤，<br/>
+            debug:是否需要开启调试模式（true 会在控制台输出信息）<br/>
+
+
 <pre>
 var  _YUI3_CONFIG_ = {
 	combine   : true,
@@ -204,15 +232,37 @@ var  _YUI3_CONFIG_ = {
 };
 var YTRIP = YUI(_YUI3_CONFIG_);	
 </pre>
-       			</li>
-       			<li>
-       				包使用：
-<pre>
+        </li>
+        <li>
+            KISSY本身就是已经实例化的对象了，可以直接use某些模块：
+            <pre>
 KISSY.use('module1,module2',function (S,M1,M2) {
+   new M1();
    new M1();
 });
 </pre>
-包配置 <a href="http://docs.kissyui.com/docs/html/api/seed/loader/config.html" >config</a>：
+            而KISSY的config参数相对就更简单了，简单到我们可以不太费劲地一一例举:
+            debug (Boolean) – 是否开启调试模式 <br/>
+            alias (Object) – 模块别名配置. <br/>
+            group (Object) – 默认 false. 所有包的默认组配置. <br/>
+            base (String) – KISSY 框架所在的基地址     <br/>
+            comboMaxUrlLength (Number) – Combo url 的最长长度，默认 1024 <br/>
+            comboPrefix (String) – Combo 前缀，默认 ”??”      <br/>
+            comboSep (String) – Combo 分隔符，默认 ”,”     <br/>
+            tag (String) – KISSY 内置模块时间戳，默认 KISSY 当前 build 时间  <br/>
+            combine (Boolean) – 是否开启自动 combo 模式，默认 false 不开启. 自动 combo 模式要求 use 前配置好依赖关系  <br/>
+            config.packages (Object) –  以单个包名为键，单个包配置对象为值的键值对对象。单个包配置对象包括： <br/>
+            &nbsp;&nbsp;-name 字符串, 表示包名 ; <br/>
+            &nbsp;&nbsp;-group  字符串, 表示包所属的组名; <br/>
+            &nbsp;&nbsp;-debug  Boolean, 包内的脚本请求是是否加 -min 后缀，默认和 KISSY.config(“debug”) 相同; <br/>
+            &nbsp;&nbsp;-tag  字符串, 最好为时间戳, 用于刷新客户端本包的模块文件缓存; <br/>
+            &nbsp;&nbsp;-combine  Boolean, 如果总和 combine 设置为 true，但是单个包 combine 设置为 false，则该包内文件不进行自动 combo; <br/>
+            &nbsp;&nbsp;-ignorePackageNameInUri Boolean, 默认 false. 是否在请求的模块路径中省去 package name; <br/>
+            &nbsp;&nbsp; -base 字符串, 表示包所在的 url 路径, 相对路径表示相对于当前页面路径; <br/>
+            &nbsp;&nbsp;-charset 字符串, 表示此包中模块定义文件的编码格式, 默认 utf-8； <br/>
+
+
+            包配置 <a href="http://docs.kissyui.com/docs/html/api/seed/loader/config.html">config</a>：
 <pre>
 KISSY.config({
 combine	   : true,
@@ -225,250 +275,277 @@ packages   : [{
     path : path 
 }]
 </pre>
-<p>KISSY的这种包配置，虽然给使用的时候带来了便利，但出问题的时候系统不会报bug,这时可能要靠自己的“火眼金睛”了。有没有更好的解决办法呢？当然……</p>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section>
-       		<h2 id="Lang">Lang 工具包</h2>
-       		<ul>
-       			<li class="y">
-       				YUI的工具条通过Y.Lang访问，主要是对数组类等的操作：<br/>
-       				Y.Lang.isArray <br/>
-					Y.Lang.isBoolean <br/>
-					Y.Lang.isDate <br/>
-					Y.Lang.isFunction <br/>
-					Y.Lang.isNull <br/>
-					Y.Lang.isNumber <br/>
-					Y.Lang.isObject <br/>
-					Y.Lang.isString <br/>
-					Y.Lang.isUndefined <br/>
-					Y.Lang.isValue <br/>
-					Y.Lang.now <br/>
-					Y.Lang.sub <br/>
-					Y.Lang.trim <br/>
-					Y.Lang.trimLeft <br/>
-					Y.Lang.trimRight <br/>
-					Y.Lang.type <br/>
-       			</li>
-       			<li>
-					KISSY的工具条在核心模块，可以直接访问：<br/>
-					S.isArray <br/>
-					S.isBoolean <br/>
-					S.isDate <br/>
-					S.isFunction <br/>
-					S.isNull <br/>
-					S.isNumber <br/>
-					S.isObject <br/>
-					S.isString <br/>
-					S.isUndefined <br/>
-					-- <br/>
-					S.now <br/>
-					S.substitute <br/>
-					S.trim <br/>
-					-- <br/>
-					-- <br/>
-					-- <br/>
-					
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section>
-       		<h2 id="JSON">JSON json格式数据处理</h2>
-       		<ul>
-       			<li class="y"> 
-       				Y.JSON.customTransport <br/>
-					Y.JSON.defaultTransport <br/>
-					Y.JSON.notify<br/>
-					Y.JSON.parse <br/>
-					Y.JSON.stringify <br/>
-       			</li>
-       			<li>
-       				kISSY对将字符串转换成obj的格式要求比较严格
-       				--<br/>
-					--<br/>
-					--<br/>
-					S.JSON.parse 将字符串解析为json对象，解析器<br/>
-					S.JSON.stringify 将json对象或者数组转化为字符串，序列化器<br/>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section>
-       		<h2 id="Array">Array 数组</h2>
-       		<ul>
-       			<li class="y">
-       				YUI有专门的<a href="http://yuilibrary.com/yui/docs/api/classes/Array.html">Array</a>类,可以做很多操作：<br/>
-					Y.Array.dedupe <br/>
-					Y.Array.each <br/>
-					Y.Array.every <br/>
-					Y.Array.filter 过滤得到符合条件的数组 <br/>
-					Y.Array.find 找到第一个符合条件的项<br/>
-					Y.Array.flatten <br/>
-					Y.Array.forEach <br/>
-					Y.Array.grep <br/>
-					Y.Array.hash <br/>
-					Y.Array.indexOf <br/>
-					Y.Array.invoke <br/>
-					Y.Array.lastIndexOf <br/>
-					Y.Array.map <br/>
-					Y.Array.numericSort <br/>
-					Y.Array.partition <br/>
-					Y.Array.reduce <br/>
-					Y.Array.reject <br/>
-					Y.Array.some <br/>
-					Y.Array.test <br/>
-					Y.Array.unique <br/>
-					Y.Array.zip <br/>
-       			</li>
-       			<li>
-					KISSY就没有这么幸运了，你只能去核心模块<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/index.html">Lang</a> 中找到对应的函数：<br/>
-					--<br/>
-					S.each  <strong>可以用 return false退出</strong><br/>
-					--<br/>
-					S.filter<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-					S.inArray<br/>
-					S.indexof<br/>
-					--<br/>
-					S.lastIndexOf<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-					--<br/>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section>
-       		<h2 id="Object">Object 对象</h2>
-       		<ul>
-       			<li class="y">
-       				不仅仅是Array，<a href="http://yuilibrary.com/yui/docs/api/classes/Object.html">Object</a>也一样有单独的类：<br/>
-					Y.Object.each <br/>
-					Y.Object.getValue <br/>
-					Y.Object.hasKey <br/>
-					Y.Object.hasValue <br/>
-					Y.Object.isEmpty <br/>
-					Y.Object.keys <br/>
-					Y.Object.owns <br/>
-					Y.Object.setValue <br/>
-					Y.Object.size <br/>
-					Y.Object.some <br/>
-					Y.Object.values <br/>
-       			</li>
-       			<li>
-					同样的，KISSY在这方面就没去费这功夫了,还是在<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/index.html">Lang</a>：<br/>
-					S.each<br/>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       		<section>
-       		<h2 id="Dom">Dom/NODE 元素操作</h2>
-       		<ul>
-       			<li class="y">
-       				<p>YUI的Dom/NODE接口，方法名相对更规范一些(比如getAttribute,get('value'),setStyle)。</p>
-       				<p>对YUI，比较令人疑惑的是NODE的get和set这两个“黑盒子”。目前已知的有：</p>
-       				<table>
-       					<caption>YUI的get和set</caption>
-       					<thead>
-       						<tr>
-       							<th>方法</th><th>功能</th><th>KISSY对应函数</th>
-       						</tr>
-       					</thead>
-       					<tbody>
-       						<tr>
-       							<td>get('value')</td><td>input获取value值</td><td>val()</td>
-       						</tr>
-       						<tr>
-       							<td>set('text')</td><td>给符合选择器的所有元素设置文本值</td><td>text(value)</td>
-       						</tr>
-       					</tbody>
-       				</table>
-       			</li>
-       			<li>
-					<p>相对而言，KISSY在这方面，接口更接近于JQuery(简洁，比如attr,val,css)。</p>
-					<table>
-       					<caption>KISSY-YUI Node接口差异对比</caption>
-       					<thead>
-       						<tr>
-       							<th>KISSY</th><th>YUI</th><th>说明</th>
-       						</tr>
-       					</thead>
-       					<tbody>
-       						<tr>
-       							<td>html()</td><td>getHTML()/setHTML()</td><td>获取/设置符合选择器的(KISSY:第一个元素的) innerHTML。YUI不赞成用getContent</td>
-       						</tr>
-       						<tr>
-       							<td>text()</td><td>get('text')/set('text',value)</td><td>获取/设置节点的文本值</td>
-       						</tr>
-       					</tbody>
-       				</table>
-       			</li>
-       		</ul>
-       	</section>	
-       	
-       	<section>
-       		<h2 id="Event">Event 事件</h2>
-       		<ul>
-       			<li class="y">
-       				相比于KISSY，YUI有全局的广播事件；YUI的simulate有兼容性问题（比如checkbox的click事件，在ie7/6下不能改变状态，而KISSY的fire可以）；对应方法及参数（基于node）:<br/>
-       				on ( type , fn , [context] , [arg*] ) <br/>
-       				delegate ( type , fn , spec , context , args )<br/>
-       				fire ( type , arguments ) 只能触发自定义事件<br/>
-       				simulate ( type , options ) 触发DOM事件
-       			</li>
-       			<li>
-       				 KISSY本身实例化对象没有继承事件类（KISSY模拟方法：var globalEvent=S.mix({},S.EventTarget);）。 对应方法及参数（基于node）：<br/>
-					 on (eventType , fn [ , scope ] ) 用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用<br/>
-					 delegate (eventType , filter , fn [ , scope ] ) 参数顺序和YUI有差别<br/>
-					 fire ( eventType [ , domEvent ] ) 可以触发DOM事件<br/>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section>
-       		<h2 id="Later">Later 延迟执行指定函数</h2>
-       		<ul>
-       			<li class="y">
-       				YUI的延迟函数<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_later">later</a>,参数顺序如下：<br/>
-					Y.later( when,o ,fn ,data,periodic )<br/>
-					when (number) – 延迟时间, 单位是毫秒.<br/>
-					o (object) – fn 上下文对象<br/>
-					fn (function) – 延迟执行的函数.<br/>
-					data (Array) – 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.<br/>
-					periodic (boolean) – 是不是周期性执行. 默认为 false.<br/>
-       			</li>
-       			<li>
-					KISSY的延迟函数<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/later.html">later</a>,参数顺序如下：<br/>
-					S.later ( fn[, when, periodic, o, data] )<br/>
-					fn (function) – 延迟执行的函数.<br/>
-					when (number) – 延迟时间, 单位是毫秒.<br/>
-					periodic (boolean) – 是不是周期性执行. 默认为 false.<br/>
-					o (object) – fn 上下文对象<br/>
-					data (Array) – 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.<br/>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section>
-       		<h2 id="Io">IO 异步请求</h2>
-       		<ul>
-       			<li class="y">
-       				在YUI里面 ，<a href="http://yuilibrary.com/yui/docs/api/classes/Get.html">Get</a>是一个类而非方法，主要功能是用来加载js和css文件;<br/>
-       				<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_jsonp">jsonp</a>和<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_io">io</a>却是两个静态方法;<br/>
-       				当然，<a href="http://yuilibrary.com/yui/docs/api/classes/IO.html">IO</a>这个类还是存在的，而且提供的方法和事件接口也非常详尽<br/>
-       				相比之下，jsonp对应的<a href="http://yuilibrary.com/yui/docs/api/classes/JSONPRequest.html">JSONPRequest</a>类就简单得多了，就提供了一个send方法。
+            <p>KISSY的这种包配置，虽然给使用的时候带来了便利，但出问题的时候系统不会报bug,这时可能要靠自己的“火眼金睛”了。有没有更好的解决办法呢？当然……</p>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Lang">Lang 工具包</h2>
+    <ul>
+        <li class="y">
+            YUI的工具条通过Y.Lang访问，主要是对字符串、对象、数组类等的操作：<br/>
+            Y.Lang.isArray <br/>
+            Y.Lang.isBoolean <br/>
+            Y.Lang.isDate <br/>
+            Y.Lang.isFunction <br/>
+            Y.Lang.isNull <br/>
+            Y.Lang.isNumber <br/>
+            Y.Lang.isObject <br/>
+            Y.Lang.isString <br/>
+            Y.Lang.isUndefined <br/>
+            Y.Lang.isValue 是否为一个值（排除null,undefined,NAN）<br/>
+            Y.Lang.now <br/>
+            Y.Lang.sub 和Y.substitute使用相同的模板 <br/>
+            Y.Lang.trim <br/>
+            Y.Lang.trimLeft <br/>
+            Y.Lang.trimRight <br/>
+            Y.Lang.type <br/>
+        </li>
+        <li>
+            KISSY的工具条在核心模块，可以直接访问：<br/>
+            S.isArray <br/>
+            S.isBoolean <br/>
+            S.isDate <br/>
+            S.isFunction <br/>
+            S.isNull <br/>
+            S.isNumber <br/>
+            S.isObject <br/>
+            S.isString <br/>
+            S.isUndefined <br/>
+            -- <br/>
+            S.now <br/>
+            S.substitute <br/>
+            S.trim <br/>
+            -- <br/>
+            -- <br/>
+            -- <br/>
+
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="JSON">JSON json格式数据处理</h2>
+    <ul>
+        <li class="y">
+            Y.JSON.customTransport <br/>
+            Y.JSON.defaultTransport <br/>
+            Y.JSON.notify<br/>
+            Y.JSON.parse <br/>
+            Y.JSON.stringify <br/>
+        </li>
+        <li>
+            kISSY对将字符串转换成obj的格式要求比较严格，这一点要特别注意
+            --<br/>
+            --<br/>
+            --<br/>
+            S.JSON.parse 将字符串解析为json对象，解析器<br/>
+            S.JSON.stringify 将json对象或者数组转化为字符串，序列化器<br/>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Array">Array 数组</h2>
+    <ul>
+        <li class="y">
+            YUI有专门的<a href="http://yuilibrary.com/yui/docs/api/classes/Array.html">Array</a>类，几乎涵盖了你能想到的方法：<br/>
+            1.&nbsp;Y.Array.dedupe <br/>
+            2.&nbsp;Y.Array.each 类似于ES5的原生forEach,不能退出循环<br/>
+            3.&nbsp;Y.Array.every 和each的区别在于可以返回假值以退出循环<br/>
+            4.&nbsp;Y.Array.filter 过滤得到符合条件的新数组 <br/>
+            5.&nbsp;Y.Array.find 找到第一个符合条件的项<br/>
+            6.&nbsp;Y.Array.flatten <br/>
+            7.&nbsp;Y.Array.forEach each的别名 <br/>
+            8.&nbsp;Y.Array.grep <br/>
+            9.&nbsp;Y.Array.hash <br/>
+            10.&nbsp;Y.Array.indexOf <br/>
+            11.&nbsp;Y.Array.invoke <br/>
+            12.&nbsp;Y.Array.lastIndexOf <br/>
+            13.&nbsp;Y.Array.map <br/>
+            14.&nbsp;Y.Array.numericSort <br/>
+            15.&nbsp;Y.Array.partition <br/>
+            16.&nbsp;Y.Array.reduce <br/>
+            17.&nbsp;Y.Array.reject <br/>
+            18.&nbsp;Y.Array.some <br/>
+            19.&nbsp;Y.Array.test <br/>
+            20.&nbsp;Y.Array.unique <br/>
+            21.&nbsp;Y.Array.zip <br/>
+        </li>
+        <li>
+            KISSY就没有这么幸运了，你只能去核心模块<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/index.html">Lang</a>
+            中找到对应的和数组相关的操作。少但也够用：<br/>
+            1.&nbsp;- <br/>
+            2.&nbsp;S.each 可以返回假值以退出循环<br/>
+            3.&nbsp;S.each <br/>
+            4.&nbsp;S.filter 过滤得到符合条件的新数组 <br/>
+            5.&nbsp;可用S.filter()[0]来模拟<br/>
+            6.&nbsp;- <br/>
+            7.&nbsp;S.each  <br/>
+            8.&nbsp;- <br/>
+            9.&nbsp;- <br/>
+            10.&nbsp;S.indexOf <br/>
+            11.&nbsp;- <br/>
+            12.&nbsp;S.lastIndexOf <br/>
+            13.&nbsp;S.map <br/>
+            14.&nbsp;- <br/>
+            15.&nbsp;- <br/>
+            16.&nbsp;S.reduce <br/>
+            17.&nbsp;- <br/>
+            18.&nbsp;- <br/>
+            19.&nbsp;- <br/>
+            20.&nbsp;S.unique <br/>
+            21.&nbsp;- <br/>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Object">Object 对象</h2>
+    <ul>
+        <li class="y">
+            不仅仅是Array，<a href="http://yuilibrary.com/yui/docs/api/classes/Object.html">Object</a>也一样有单独的类：<br/>
+            1.&nbsp;Y.Object.each <br/>
+            2.&nbsp;Y.Object.getValue <br/>
+            3.&nbsp;Y.Object.hasKey <br/>
+            4.&nbsp;Y.Object.hasValue <br/>
+            5.&nbsp;Y.Object.isEmpty <br/>
+            6.&nbsp;Y.Object.keys <br/>
+            7.&nbsp;Y.Object.owns <br/>
+            8.&nbsp;Y.Object.setValue <br/>
+            9.&nbsp;Y.Object.size <br/>
+            10.&nbsp;Y.Object.some <br/>
+            11.&nbsp;Y.Object.values <br/>
+        </li>
+        <li>
+            同样的，KISSY在这方面就没去费这功夫了,还是在<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/index.html">Lang</a>：<br/>
+            1.&nbsp;S.each <br/>
+            2.&nbsp;- <br/>
+            3.&nbsp;- <br/>
+            4.&nbsp;- <br/>
+            5.&nbsp;S.isEmptyObject <br/>
+            6.&nbsp;S.keys <br/>
+            7.&nbsp;- <br/>
+            8.&nbsp;- <br/>
+            9.&nbsp;- <br/>
+            10.&nbsp;- <br/>
+            11.&nbsp;S.makeArray <br/>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Dom">Dom/NODE 元素操作</h2>
+    <ul>
+        <li class="y">
+            <p>YUI的Dom/NODE接口，方法名相对更规范一些(比如getAttribute,get('value'),setStyle)。</p>
+
+            <p>对YUI，比较令人疑惑的是NODE的get和set这两个“黑盒子”。目前已知的有：</p>
+            <table>
+                <caption>YUI的get和set</caption>
+                <thead>
+                <tr>
+                    <th>方法</th>
+                    <th>功能</th>
+                    <th>KISSY对应函数</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>get('value')</td>
+                    <td>input获取value值</td>
+                    <td>val()</td>
+                </tr>
+                <tr>
+                    <td>set('text')</td>
+                    <td>给符合选择器的所有元素设置文本值</td>
+                    <td>text(value)</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <p>相对而言，KISSY在这方面，接口更接近于JQuery(简洁，比如attr,val,css)。</p>
+            <table>
+                <caption>KISSY-YUI Node接口差异对比</caption>
+                <thead>
+                <tr>
+                    <th>KISSY</th>
+                    <th>YUI</th>
+                    <th>说明</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>html()</td>
+                    <td>getHTML()/setHTML()</td>
+                    <td>获取/设置符合选择器的(KISSY:第一个元素的) innerHTML。YUI不赞成用getContent</td>
+                </tr>
+                <tr>
+                    <td>text()</td>
+                    <td>get('text')/set('text',value)</td>
+                    <td>获取/设置节点的文本值</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Event">Event 事件</h2>
+    <ul>
+        <li class="y">
+            相比于KISSY，YUI有全局的广播事件；YUI的simulate有兼容性问题（比如checkbox的click事件，在ie7/6下不能改变状态，而KISSY的fire可以）；对应方法及参数（基于node）:<br/>
+            on ( type , fn , [context] , [arg*] ) <br/>
+            delegate ( type , fn , spec , context , args )<br/>
+            fire ( type , arguments ) 只能触发自定义事件<br/>
+            simulate ( type , options ) 触发DOM事件
+        </li>
+        <li>
+            KISSY本身实例化对象没有继承事件类（KISSY模拟方法：var globalEvent=S.mix({},S.EventTarget);）。 对应方法及参数（基于node）：<br/>
+            on (eventType , fn [ , scope ] ) 用 Event.on 绑定的事件处理器可以被用户触发的原生事件调用. 但是这些事件处理器也可以使用 fire 手动调用<br/>
+            delegate (eventType , filter , fn [ , scope ] ) 参数顺序和YUI有差别<br/>
+            fire ( eventType [ , domEvent ] ) 可以触发DOM事件<br/>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Later">Later 延迟执行指定函数</h2>
+    <ul>
+        <li class="y">
+            YUI的延迟函数<a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_later">later</a>,参数顺序如下：<br/>
+            Y.later( when,o ,fn ,data,periodic )<br/>
+            when (number) – 延迟时间, 单位是毫秒.<br/>
+            o (object) – fn 上下文对象<br/>
+            fn (function) – 延迟执行的函数.<br/>
+            data (Array) – 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.<br/>
+            periodic (boolean) – 是不是周期性执行. 默认为 false.<br/>
+        </li>
+        <li>
+            KISSY的延迟函数<a href="http://docs.kissyui.com/docs/html/api/seed/kissy/later.html">later</a>,参数顺序如下：<br/>
+            S.later ( fn[, when, periodic, o, data] )<br/>
+            fn (function) – 延迟执行的函数.<br/>
+            when (number) – 延迟时间, 单位是毫秒.<br/>
+            periodic (boolean) – 是不是周期性执行. 默认为 false.<br/>
+            o (object) – fn 上下文对象<br/>
+            data (Array) – 传递的参数. 可以为单个对象, 最后会转换成数组, 依次传递给执行函数.<br/>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Io">IO 异步请求</h2>
+    <ul>
+        <li class="y">
+            在YUI里面 ，<a
+                href="http://yuilibrary.com/yui/docs/api/classes/Get.html">Get</a>是一个类而非方法，主要功能是用来加载js和css文件;<br/>
+            <a href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_jsonp">jsonp</a>和<a
+                href="http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_io">io</a>却是两个静态方法;<br/>
+            当然，<a href="http://yuilibrary.com/yui/docs/api/classes/IO.html">IO</a>这个类还是存在的，而且提供的方法和事件接口也非常详尽<br/>
+            相比之下，jsonp对应的<a href="http://yuilibrary.com/yui/docs/api/classes/JSONPRequest.html">JSONPRequest</a>类就简单得多了，就提供了一个send方法。
 <pre>
 Y.io('https://somedomain.com/url', {
     method: 'PUT',
@@ -502,36 +579,36 @@ Y.io('https://somedomain.com/url', {
     }
 });	
 </pre>
-       			</li>
-       			<li>
-       				new IO(cfg):<br/>
-       				cfg.url<br/>
-					cfg.accepts<br/>
-					cfg.dataType<br/>
-					cfg.processData<br/>
-					cfg.async<br/>
-					cfg.cache<br/>
-					cfg.contentType<br/>
-					cfg.context<br/>
-					cfg.crossDomain<br/>
-					cfg.data<br/>
-					cfg.serializeArray<br/>
-					cfg.error<br/>
-					cfg.success<br/>
-					cfg.complete<br/>
-					cfg.headers<br/>
-					cfg.jsonp<br/>
-					cfg.jsonpCallback<br/>
-					cfg.mimeType<br/>
-					cfg.password<br/>
-					cfg.username<br/>
-					cfg.scriptCharset<br/>
-					cfg.timeout<br/>
-					cfg.type<br/>
-					cfg.xdr<br/>
-					cfg.xhrFields<br/>
-					cfg.form<br/>
-					cfg.beforeSend<br/>
+        </li>
+        <li>
+            new IO(cfg):<br/>
+            cfg.url<br/>
+            cfg.accepts<br/>
+            cfg.dataType<br/>
+            cfg.processData<br/>
+            cfg.async<br/>
+            cfg.cache<br/>
+            cfg.contentType<br/>
+            cfg.context<br/>
+            cfg.crossDomain<br/>
+            cfg.data<br/>
+            cfg.serializeArray<br/>
+            cfg.error<br/>
+            cfg.success<br/>
+            cfg.complete<br/>
+            cfg.headers<br/>
+            cfg.jsonp<br/>
+            cfg.jsonpCallback<br/>
+            cfg.mimeType<br/>
+            cfg.password<br/>
+            cfg.username<br/>
+            cfg.scriptCharset<br/>
+            cfg.timeout<br/>
+            cfg.type<br/>
+            cfg.xdr<br/>
+            cfg.xhrFields<br/>
+            cfg.form<br/>
+            cfg.beforeSend<br/>
 <pre>
 	
 	IO.get(url, data, callback, dataType)
@@ -554,15 +631,16 @@ jsonp<
 	    dataType: "jsonp"
 	});
 </pre>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       		<section>
-       		<h2 id="Base">Base 基类</h2>
-       		<ul>
-       			<li class="y">
-       				 怎么说呢，<a href="http://yuilibrary.com/yui/docs/api/classes/Base.html">Base</a> 是一个很牛逼的基础类，继承了Attribute和EventTarget。一般我们创建新类，都会选择继承Base：
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2 id="Base">Base 基类</h2>
+    <ul>
+        <li class="y">
+            怎么说呢，<a href="http://yuilibrary.com/yui/docs/api/classes/Base.html">Base</a>
+            是一个很牛逼的基础类，继承了Attribute和EventTarget。一般我们创建新类，都会选择继承Base：
 <pre>
 function NewClass (config) {
 	NewClass.superclass.constructor.apply(this, arguments);
@@ -587,10 +665,12 @@ Y.extend(NewClass, Y.Base, {
     }
 });
 </pre>
-       			</li>
-       			<li>
-					一般我们add一个模块，都会让构造函数继承 <a href="http://docs.kissyui.com/docs/html/api/core/base/"> Base </a>。 KISSY 的 base 提供给我们一个基类, 整合了 attribute 功能, 让继承 base 的子类自动具有 attribute 的功能。
-					当一个子类继承了base，我们就可以通过get、set来操作属性，并通过“*change”来监听属性的改变。至于用法，和YUI基本没啥区别。虽然它没有提供create方法，但我们可以用augment模拟。唯一让人不爽的是，没有 initializer 供我们自动初始化，所以我们要自己动手调用：
+        </li>
+        <li>
+            一般我们add一个模块，都会让构造函数继承 <a href="http://docs.kissyui.com/docs/html/api/core/base/"> Base </a>。 KISSY 的 base
+            提供给我们一个基类, 整合了 attribute 功能, 让继承 base 的子类自动具有 attribute 的功能。
+            当一个子类继承了base，我们就可以通过get、set来操作属性，并通过“*change”来监听属性的改变。至于用法，和YUI基本没啥区别。虽然它没有提供create方法，但我们可以用augment模拟。唯一让人不爽的是，没有
+            initializer 供我们自动初始化，所以我们要自己动手调用：
 <pre>
 function NewClassr(){
 	NewClassr.superclass.constructor.apply(this, arguments);
@@ -612,40 +692,40 @@ S.extend(NewClassr, S.Base, {
 	}
 });
 </pre>
-       			</li>
-       		</ul>
-       	</section>
-       	
-       	<section id="ksth">
-       		<h2>快速替换一览表 : YUI - KISSY</h2>
-       		<dl>
-       			<dt>Array.each - each</dt>
-       			<dt>Array.indexOf(arr,el) - index(el,arr)</dt>
-       			<dt>Array.find - filter()[0]</dt>
-       			<dt>ancestor - parent [n]</dt>
-       			<dt>delegate(type,fn,spec,context,args) - delegate(type,spec,fn[,context])</dt>
-       			<dt>e.currentTarget - S.one(e.currentTarget) </dt>
-       			<dt>getAttribute - attr [n]</dt> 
-       			<dt>getHTML - html [n]</dt> 
-       			<dt>get('value') - val() [n]</dt>
-       			<dt>get('checked') - attr('checked') [n]</dt>
-       			<dt>get('children') - children()[n]</dt>
-       			<dt>get('region') ? offset [n]</dt>
-       			<dt>get('offsetHeight') ? outerHeight [n]</dt>
-       			<dt>scrollTop() - scrollTop()</dt>
-       			<dt>getContent - html [n] [n]</dt>
-       			<dt>Lang.trim - trim</dt>
-       			<dt>later (when,o,fn,data,periodic) - later(fn[,when,periodic,o,data])</dt>
-       			<dt>mix - mix</dt>
-       			<dt>remove - remove [n]</dt>
-       			<dt>removeAttribute - removeAttr[n]</dt>
-       			<dt>setAttribute - attr</dt> 
-       			<dt>setHTML - html</dt>
-       			<dt>setContent - html</dt>
-       			<dt>setStyle - css</dt>
-       			<dt>set('value',str) - val(str)</dt>
-       			<dt>size() - ['length'] [n]</dt> 
-       		</dl>
-       	</section>
-    </body>
+        </li>
+    </ul>
+</section>
+
+<section id="ksth">
+    <h2>快速替换一览表 : YUI - KISSY</h2>
+    <dl>
+        <dt>Array.each - each</dt>
+        <dt>Array.indexOf(arr,el) - index(el,arr)</dt>
+        <dt>Array.find - filter()[0]</dt>
+        <dt>ancestor - parent [n]</dt>
+        <dt>delegate(type,fn,spec,context,args) - delegate(type,spec,fn[,context])</dt>
+        <dt>e.currentTarget - S.one(e.currentTarget)</dt>
+        <dt>getAttribute - attr [n]</dt>
+        <dt>getHTML - html [n]</dt>
+        <dt>get('value') - val() [n]</dt>
+        <dt>get('checked') - prop('checked') [n]</dt>
+        <dt>get('children') - children()[n]</dt>
+        <dt>get('region') ? offset [n]</dt>
+        <dt>get('offsetHeight') ? outerHeight [n]</dt>
+        <dt>scrollTop() - scrollTop()</dt>
+        <dt>getContent - html [n] [n]</dt>
+        <dt>Lang.trim - trim</dt>
+        <dt>later (when,o,fn,data,periodic) - later(fn[,when,periodic,o,data])</dt>
+        <dt>mix - mix</dt>
+        <dt>remove - remove [n]</dt>
+        <dt>removeAttribute - removeAttr[n]</dt>
+        <dt>setAttribute - attr</dt>
+        <dt>setHTML - html</dt>
+        <dt>setContent - html</dt>
+        <dt>setStyle - css</dt>
+        <dt>set('value',str) - val(str)</dt>
+        <dt>size() - ['length'] [n]</dt>
+    </dl>
+</section>
+</body>
 </html>
