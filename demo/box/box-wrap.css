@@ -2,576 +2,696 @@
 *css reset
 *****************************/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
-  margin: 0;
-  padding: 0; }
+    margin: 0;
+    padding: 0;
+}
 
 abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video {
-  display: block;
-  padding: 0;
-  margin: 0; }
+    display: block;
+    padding: 0;
+    margin: 0;
+}
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 fieldset, img {
-  border: 0; }
+    border: 0;
+}
 
 address, caption, cite, code, dfn, em, strong, th, var {
-  font-style: normal;
-  font-weight: normal; }
+    font-style: normal;
+    font-weight: normal;
+}
 
 ol, ul {
-  list-style-type: none; }
+    list-style-type: none;
+}
 
 caption, th {
-  text-align: center; }
+    text-align: center;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1em;
-  font-weight: normal; }
+    font-size: 1em;
+    font-weight: normal;
+}
 
 q:before, q:after {
-  content: ''; }
+    content: '';
+}
 
 abbr, acronym {
-  border: 0; }
+    border: 0;
+}
 
 input {
-  padding: 2px; }
+    padding: 2px;
+}
 
 body, button, input, select, textarea {
-  font: 12px/1.5 tahoma, arial, "宋体"; }
+    font: 12px/1.5 tahoma, arial, "宋体";
+}
 
 /*****************************
 *font
 *****************************/
 .f1 {
-  font-size: 1em; }
+    font-size: 1em;
+}
 
 .f12 {
-  font-size: 1.2em; }
+    font-size: 1.2em;
+}
 
 .f16 {
-  font-size: 1.6em; }
+    font-size: 1.6em;
+}
 
 .fb {
-  font-weight: bold; }
+    font-weight: bold;
+}
 
 .fn {
-  font-weight: normal; }
+    font-weight: normal;
+}
 
 .ln12 {
-  line-height: 1.2em; }
+    line-height: 1.2em;
+}
 
 .ln15 {
-  line-height: 1.5em; }
+    line-height: 1.5em;
+}
 
 .ln2 {
-  line-height: 2em; }
+    line-height: 2em;
+}
 
 .uln {
-  text-decoration: underline; }
+    text-decoration: underline;
+}
 
 .uln_no {
-  text-decoration: none; }
+    text-decoration: none;
+}
 
 /*****************************
 *box
 *****************************/
 .tl {
-  text-align: left; }
+    text-align: left;
+}
 
 .tc {
-  text-align: center; }
+    text-align: center;
+}
 
 .tr {
-  text-align: right; }
+    text-align: right;
+}
 
 .midle {
-  margin: 0 auto; }
+    margin: 0 auto;
+}
 
 .fl {
-  float: left;
-  display: inline; }
+    float: left;
+    display: inline;
+}
 
 .fr {
-  float: right;
-  display: inline; }
+    float: right;
+    display: inline;
+}
 
 .clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
 
 .clearfix {
-  zoom: 1; }
+    zoom: 1;
+}
 
 .vm {
-  vertical-align: middle; }
+    vertical-align: middle;
+}
 
 .vb {
-  vertical-align: bottom; }
+    vertical-align: bottom;
+}
 
 .vt {
-  vertical-align: top; }
+    vertical-align: top;
+}
 
 .pr {
-  position: relative; }
+    position: relative;
+}
 
 .pa {
-  position: absolute; }
+    position: absolute;
+}
 
 .pf {
-  position: fixed; }
+    position: fixed;
+}
 
 .zoom {
-  zoom: 1; }
+    zoom: 1;
+}
 
 .hidden {
-  visibility: hidden; }
+    visibility: hidden;
+}
 
 .dn {
-  display: none; }
+    display: none;
+}
 
 .db {
-  display: block; }
+    display: block;
+}
 
 .di {
-  display: inline; }
+    display: inline;
+}
 
 .dib {
-  display: inline-block; }
+    display: inline-block;
+}
 
 /**
  * 	
  */
 .s-opacity {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  opacity: 0.6;
-  filter: Alpha(Opacity=60);
-  z-index: -1; }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.6;
+    filter: Alpha(Opacity=60);
+    z-index: -1;
+}
 
 /**==============================================
 * 	��ť=========================================
 ==============================================*/
 .button {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: #FFFFFF;
-  font-family: 'AllerLight',Helvetica,Arial,sans-serif;
-  color: #fff;
-  margin-left: 1em;
-  padding: .6em 1.2em;
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  cursor: pointer; }
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+    font-family: 'AllerLight', Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin-left: 1em;
+    padding: .6em 1.2em;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    cursor: pointer;
+}
 
 .button:hover {
-  background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#ff9900), to(#ff6600));
-  /*Old gradient for webkit*/
-  background: -webkit-linear-gradient(top, #ff9900, #ff6600);
-  /*new gradient for Webkit*/
-  background: -o-linear-gradient(top, #ff9900, #ff6600);
-  /*Opera11*/
-  background: -moz-linear-gradient(#ff9900, #ff6600);
-  /*Mozilla*/
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600);
-  /*IE<9>*/
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600)";
-  /*IE8+*/ }
+    background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#ff9900), to(#ff6600));
+    /*Old gradient for webkit*/
+    background: -webkit-linear-gradient(top, #ff9900, #ff6600);
+    /*new gradient for Webkit*/
+    background: -o-linear-gradient(top, #ff9900, #ff6600);
+    /*Opera11*/
+    background: -moz-linear-gradient(#ff9900, #ff6600);
+    /*Mozilla*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600);
+    /*IE<9>*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600)";
+    /*IE8+*/
+}
 
 /**测试**/
 /*****************************
 *css reset
 *****************************/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
-  margin: 0;
-  padding: 0; }
+    margin: 0;
+    padding: 0;
+}
 
 abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video {
-  display: block;
-  padding: 0;
-  margin: 0; }
+    display: block;
+    padding: 0;
+    margin: 0;
+}
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 fieldset, img {
-  border: 0; }
+    border: 0;
+}
 
 address, caption, cite, code, dfn, em, strong, th, var {
-  font-style: normal;
-  font-weight: normal; }
+    font-style: normal;
+    font-weight: normal;
+}
 
 ol, ul {
-  list-style-type: none; }
+    list-style-type: none;
+}
 
 caption, th {
-  text-align: center; }
+    text-align: center;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 1em;
-  font-weight: normal; }
+    font-size: 1em;
+    font-weight: normal;
+}
 
 q:before, q:after {
-  content: ''; }
+    content: '';
+}
 
 abbr, acronym {
-  border: 0; }
+    border: 0;
+}
 
 input {
-  padding: 2px; }
+    padding: 2px;
+}
 
 body, button, input, select, textarea {
-  font: 12px/1.5 tahoma, arial, "宋体"; }
+    font: 12px/1.5 tahoma, arial, "宋体";
+}
 
 /*****************************
 *font
 *****************************/
 .f1 {
-  font-size: 1em; }
+    font-size: 1em;
+}
 
 .f12 {
-  font-size: 1.2em; }
+    font-size: 1.2em;
+}
 
 .f16 {
-  font-size: 1.6em; }
+    font-size: 1.6em;
+}
 
 .fb {
-  font-weight: bold; }
+    font-weight: bold;
+}
 
 .fn {
-  font-weight: normal; }
+    font-weight: normal;
+}
 
 .ln12 {
-  line-height: 1.2em; }
+    line-height: 1.2em;
+}
 
 .ln15 {
-  line-height: 1.5em; }
+    line-height: 1.5em;
+}
 
 .ln2 {
-  line-height: 2em; }
+    line-height: 2em;
+}
 
 .uln {
-  text-decoration: underline; }
+    text-decoration: underline;
+}
 
 .uln_no {
-  text-decoration: none; }
+    text-decoration: none;
+}
 
 /*****************************
 *box
 *****************************/
 .tl {
-  text-align: left; }
+    text-align: left;
+}
 
 .tc {
-  text-align: center; }
+    text-align: center;
+}
 
 .tr {
-  text-align: right; }
+    text-align: right;
+}
 
 .midle {
-  margin: 0 auto; }
+    margin: 0 auto;
+}
 
 .fl {
-  float: left;
-  display: inline; }
+    float: left;
+    display: inline;
+}
 
 .fr {
-  float: right;
-  display: inline; }
+    float: right;
+    display: inline;
+}
 
 .clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; }
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
 
 .clearfix {
-  zoom: 1; }
+    zoom: 1;
+}
 
 .vm {
-  vertical-align: middle; }
+    vertical-align: middle;
+}
 
 .vb {
-  vertical-align: bottom; }
+    vertical-align: bottom;
+}
 
 .vt {
-  vertical-align: top; }
+    vertical-align: top;
+}
 
 .pr {
-  position: relative; }
+    position: relative;
+}
 
 .pa {
-  position: absolute; }
+    position: absolute;
+}
 
 .pf {
-  position: fixed; }
+    position: fixed;
+}
 
 .zoom {
-  zoom: 1; }
+    zoom: 1;
+}
 
 .hidden {
-  visibility: hidden; }
+    visibility: hidden;
+}
 
 .dn {
-  display: none; }
+    display: none;
+}
 
 .db {
-  display: block; }
+    display: block;
+}
 
 .di {
-  display: inline; }
+    display: inline;
+}
 
 .dib {
-  display: inline-block; }
+    display: inline-block;
+}
 
 /**
  * 	
  */
 .s-opacity {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #000;
-  opacity: 0.6;
-  filter: Alpha(Opacity=60);
-  z-index: -1; }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.6;
+    filter: Alpha(Opacity=60);
+    z-index: -1;
+}
 
 /**==============================================
 * 	��ť=========================================
 ==============================================*/
 .button {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: #FFFFFF;
-  font-family: 'AllerLight',Helvetica,Arial,sans-serif;
-  color: #fff;
-  margin-left: 1em;
-  padding: .6em 1.2em;
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  cursor: pointer; }
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+    font-family: 'AllerLight', Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin-left: 1em;
+    padding: .6em 1.2em;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    cursor: pointer;
+}
 
 .button:hover {
-  background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#ff9900), to(#ff6600));
-  /*Old gradient for webkit*/
-  background: -webkit-linear-gradient(top, #ff9900, #ff6600);
-  /*new gradient for Webkit*/
-  background: -o-linear-gradient(top, #ff9900, #ff6600);
-  /*Opera11*/
-  background: -moz-linear-gradient(#ff9900, #ff6600);
-  /*Mozilla*/
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600);
-  /*IE<9>*/
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600)";
-  /*IE8+*/ }
+    background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#ff9900), to(#ff6600));
+    /*Old gradient for webkit*/
+    background: -webkit-linear-gradient(top, #ff9900, #ff6600);
+    /*new gradient for Webkit*/
+    background: -o-linear-gradient(top, #ff9900, #ff6600);
+    /*Opera11*/
+    background: -moz-linear-gradient(#ff9900, #ff6600);
+    /*Mozilla*/
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600);
+    /*IE<9>*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ff9900, endColorstr=#ff6600)";
+    /*IE8+*/
+}
 
 /**测试**/
 body {
-  width: 80%;
-  margin: 40px auto; }
+    width: 80%;
+    margin: 40px auto;
+}
 
 h1 {
-  font-size: 24px;
-  line-height: 2em;
-  color: black;
-  background-color: #cccccc;
-  text-indent: 20px;
-  font-weight: bold;
-  margin-bottom: 10px; }
+    font-size: 24px;
+    line-height: 2em;
+    color: black;
+    background-color: #cccccc;
+    text-indent: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
 h2 {
-  font-size: 16px;
-  line-height: 2em;
-  color: black;
-  background-color: #cccccc;
-  text-indent: 20px;
-  font-weight: bold;
-  margin-bottom: 10px; }
+    font-size: 16px;
+    line-height: 2em;
+    color: black;
+    background-color: #cccccc;
+    text-indent: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
 h3 {
-  border-bottom: 1px dashed green;
-  line-height: 2em;
-  margin: 20px 0; }
+    border-bottom: 1px dashed green;
+    line-height: 2em;
+    margin: 20px 0;
+}
 
 .box-table {
-  border-collapse: separate;
-  line-height: 2em; }
-  .box-table td, .box-table th {
+    border-collapse: separate;
+    line-height: 2em;
+}
+
+.box-table td, .box-table th {
     padding: 10px;
-    border: 1px solid #666; }
+    border: 1px solid #666;
+}
 
 .box {
-  width: 150px;
-  height: 100px;
-  padding: 10px;
-  border: 1px solid black;
-  margin: 20px;
-  line-height: 2em; }
+    width: 150px;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 20px;
+    line-height: 2em;
+}
 
 .inline-block {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 10px;
-  border: 1px solid black;
-  margin: 20px;
-  line-height: 3em; }
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 20px;
+    line-height: 3em;
+}
 
 .fl {
-  float: left;
-  display: inline;
-  width: 150px;
-  height: auto; }
+    float: left;
+    display: inline;
+    width: 150px;
+    height: auto;
+}
 
 .flwrap {
-  width: 300px; }
+    width: 300px;
+}
 
 .masklayer {
-  display: block;
-  height: 235px;
-  position: relative;
-  text-decoration: none;
-  width: 235px;
-  z-index: 1;
-  margin: 10px; }
+    display: block;
+    height: 235px;
+    position: relative;
+    text-decoration: none;
+    width: 235px;
+    z-index: 1;
+    margin: 10px;
+}
 
 .layer {
-  bottom: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-  _width: 100%;
-  _height: 0;
-  display: none;
-  _display: block;
-  position: absolute;
-  z-index: 2; }
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    _width: 100%;
+    _height: 0;
+    display: none;
+    _display: block;
+    position: absolute;
+    z-index: 2;
+}
 
 .s-opacity {
-  bottom: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-  opacity: 0.6;
-  filter: Alpha(Opacity=60);
-  position: absolute;
-  z-index: -1;
-  _width: 100%;
-  _height: 100%; }
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.6;
+    filter: Alpha(Opacity=60);
+    position: absolute;
+    z-index: -1;
+    _width: 100%;
+    _height: 100%;
+}
 
 .masklayer:hover .layer, .masklayer-on .layer {
-  cursor: pointer;
-  display: block;
-  _width: 100%;
-  _height: 100%; }
+    cursor: pointer;
+    display: block;
+    _width: 100%;
+    _height: 100%;
+}
 
 .masklayer-leave .layer {
-  visibility: hidden; }
+    visibility: hidden;
+}
 
 .fglayer .text {
-  bottom: 10px;
-  color: yellow;
-  display: inline;
-  left: 0;
-  margin-left: 10%;
-  position: absolute;
-  text-align: center;
-  width: 80%; }
+    bottom: 10px;
+    color: yellow;
+    display: inline;
+    left: 0;
+    margin-left: 10%;
+    position: absolute;
+    text-align: center;
+    width: 80%;
+}
 
 .bglayer {
-  background: none repeat scroll 0 0 #000000;
-  color: #000000;
-  display: none;
-  opacity: 0.6;
-  filter: Alpha(Opacity=60); }
+    background: none repeat scroll 0 0 #000000;
+    color: #000000;
+    display: none;
+    opacity: 0.6;
+    filter: Alpha(Opacity=60);
+}
 
 .masklayer .price {
-  bottom: 0;
-  left: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  height: 29px;
-  line-height: 29px;
-  position: absolute;
-  text-align: center;
-  z-index: 100; }
+    bottom: 0;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    height: 29px;
+    line-height: 29px;
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+}
 
 .masklayer .price .text {
-  background: none repeat scroll 0 0 transparent;
-  color: #FF6600;
-  font-family: Arial;
-  padding: 0 20px; }
+    background: none repeat scroll 0 0 transparent;
+    color: #FF6600;
+    font-family: Arial;
+    padding: 0 20px;
+}
 
 .masklayer .title {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  _width: 100%;
-  font-size: 14px;
-  height: 29px;
-  line-height: 29px;
-  position: absolute;
-  text-align: center;
-  z-index: 100; }
+    bottom: 0;
+    left: 0;
+    right: 0;
+    _width: 100%;
+    font-size: 14px;
+    height: 29px;
+    line-height: 29px;
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+}
 
 .masklayer .title .text {
-  color: #FFFFFF; }
+    color: #FFFFFF;
+}
 
 .box {
-  width: auto;
-  height: auto;
-  padding: 10px;
-  border: 1px solid black;
-  margin: 20px;
-  line-height: 2em; }
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 20px;
+    line-height: 2em;
+}
 
 .flwrap {
-  width: 100%; }
+    width: 100%;
+}
 
 .pawrap {
-  position: relative;
-  width: 300px;
-  height: 300px; }
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
 
 .pa-vw-l {
-  left: 0;
-  right: auto; }
+    left: 0;
+    right: auto;
+}
 
 .pa-vw-r {
-  right: 0;
-  left: auto; }
+    right: 0;
+    left: auto;
+}
 
 .pa-hw-b {
-  bottom: 0;
-  top: auto;
-  right: 100px;
-  left: 100px; }
+    bottom: 0;
+    top: auto;
+    right: 100px;
+    left: 100px;
+}
 
 .pa-hw-t {
-  right: 100px;
-  left: 100px;
-  top: 0;
-  bottom: auto; }
+    right: 100px;
+    left: 100px;
+    top: 0;
+    bottom: auto;
+}
 
 .pa-hv {
-  top: 30%;
-  left: 30%; }
+    top: 30%;
+    left: 30%;
+}

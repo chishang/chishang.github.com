@@ -1,361 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>milk3y</title>
-		<meta name="description" content="" />
-		<meta name="generator" content="Studio 3 http://aptana.com/" />
-		<meta name="author" content="CS" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		
-		<link rel="stylesheet" href="http://a.tbcdn.cn/??p/global/1.0/global-min.css,app/dp/s/html5/css/common-min.css?t=2012121220100214.css" />
-		<style >
-			header{
-				 height: 160px;
-				 background: #f8efde url("http://img02.taobaocdn.com/tps/i2/T1lWE4Xj4gXXXvPpfM-720-161.jpg") no-repeat center top;
-				 display: none;
-				}
-				#page{
-					height: 2235px;
-					/*height:0;*/
-					background: #f8efde url("http://img01.taobaocdn.com/tps/i1/T1zi34Xi4eXXca_...-14-1.jpg") center repeat-y;
-				}
-				#container{
-					width:880px;
-					margin: 0 auto;
-					position: relative;
-				}
-				#curtain{
-					width:1280px;
-					height: 2235px;
-					position: absolute;
-					top: 0px;
-					left: 0px;
-					z-index: 2;
-					background:  #f8efde;
-				}
-				#tree{
-					position: absolute;
-					display:none;
-					top:1px;
-					left: 386px;
-					width:108px;
-					height: 2249px;
-					background: url("http://img04.taobaocdn.com/tps/i4/T16QE5XaJaXXb3oHQv-108-2249.jpg") no-repeat;
-				}
-				#treeleaf{
-					position: absolute;
-					display:none;
-					top:1px;
-					left: 386px;
-					width:108px;
-					height: 2234px;
-					background: #f8efde url("http://img01.taobaocdn.com/tps/i1/T1zi34Xi4eXXca_...-14-1.jpg") center repeat-y;
-					z-index: 1;
-				}
-				footer{
-					width:100%;
-					height: 200px;
-					background: #3b6b99 url("http://img04.taobaocdn.com/tps/i4/T1hkM4XcJcXXcryKEg-1280-200.jpg") no-repeat center top;
-				}
-				.show{
-					display: block
-				}
-				.leaf{
-					position: absolute;
-					width:580px;
-					height: 200px;
-					background: url("http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg") no-repeat -655px -210px;
-					left:455px;
-					top:48px;
-					
-					display:none;
-				}
-				.leaf1211{
-					 background-position: -55px -308px;
-					 left: -145px;
-   					 top: 146px;
-				}
-				.leaf1210{
-					background-position: -650px -450px;
-					left: 449px;
-    				top: 288px;
-				}
-				
-				
-				.leaf1205{
-					width:465px;
-					height:75px;
-					background-position: -150px  -552px;
-					left:-50px;
-    				top:390px;
-				}
-				.leaf1204{
-					width:230px;
-					height:70px;
-					background-position: -666px  -672px;
-					left:466px;
-    				top:510px;
-				}
-				
-				.leaf1202{	
-					width:465px;
-					background-position: -153px  -653px;
-					left:-47px;
-    				top:491px;
-					
-				}
-				.leaf1201{
-					height:205px;
-					background-position: -672px  -847px;
-					left:472px;
-    				top:685px;
-				}
-				
-				.leaf11{
-					width:525px;
-					height:292px;
-					background-position: -91px  -890px;
-					left:-109px;
-    				top:728px;
-				}
-				.leaf1109{
-					width:285px;
-					height:75px;
-					background-position: -661px  -1099px;
-					left:461px;
-    				top:937px;
-				}
-				.leaf1107{
-					width:285px;
-					height:75px;
-					background-position: -326px  -1208px;
-					left:102px;
-    				top:1046px;
-				}
-				.leaf1106{
-					width:285px;
-					height:75px;
-					background-position: -663px  -1298px;
-					left:463px;
-    				top:1136px;
-				}
-				.leaf1105{
-					width:465px;
-					background-position: -155px  -1352px;
-					left:-45px;
-    				top:1190px;
-				}
-				.leaf1104{
-					background-position: -659px  -1457px;
-					left:459px;
-    				top:1295px;
-    				height: 270px;
-				}
-				
-				
-				
-				
-				.leaf1103{
-					background-position: -51px  -1562px;
-					left:-149px;
-    				top:1400px;
-				}
-				.leaf1102{
-					width:375px;
-					height:115px;
-					background-position: -673px  -1815px;
-					left:473px;
-    				top:1653px;
-				}
-				.leaf10{
-					height:382px;
-					background-position: -74px  -1775px;
-					left: -126px;
-    				top: 1613px;
-				}
-				.leaf1010{
-					background-position: -654px  -2001px;
-					left: 454px;
-    				top:1839px;
-				}
-				.leaf0912{
-					width: 400px;
-					height: 110px;
-					background-position: -222px  -2175px;
-					left: 22px;
-    				top: 2013px;
-				}
-				.leaf0911{
-					width:210px;
-					height: 80px;
-					background-position: -675px  -2304px;
-					left: 475px;
-    				top: 2142px;
-				}
-				embed{
-					 
-					 position:absolute;
-					 top:0px;
-					 right:0px;
-					 z-index: 4;
-				}
-				nav{
-					position: fixed;
-					bottom:120px;
-					right:20px;
-					width:100px;
-					height: 20px;
-					padding-top:95px;
-					background:#e10000 url("http://img02.taobaocdn.com/tps/i2/T1kXs6XeNaXXbCFbsb-100-100.jpg") no-repeat;
-					text-align:center;
-					z-index: 5;
-					color:#fff;
-					font-size: 12px;
-				}
-				nav a{
-					position: absolute;
-					width:100px;
-					height:100px;
-					top:0;
-					left:0;
-				}
-				
-		</style>
-		<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js"></script>
-	</head>
-	<body>
-		    <nav>
-		    	<a href="http://v.youku.com/v_show/id_XNTAyNjk4NTg0.html" target="_blank"></a>
-		    	密码：13579
-		    </nav>
-			<header id="header">
-				
-			 <img  id="img" src="http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg" width="0" height="0" border="0"/>
-			</header>
-			
-			<div id="page">
-				<div id="container">
-					<!-- <embed id="film" src="http://player.youku.com/player.php/sid/XNTAyNjk4NTg0/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
-		 -->
-					<div id="curtain"></div>
-					<div id="tree">
-					
-					</div>	
-					<div id="treeleaf"></div>
-					<div class="leaf  leaf1212"></div>
-					<div class="leaf  leaf1211"></div>
-					<div class="leaf  leaf1210"></div>
-					<div class="leaf  leaf1205"></div>
-					<div class="leaf  leaf1204"></div>
-					<div class="leaf  leaf1202"></div>
-					<div class="leaf  leaf1201"></div>
-					<div class="leaf  leaf11"></div>
-					<div class="leaf  leaf1109"></div>
-					<div class="leaf  leaf1107"></div>
-					<div class="leaf  leaf1106"></div>
-					<div class="leaf  leaf1105"></div>
-					<div class="leaf  leaf1104"></div>
-					<div class="leaf  leaf1103"></div>
-					<div class="leaf  leaf1102"></div>
-					<div class="leaf  leaf10"></div>
-					<div class="leaf  leaf1010"></div>
-					<div class="leaf  leaf0912"></div>
-					<div class="leaf  leaf0911"></div>
-				</div>
-			</div>
-			<footer>
-				
-			</footer>
-	
-		<script>
-			KISSY.use("sizzle,anim",function(S,$,A){
-					var TIME = 10000,
-						hpage = '2235px',
-						htree = '2249px',
-						tree = S.one("#tree"),
-						treeleaf = S.one("#treeleaf"),
-						img = S.one("#img"),
-						leafs = S.all(".leaf"),
-						header = S.one("#header"),
-						showTreeTime =  TIME/10,
-						showTreeLeafTime = TIME/10*2,
-						film =S.one("#film"),
-						showLeafTime = TIME/10*2.5;
-						var showTree = new A('#curtain',{
-							height:0
-						},TIME/1000, 'easeNone',function(){
-							
-							
-						}),
-						showTreeLeaf = new A('#treeleaf',{
-							height:0
-						},TIME/1000, 'easeNone',function(){
-							
-							
-						});
-						var len =leafs.length,
-						sep = TIME/len;
-						window.scrollTo(0,2235);
-						var beforeLoadTime = new Date().getTime();
-						S.later(function(){
-								treeleaf.show();
-								showTree.run();
-						},showTreeTime);
-						S.later(function(){
-								tree.show();
-								showTreeLeaf.run();
-						},showTreeLeafTime); 
-						var hsp = (2249 / 2000),
-						sindex = 2000,
-						sto;
-						 
-						S.later(function(){
-							sindex -- ;
-							sto = sindex * hsp;
-							(function(){
-								console.log(sto)
-								 
-								sto>0 && window.scrollTo(0,sto);
-							})()
-							
-						},5,true);
-						
-				img.on("load",function(){
-					var loadTime = new Date().getTime();
-					var time = beforeLoadTime - loadTime;
-					  showLeafTime = time > showLeafTime ? time : showLeafTime ;
-					console.log(time)
-						S.later(function(){
-								 leafs.each(function (leaf,index,obj){
-								 	var node = leaf,
-								 	later = TIME -sep*(index+1);
-								 	(function (){
-									 			S.later(function(){
-									 				   index % 2 == 0 ?node.fadeIn(0.4):
-														node.slideDown(0.4);
-														
-														if(index == 0){
-															header.scrollIntoView();
-																
-															header.addClass("show");
-															
-															
-														}
-												},later);
-								 	})();
-								 });
-						}, showLeafTime );
-						
-						
-				});
-			});
-		</script>
-	</body>
+<head>
+<meta charset="utf-8"/>
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+Remove this if you use the .htaccess -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>milk3y</title>
+<meta name="description" content=""/>
+<meta name="generator" content="Studio 3 http://aptana.com/"/>
+<meta name="author" content="CS"/>
+<meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
+<link rel="stylesheet"
+      href="http://a.tbcdn.cn/??p/global/1.0/global-min.css,app/dp/s/html5/css/common-min.css?t=2012121220100214.css"/>
+<style>
+header {
+    height: 160px;
+    background: #f8efde url("http://img02.taobaocdn.com/tps/i2/T1lWE4Xj4gXXXvPpfM-720-161.jpg") no-repeat center top;
+    display: none;
+}
+
+#page {
+    height: 2235px;
+    /*height:0;*/
+    background: #f8efde url("http://img01.taobaocdn.com/tps/i1/T1zi34Xi4eXXca_...-14-1.jpg") center repeat-y;
+}
+
+#container {
+    width: 880px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#curtain {
+    width: 1280px;
+    height: 2235px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    background: #f8efde;
+}
+
+#tree {
+    position: absolute;
+    display: none;
+    top: 1px;
+    left: 386px;
+    width: 108px;
+    height: 2249px;
+    background: url("http://img04.taobaocdn.com/tps/i4/T16QE5XaJaXXb3oHQv-108-2249.jpg") no-repeat;
+}
+
+#treeleaf {
+    position: absolute;
+    display: none;
+    top: 1px;
+    left: 386px;
+    width: 108px;
+    height: 2234px;
+    background: #f8efde url("http://img01.taobaocdn.com/tps/i1/T1zi34Xi4eXXca_...-14-1.jpg") center repeat-y;
+    z-index: 1;
+}
+
+footer {
+    width: 100%;
+    height: 200px;
+    background: #3b6b99 url("http://img04.taobaocdn.com/tps/i4/T1hkM4XcJcXXcryKEg-1280-200.jpg") no-repeat center top;
+}
+
+.show {
+    display: block
+}
+
+.leaf {
+    position: absolute;
+    width: 580px;
+    height: 200px;
+    background: url("http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg") no-repeat -655px -210px;
+    left: 455px;
+    top: 48px;
+
+    display: none;
+}
+
+.leaf1211 {
+    background-position: -55px -308px;
+    left: -145px;
+    top: 146px;
+}
+
+.leaf1210 {
+    background-position: -650px -450px;
+    left: 449px;
+    top: 288px;
+}
+
+.leaf1205 {
+    width: 465px;
+    height: 75px;
+    background-position: -150px -552px;
+    left: -50px;
+    top: 390px;
+}
+
+.leaf1204 {
+    width: 230px;
+    height: 70px;
+    background-position: -666px -672px;
+    left: 466px;
+    top: 510px;
+}
+
+.leaf1202 {
+    width: 465px;
+    background-position: -153px -653px;
+    left: -47px;
+    top: 491px;
+
+}
+
+.leaf1201 {
+    height: 205px;
+    background-position: -672px -847px;
+    left: 472px;
+    top: 685px;
+}
+
+.leaf11 {
+    width: 525px;
+    height: 292px;
+    background-position: -91px -890px;
+    left: -109px;
+    top: 728px;
+}
+
+.leaf1109 {
+    width: 285px;
+    height: 75px;
+    background-position: -661px -1099px;
+    left: 461px;
+    top: 937px;
+}
+
+.leaf1107 {
+    width: 285px;
+    height: 75px;
+    background-position: -326px -1208px;
+    left: 102px;
+    top: 1046px;
+}
+
+.leaf1106 {
+    width: 285px;
+    height: 75px;
+    background-position: -663px -1298px;
+    left: 463px;
+    top: 1136px;
+}
+
+.leaf1105 {
+    width: 465px;
+    background-position: -155px -1352px;
+    left: -45px;
+    top: 1190px;
+}
+
+.leaf1104 {
+    background-position: -659px -1457px;
+    left: 459px;
+    top: 1295px;
+    height: 270px;
+}
+
+.leaf1103 {
+    background-position: -51px -1562px;
+    left: -149px;
+    top: 1400px;
+}
+
+.leaf1102 {
+    width: 375px;
+    height: 115px;
+    background-position: -673px -1815px;
+    left: 473px;
+    top: 1653px;
+}
+
+.leaf10 {
+    height: 382px;
+    background-position: -74px -1775px;
+    left: -126px;
+    top: 1613px;
+}
+
+.leaf1010 {
+    background-position: -654px -2001px;
+    left: 454px;
+    top: 1839px;
+}
+
+.leaf0912 {
+    width: 400px;
+    height: 110px;
+    background-position: -222px -2175px;
+    left: 22px;
+    top: 2013px;
+}
+
+.leaf0911 {
+    width: 210px;
+    height: 80px;
+    background-position: -675px -2304px;
+    left: 475px;
+    top: 2142px;
+}
+
+embed {
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 4;
+}
+
+nav {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    width: 100px;
+    height: 20px;
+    padding-top: 95px;
+    background: #e10000 url("http://img02.taobaocdn.com/tps/i2/T1kXs6XeNaXXbCFbsb-100-100.jpg") no-repeat;
+    text-align: center;
+    z-index: 5;
+    color: #fff;
+    font-size: 12px;
+}
+
+nav a {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+}
+
+</style>
+<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js"></script>
+</head>
+<body>
+<nav>
+    <a href="http://v.youku.com/v_show/id_XNTAyNjk4NTg0.html" target="_blank"></a>
+    密码：13579
+</nav>
+<header id="header">
+
+    <img id="img" src="http://img02.taobaocdn.com/tps/i2/T1PKU5XnlaXXam5AkZ-1280-2597.jpg" width="0" height="0"
+         border="0"/>
+</header>
+
+<div id="page">
+    <div id="container">
+        <!-- <embed id="film" src="http://player.youku.com/player.php/sid/XNTAyNjk4NTg0/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+-->
+        <div id="curtain"></div>
+        <div id="tree">
+
+        </div>
+        <div id="treeleaf"></div>
+        <div class="leaf  leaf1212"></div>
+        <div class="leaf  leaf1211"></div>
+        <div class="leaf  leaf1210"></div>
+        <div class="leaf  leaf1205"></div>
+        <div class="leaf  leaf1204"></div>
+        <div class="leaf  leaf1202"></div>
+        <div class="leaf  leaf1201"></div>
+        <div class="leaf  leaf11"></div>
+        <div class="leaf  leaf1109"></div>
+        <div class="leaf  leaf1107"></div>
+        <div class="leaf  leaf1106"></div>
+        <div class="leaf  leaf1105"></div>
+        <div class="leaf  leaf1104"></div>
+        <div class="leaf  leaf1103"></div>
+        <div class="leaf  leaf1102"></div>
+        <div class="leaf  leaf10"></div>
+        <div class="leaf  leaf1010"></div>
+        <div class="leaf  leaf0912"></div>
+        <div class="leaf  leaf0911"></div>
+    </div>
+</div>
+<footer>
+
+</footer>
+
+<script>
+    KISSY.use("sizzle,anim", function (S, $, A) {
+        var TIME = 10000,
+                hpage = '2235px',
+                htree = '2249px',
+                tree = S.one("#tree"),
+                treeleaf = S.one("#treeleaf"),
+                img = S.one("#img"),
+                leafs = S.all(".leaf"),
+                header = S.one("#header"),
+                showTreeTime = TIME / 10,
+                showTreeLeafTime = TIME / 10 * 2,
+                film = S.one("#film"),
+                showLeafTime = TIME / 10 * 2.5;
+        var showTree = new A('#curtain', {
+                    height: 0
+                }, TIME / 1000, 'easeNone', function () {
+
+
+                }),
+                showTreeLeaf = new A('#treeleaf', {
+                    height: 0
+                }, TIME / 1000, 'easeNone', function () {
+
+
+                });
+        var len = leafs.length,
+                sep = TIME / len;
+        window.scrollTo(0, 2235);
+        var beforeLoadTime = new Date().getTime();
+        S.later(function () {
+            treeleaf.show();
+            showTree.run();
+        }, showTreeTime);
+        S.later(function () {
+            tree.show();
+            showTreeLeaf.run();
+        }, showTreeLeafTime);
+        var hsp = (2249 / 2000),
+                sindex = 2000,
+                sto;
+
+        S.later(function () {
+            sindex--;
+            sto = sindex * hsp;
+            (function () {
+                console.log(sto)
+
+                sto > 0 && window.scrollTo(0, sto);
+            })()
+
+        }, 5, true);
+
+        img.on("load", function () {
+            var loadTime = new Date().getTime();
+            var time = beforeLoadTime - loadTime;
+            showLeafTime = time > showLeafTime ? time : showLeafTime;
+            console.log(time)
+            S.later(function () {
+                leafs.each(function (leaf, index, obj) {
+                    var node = leaf,
+                            later = TIME - sep * (index + 1);
+                    (function () {
+                        S.later(function () {
+                            index % 2 == 0 ? node.fadeIn(0.4) :
+                                    node.slideDown(0.4);
+
+                            if (index == 0) {
+                                header.scrollIntoView();
+
+                                header.addClass("show");
+
+
+                            }
+                        }, later);
+                    })();
+                });
+            }, showLeafTime);
+
+
+        });
+    });
+</script>
+</body>
 </html>

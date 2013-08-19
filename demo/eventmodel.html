@@ -1,150 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
+<head>
+    <meta charset="utf-8"/>
 
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-		<title>eventmodel</title>
-		<meta name="description" content="" />
-		<meta name="author" content="chishang.lcw" />
+    <title>eventmodel</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="chishang.lcw"/>
 
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
 
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="stylesheet" href="http://a.tbcdn.cn/??p/global/1.0/global-min.css,app/dp/s/html5/css/common-min.css?t=2012121220100214.css" />
-		<style type="text/css">
-			.demo-box,#note{
-				width:900px;
-				margin:10px auto;
-				border: 1px solid #ccc;
-				padding: 20px;
-			}
-			#note{
-				width:940px;
-				padding: 0;
-				text-align: center;
-			}
-			p,span{
-				display:block;
-				padding: 20px;
-				border: 1px solid #ccc;
-			}
-			 
-			 
-		</style>
-	</head>
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet"
+          href="http://a.tbcdn.cn/??p/global/1.0/global-min.css,app/dp/s/html5/css/common-min.css?t=2012121220100214.css"/>
+    <style type="text/css">
+        .demo-box, #note {
+            width: 900px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
 
-	<body>
-		<div class="demo-box" id="J_Delegate">
-			div
-			 <p>
-			 	p
+        #note {
+            width: 940px;
+            padding: 0;
+            text-align: center;
+        }
+
+        p, span {
+            display: block;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="demo-box" id="J_Delegate">
+    div
+    <p>
+        p
 			 	<span>
 			 		span
 			 		<a href="#">a</a>
 			 		
-			 		<input type="text" data-target="input[text]"  value="我是input">
+			 		<input type="text" data-target="input[text]" value="我是input">
 			 		<select data-target="select">
-			 			<option value="1">1</option>
-			 			<option value="2">2</option>
-			 		</select>
-			 		<input type="checkbox"  data-target="checkbox" />
-					<input class="event" type="button" data-events="fireSelectChange" data-target="模拟select的change事件" value="模拟select的change事件" />
-					<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="fireCheckboxClick" value="模拟checkbox的click事件" />
-					<input class="event" type="button" data-target="dispatch" data-events="dispatch" id="J_Dispatch" value="dispatch" />
-					<input class="event" type="button" data-target="clear" data-events="clear" value="clear" />
-			 		<input class="event" type="button" data-target="添加" data-events="add" value="添加" />
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+			 		<input type="checkbox" id="J_Checked" data-target="checkbox"/>
+					<input class="event" type="button" data-events="fireSelectChange" data-target="模拟select的change事件"
+                           value="模拟select的change事件"/>
+					<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="fireCheckboxClick"
+                           value="模拟checkbox的click事件"/>
+					<input class="event" type="button" data-target="dispatch" data-events="dispatch" id="J_Dispatch"
+                           value="dispatch"/>
+					<input class="event" type="button" data-target="clear" data-events="clear" value="clear"/>
+			 		<input class="event" type="button" data-target="添加" data-events="add" value="添加"/>
 			 	</span>
-			 </p>
-		</div>
-		
-		
-		<table id="note" class="event" data-events="clear">
-			<thead>
-				<tr>
-				<th>事件名称</th>
-				<th>事件阶段</th>
-				<th>触发元素</th>
-				<th>来源元素</th>
-				</tr>
-			</thead>
-			<tbody id="tbody">
-				
-			</tbody>
-		</table>
-		
-		<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js"></script>
-		<script>
-			var listenEvent;
-			
-			KISSY.use("sizzle,core",function(S){
-				var doms = S.all("html,body,div,p,span,a,input,select,option");
-				var doc = S.one(document);
-				doc.targetName ="document";
-				
-				var win = S.one(window);
-				win.targetName ="window";
-				var noteBox = S.one("#tbody");
-				var listTpl = '<tr><td>{type}</td><td>{eventPhase}</td><td>{currentTarget}</td><td>{target}</td></tr>';
-				listenEvent = function(e){
-					var srcnode = S.one(e.target),
-					curnode = S.one(e.currentTarget),
-					target= srcnode.attr('data-target')|| e.target.tagName || this.targetName,
-					curtarget = this.targetName || curnode.attr('data-target') || e.currentTarget.tagName;
-						var obj = {
-							type:e.type ,
-							eventPhase:e.eventPhase ,
-							currentTarget: curtarget  ,
-							target: target 
-						};
-						var list = S.substitute(listTpl,obj);
-						noteBox.append(list);
-				}
-				
-				// 创建
-				var evt = document.createEvent && document.createEvent("HTMLEvents"),
-				Dispatch = document.getElementById("J_Dispatch");
-				// 初始化
-				evt && evt.initEvent("alert", true, true);
-				function dispatchEvent(e){
-					// 触发, 即弹出文字
-					Dispatch.dispatchEvent && Dispatch.dispatchEvent(evt);
-				}
-				function fireEvent(e){
-					var node = S.one(e.currentTarget),
-					events = node.attr('data-events');
-					switch(events){
-						case "fireCheckboxClick":
-							S.all('input[type="checkbox"]').fire('click');break;
-						case "fireSelectChange":
-							S.all('select').fire('change');break;
-						case 'dispatch':
-						dispatchEvent(e);break;
-						case 'clear':
-						noteBox.html('');break;	
-						case 'add':
-						S.one('span').append('<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="fireCheckboxClick" value="模拟checkbox的click事件" />');
-						break;
-						default :
-						break;
-					}
-				}
-				doms.on('click change blur focus',listenEvent,doms);
-				doc.on('click change blur focus',listenEvent,doc);
-				win.on('click change blur focus  alert',listenEvent,win);
-				Dispatch.addEventListener && Dispatch.addEventListener('alert',listenEvent);
-				Dispatch.addEventListener && Dispatch.addEventListener('alert',listenEvent);
-				S.one('#J_Delegate').delegate('click','.event',fireEvent);
-				S.one('#J_Delegate').on('click',function(){
-				});
-				S.one('#J_Delegate').on('click',function(){
-				});
-			});
-		</script>
-	</body>
+    </p>
+</div>
+
+
+<table id="note" class="event" data-events="clear">
+    <thead>
+    <tr>
+        <th>事件名称</th>
+        <th>事件阶段</th>
+        <th>触发元素</th>
+        <th>来源元素</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+</table>
+
+<script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js"></script>
+<script>
+    var listenEvent;
+
+    KISSY.use("sizzle,core", function (S) {
+        var doms = S.all("html,body,div,p,span,a,input,select,option");
+        var doc = S.one(document);
+        doc.targetName = "document";
+
+        var win = S.one(window);
+        win.targetName = "window";
+        var noteBox = S.one("#tbody");
+        var checked = S.one('#J_Checked');
+        var container = S.one('#J_Delegate');
+        var listTpl = '<tr><td>{type}</td><td>{eventPhase}</td><td>{currentTarget}</td><td>{target}</td></tr>';
+        listenEvent = function (e) {
+            var srcnode = S.one(e.target),
+                    curnode = S.one(e.currentTarget),
+                    target = srcnode.attr('data-target') || e.target.tagName || this.targetName,
+                    curtarget = this.targetName || curnode.attr('data-target') || e.currentTarget.tagName;
+            S.log('listen:' + curtarget, 'info');
+            S.log(e);
+            var obj = {
+                type: e.type,
+                eventPhase: e.eventPhase,
+                currentTarget: curtarget,
+                target: target
+            };
+            var list = S.substitute(listTpl, obj);
+            noteBox.append(list);
+
+            if (srcnode.prop && srcnode.prop('id')) {
+                showChecked();
+            }
+        }
+        function showChecked() {
+            S.log("选中状态:", 'info');
+            S.log(checked.prop('checked'));
+        }
+
+        // 创建
+        var evt = document.createEvent && document.createEvent("HTMLEvents"),
+                Dispatch = document.getElementById("J_Dispatch");
+        // 初始化
+        evt && evt.initEvent("alert", true, true);
+        function dispatchEvent(e) {
+            // 触发, 即弹出文字
+            Dispatch.dispatchEvent && Dispatch.dispatchEvent(evt);
+        }
+
+        function fireEvent(e) {
+            var node = S.one(e.currentTarget),
+                    events = node.attr('data-events');
+            S.log('开始触发事件', 'warn')
+            switch (events) {
+                case "fireCheckboxClick":
+                    S.all('input[type="checkbox"]').fire('click');
+                    break;
+                case "fireSelectChange":
+                    S.all('select').fire('change');
+                    break;
+                case 'dispatch':
+                    dispatchEvent(e);
+                    break;
+                case 'clear':
+                    noteBox.html('');
+                    break;
+                case 'add':
+                    S.one('span').append('<input class="event" type="button" data-target="模拟checkbox的click事件" data-events="fireCheckboxClick" value="模拟checkbox的click事件" />');
+                    break;
+                default :
+                    break;
+            }
+        }
+
+        function delegateEvent(e) {
+            var srcnode = S.one(e.target),
+            curnode = S.one(e.currentTarget),
+            target = srcnode.attr('data-target') || e.target.tagName || this.targetName,
+            curtarget = this.targetName || curnode.attr('data-target') || e.currentTarget.tagName;
+            curtarget += "&nbsp;[del]";
+
+            S.log('delegate:'+curtarget, 'info' );
+            S.log(e);
+            var obj = {
+                type: e.type,
+                eventPhase: e.eventPhase,
+                currentTarget: curtarget,
+                target: target
+            };
+            var list = S.substitute(listTpl, obj);
+            noteBox.append(list);
+        }
+
+        doms.on('click change blur focus', listenEvent, doms);
+        doc.on('click change blur focus', listenEvent, doc);
+        win.on('click change blur focus  alert', listenEvent, win);
+        Dispatch.addEventListener && Dispatch.addEventListener('alert', listenEvent);
+        Dispatch.addEventListener && Dispatch.addEventListener('alert', listenEvent);
+        container.delegate('click', '.event', fireEvent);
+        container.delegate('click change blur focus', 'input', delegateEvent);
+
+    });
+</script>
+</body>
 </html>

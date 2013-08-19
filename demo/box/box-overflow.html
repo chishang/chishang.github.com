@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>溢出</title>
-		<meta name="description" content="" />
-		<meta name="generator" content="Studio 3 http://aptana.com/" />
-		<meta name="author" content="CS" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="stylesheet" type="text/css" href="box-overflow.css" />
-	</head>
-	<body>
-		 <h1>基本盒模型</h1>
-		 <input type="button" class="J_Overflow" value="overflow:hidden">
-		 <h2>内联元素</h2>
-		 <span class="box">内联元素没有溢出之说</span>
-		 <h2>块状元素</h2>
-		 <div class="box">对于块状元素，溢出后的内容，会不会影响其他元素的布局？</div>
-		 <h2>内联-块状元素</h2>
-		 <span class="inline-block">我是内联-块状的span。当我溢出之后，悲剧发生了:在ff下，我是会影响下面的元素排列的；在chrome下，溢出部分不会影响其他元素；在ie6下……我直接被无视了</span>
-		 <!--  <span class="inline-block" style="width:auto; height: auto;">这是测试ie6用的，其他浏览器忽略之</span> -->
-		 <h2>表格</h2>
-		 <table class="box">
-		 	<caption>表格没有溢出之说</caption>
-		 	<thead></thead>
-		 	<tbody></tbody>
-		 	<tfoot></tfoot>
-		 </table>
-		  <h2>浮动</h2>
-		 <div class="clearfix box" style="width:200px">
-		 	<div class="fl box">我虽然脱离了正常的排列顺序,被置于邻近块状元素的边框和背景之上</div>
-		 	<span>但仍然能够令队伍中邻近的元素像某个方向缩进</span>
-		 	<div class="fl box">当我溢出父元素之后，对父元素的同级元素也会有影响</div>
-		 </div>
-		 	
-		  <h2>绝对定位</h2>
-		 	<a class="masklayer">
-	    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
-	    		<div class="title">
-					<span class="s-opacity"></span>
-					<span class="text">看我怎么溢出看我怎么溢出看我怎么溢出</span>
-				</div> 
-	    	</a>
-		  	<a class="masklayer">
-		    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
-		    		<p class="layer bglayer">背景色</p>
-					<p class="layer fglayer"><span class="text">绝对定位</span></p>
-		    </a>
-		    <script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
-		<script src="box.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8"/>
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>溢出</title>
+    <meta name="description" content=""/>
+    <meta name="generator" content="Studio 3 http://aptana.com/"/>
+    <meta name="author" content="CS"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="box-overflow.css"/>
+</head>
+<body>
+<h1>基本盒模型</h1>
+<input type="button" class="J_Overflow" value="overflow:hidden">
+
+<h2>内联元素</h2>
+<span class="box">内联元素没有溢出之说</span>
+
+<h2>块状元素</h2>
+
+<div class="box">对于块状元素，溢出后的内容，会不会影响其他元素的布局？</div>
+<h2>内联-块状元素</h2>
+<span class="inline-block">我是内联-块状的span。当我溢出之后，悲剧发生了:在ff下，我是会影响下面的元素排列的；在chrome下，溢出部分不会影响其他元素；在ie6下……我直接被无视了</span>
+<!--  <span class="inline-block" style="width:auto; height: auto;">这是测试ie6用的，其他浏览器忽略之</span> -->
+<h2>表格</h2>
+<table class="box">
+    <caption>表格没有溢出之说</caption>
+    <thead></thead>
+    <tbody></tbody>
+    <tfoot></tfoot>
+</table>
+<h2>浮动</h2>
+
+<div class="clearfix box" style="width:200px">
+    <div class="fl box">我虽然脱离了正常的排列顺序,被置于邻近块状元素的边框和背景之上</div>
+    <span>但仍然能够令队伍中邻近的元素像某个方向缩进</span>
+
+    <div class="fl box">当我溢出父元素之后，对父元素的同级元素也会有影响</div>
+</div>
+
+<h2>绝对定位</h2>
+<a class="masklayer">
+    <img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+
+    <div class="title">
+        <span class="s-opacity"></span>
+        <span class="text">看我怎么溢出看我怎么溢出看我怎么溢出</span>
+    </div>
+</a>
+<a class="masklayer">
+    <img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+
+    <p class="layer bglayer">背景色</p>
+
+    <p class="layer fglayer"><span class="text">绝对定位</span></p>
+</a>
+<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
+<script src="box.js"></script>
+</body>
 </html>

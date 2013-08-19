@@ -1,60 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>基本盒模型</title>
-		<meta name="description" content="" />
-		<meta name="generator" content="Studio 3 http://aptana.com/" />
-		<meta name="author" content="CS" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="stylesheet" type="text/css" href="box-base.css" />
-	</head>
-	<body>
-		 <h1>基本盒模型</h1>
-		 <input type="button" class="J_Overflow" value="overflow:hidden">
-		 <h2>内联元素</h2>
-		 <span class="box">我是span，天生就是内联元素。width和height都已经阻止不了我了</span>
-		 <h2>块状元素</h2>
-		 <div class="box">我是div，大家用得最多的块状元素。我是最最听话的了</div>
-		 <h2>内联-块状元素</h2>
-		 <span class="inline-block" style="width:200px;height: 100px;">我是内联-块状的span，一堵围墙把我困住了。width和height都来欺负我，好不容易逃出生天，那个overflow却横插一脚</span>
-		
-		 <h2>表格</h2>
-		 <table class="box">
-		 	<caption>我是table。width和height定义的是我的边框外围</caption>
-		 	<thead></thead>
-		 	<tbody></tbody>
-		 	<tfoot></tfoot>
-		 </table>
-		  <h2>浮动</h2>
-		 <div class="clearfix box" style="width: auto">
-		 	<div class="fl box">我虽然脱离了正常的排列顺序</div>
-		 	<div class="fl box">被置于邻近块状元素的边框和背景之上</div>
-		 	<span>但仍然能够令队伍中邻近的元素像某个方向缩进</span>
-		 	<div class="box"  style="width: auto;height: auto;">就像这里的文本一样</div>
-		 </div>
-		 	
-		  <h2>绝对定位</h2>
-		 	<a class="masklayer">
-	    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
-	    		<div class="title">
-					<span class="s-opacity"></span>
-					<span class="text">绝对定位</span>
-				</div> 
-	    	</a>
-		  	<a class="masklayer">
-		    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
-		    		<p class="layer bglayer">背景色</p>
-					<p class="layer fglayer"><span class="text">绝对定位</span></p>
-		    </a>
-		
-		<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
-		<script src="box.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8"/>
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>基本盒模型</title>
+    <meta name="description" content=""/>
+    <meta name="generator" content="Studio 3 http://aptana.com/"/>
+    <meta name="author" content="CS"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="box-base.css"/>
+</head>
+<body>
+<h1>基本盒模型</h1>
+<input type="button" class="J_Overflow" value="overflow:hidden">
+
+<h2>内联元素</h2>
+<span class="box">我是span，天生就是内联元素。width和height都已经阻止不了我了</span>
+
+<h2>块状元素</h2>
+
+<div class="box">我是div，大家用得最多的块状元素。我是最最听话的了</div>
+<h2>内联-块状元素</h2>
+<span class="inline-block" style="width:200px;height: 100px;">我是内联-块状的span，一堵围墙把我困住了。width和height都来欺负我，好不容易逃出生天，那个overflow却横插一脚</span>
+
+<h2>表格</h2>
+<table class="box">
+    <caption>我是table。width和height定义的是我的边框外围</caption>
+    <thead></thead>
+    <tbody></tbody>
+    <tfoot></tfoot>
+</table>
+<h2>浮动</h2>
+
+<div class="clearfix box" style="width: auto">
+    <div class="fl box">我虽然脱离了正常的排列顺序</div>
+    <div class="fl box">被置于邻近块状元素的边框和背景之上</div>
+    <span>但仍然能够令队伍中邻近的元素像某个方向缩进</span>
+
+    <div class="box" style="width: auto;height: auto;">就像这里的文本一样</div>
+</div>
+
+<h2>绝对定位</h2>
+<a class="masklayer">
+    <img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+
+    <div class="title">
+        <span class="s-opacity"></span>
+        <span class="text">绝对定位</span>
+    </div>
+</a>
+<a class="masklayer">
+    <img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+
+    <p class="layer bglayer">背景色</p>
+
+    <p class="layer fglayer"><span class="text">绝对定位</span></p>
+</a>
+
+<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
+<script src="box.js"></script>
+</body>
 </html>

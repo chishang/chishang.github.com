@@ -1,159 +1,169 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-	<head>
-		<meta charset="UTF-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>表单验证</title>
-		<meta name="description" content="" />
-		<meta name="generator" content="Studio 3 http://aptana.com/" />
-		<meta name="author" content="liuchaowu.pt" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico" />
-		<link rel="stylesheet" href="../css/base.css" />
-		<link rel="stylesheet" href="../css/nav.css" />
-		<script src="http://chishang.github.com/js/html5.js"></script>
-		<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
-		<script src="js/config.js"></script>
-	</head>
-	<body>
-		<section class="nav-page">
-			<header>
-				 表单验证
-			</header>
-			<nav>
-				<form id="J_ValidForm" class="ks-tdform">
-					<div class="input-content default">
-						<label class="input-label" for="phone" >手机号：</label>
-						<div class="input-wrap">
+<head>
+    <meta charset="UTF-8"/>
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>表单验证</title>
+    <meta name="description" content=""/>
+    <meta name="generator" content="Studio 3 http://aptana.com/"/>
+    <meta name="author" content="liuchaowu.pt"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <link rel="shortcut icon" href="http://chishang.github.com/img/favicon.ico"/>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/nav.css"/>
+    <script src="http://chishang.github.com/js/html5.js"></script>
+    <script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
+    <script src="js/config.js"></script>
+</head>
+<body>
+<section class="nav-page">
+    <header>
+        表单验证
+    </header>
+    <nav>
+        <form id="J_ValidForm" class="ks-tdform">
+            <div class="input-content default">
+                <label class="input-label" for="phone">手机号：</label>
+
+                <div class="input-wrap">
 							
 							<span class="input-border">
 								<input type="text" class="J_phone input-text" name="phone"/>
 							</span>
-						</div>
-						<span class="input-tip"></span>
-					</div>
-					<div class="input-content default">
-						<label class="input-label" for="phone" >邮箱：</label>
-						<div class="input-wrap">
+                </div>
+                <span class="input-tip"></span>
+            </div>
+            <div class="input-content default">
+                <label class="input-label" for="phone">邮箱：</label>
+
+                <div class="input-wrap">
 							
 							<span class="input-border">
 								<input type="text" class="J_email input-text" name="phone"/>
 							</span>
-						</div>
-						<span class="input-tip"></span>
-					</div>
-					<div class="input-content default">
-						<label class="input-label" for="phone" >身份证：</label>
-						<div class="input-wrap">
+                </div>
+                <span class="input-tip"></span>
+            </div>
+            <div class="input-content default">
+                <label class="input-label" for="phone">身份证：</label>
+
+                <div class="input-wrap">
 							
 							<span class="input-border">
 								<input type="text" class="J_idcard input-text" name="phone"/>
 							</span>
-						</div>
-						<span class="input-tip"></span>
-					</div>
-					<div class="input-content default">
-						<label class="input-label" for="phone" >支付宝：</label>
-						<div class="input-wrap">
+                </div>
+                <span class="input-tip"></span>
+            </div>
+            <div class="input-content default">
+                <label class="input-label" for="phone">支付宝：</label>
+
+                <div class="input-wrap">
 							
 							<span class="input-border">
 								<input type="text" class="J_alipay input-text" name="phone"/>
 							</span>
-						</div>
-						<span class="input-tip"></span>
-					</div>
-					<div class="input-content default">
-						<label class="input-label" for="phone" >&nbsp;</label>
-						<div class="input-wrap">
-							<input type="submit" class="J_subForm" value="提交" />
-						</div>
-						
-					</div>
-					
-				</form> 
-			</nav>
-		
-			
-		</section>
-		<script  >
-			KISSY.use("validation,idcardreg",function(S){
-				 var formvalid=new S.Validation("#J_ValidForm",{
-				 		list:[{
-				 			node:".J_phone",
-				 			defVal:"请输入手机号码",
-				 			allowNull:false,
-				 			checkObj:{
-				 				reg:"Phone",
-				 				rightMes:"",
-				 				errorMes:"手机号格式不正确"
-				 			}
-				 		},{
-				 			node:".J_email",
-				 			defVal:"请输入邮箱",
-				 			allowNull:false,
-				 			checkObj:{
-				 				reg:"Email",
-				 				rightMes:"",
-				 				errorMes:"邮箱格式不正确"
-				 			}
-				 		},{
-				 			node:".J_idcard",
-				 			defVal:"请输入身份证",
-				 			allowNull:false,
-				 			checkObj:{
-				 				reg: S.isIdCardNo,
-				 				rightMes:"",
-				 				errorMes:"身份证格式不正确"
-				 			}
-				 		},{
-				 			node:".J_alipay",
-				 			defVal:"请输入支付宝账号",
-				 			ajax:true,
-				 			allowNull:false,
-				 			checkObj:{
-				 				reg: ajaxcheck,
-				 				rightMes:"",
-				 				errorMes:"支付宝账号格式不对"
-				 			}
-				 		}]
-				 });
-				 var subBtn=S.one(".J_subForm");
-				 
-				 function ajaxcheck(value,obj){
-				 	var obj=obj;
-				 	
-				 	formvalid.isPass=false;
-				 	//如果格式不对，直接提示错误信息
-				 	if(!S.Check(value,"Email").isValid && !S.Check(value,"Phone").isValid){
-				 		return {
-				 			isValid:false
-				 		}
-				 	}else{
-				 		 
-				 		S.io({
-				 			url:"data/zfb.json",
-				 			dataType:"json",
-				 			timeout:3,
-				 			data:"zfb="+value,
-				 			success:function(data){
-				 				var isValid=data.isValid;
-				 				formvalid.isPass=isValid;  
-				 				if(isValid){
-				 					obj.setRight(data.mes)
-				 				}else{
-				 					obj.setError(data.mes)
-				 				}
-				 			}
-				 		});
-				 		return {
-				 			 
-				 		};
-				 		 
-				 	}
-				 }
-			});
-		</script>
-	</body>
+                </div>
+                <span class="input-tip"></span>
+            </div>
+            <div class="input-content default">
+                <label class="input-label" for="phone">&nbsp;</label>
+
+                <div class="input-wrap">
+                    <input type="submit" class="J_subForm" value="提交"/>
+                </div>
+
+            </div>
+
+        </form>
+    </nav>
+
+
+</section>
+<script>
+    KISSY.use("validation,idcardreg", function (S) {
+        var formvalid = new S.Validation("#J_ValidForm", {
+            list: [
+                {
+                    node: ".J_phone",
+                    defVal: "请输入手机号码",
+                    allowNull: false,
+                    checkObj: {
+                        reg: "Phone",
+                        rightMes: "",
+                        errorMes: "手机号格式不正确"
+                    }
+                },
+                {
+                    node: ".J_email",
+                    defVal: "请输入邮箱",
+                    allowNull: false,
+                    checkObj: {
+                        reg: "Email",
+                        rightMes: "",
+                        errorMes: "邮箱格式不正确"
+                    }
+                },
+                {
+                    node: ".J_idcard",
+                    defVal: "请输入身份证",
+                    allowNull: false,
+                    checkObj: {
+                        reg: S.isIdCardNo,
+                        rightMes: "",
+                        errorMes: "身份证格式不正确"
+                    }
+                },
+                {
+                    node: ".J_alipay",
+                    defVal: "请输入支付宝账号",
+                    ajax: true,
+                    allowNull: false,
+                    checkObj: {
+                        reg: ajaxcheck,
+                        rightMes: "",
+                        errorMes: "支付宝账号格式不对"
+                    }
+                }
+            ]
+        });
+        var subBtn = S.one(".J_subForm");
+
+        function ajaxcheck(value, obj) {
+            var obj = obj;
+
+            formvalid.isPass = false;
+            //如果格式不对，直接提示错误信息
+            if (!S.Check(value, "Email").isValid && !S.Check(value, "Phone").isValid) {
+                return {
+                    isValid: false
+                }
+            } else {
+
+                S.io({
+                    url: "data/zfb.json",
+                    dataType: "json",
+                    timeout: 3,
+                    data: "zfb=" + value,
+                    success: function (data) {
+                        var isValid = data.isValid;
+                        formvalid.isPass = isValid;
+                        if (isValid) {
+                            obj.setRight(data.mes)
+                        } else {
+                            obj.setError(data.mes)
+                        }
+                    }
+                });
+                return {
+
+                };
+
+            }
+        }
+    });
+</script>
+</body>
 </html>

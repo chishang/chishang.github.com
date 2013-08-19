@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>box</title>
-		<meta name="description" content="" />
-		<meta name="generator" content="Studio 3 http://aptana.com/" />
-		<meta name="author" content="CS" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
-	</head>
-	<body>
-		<h1>static relative</h1>
-		<table id="table1">
-		  <tr>
-		      <td id="td1">
-		          <div id="div1" style="padding:20px;border:1px solid red;">
+<head>
+    <meta charset="utf-8"/>
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>box</title>
+    <meta name="description" content=""/>
+    <meta name="generator" content="Studio 3 http://aptana.com/"/>
+    <meta name="author" content="CS"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico"/>
+</head>
+<body>
+<h1>static relative</h1>
+<table id="table1">
+    <tr>
+        <td id="td1">
+            <div id="div1" style="padding:20px;border:1px solid red;">
 		               <span>
 		                   <strong id="greed" style="position:relative;">greed is</strong>
 		                   good 999999
 		              </span>
-		          </div>
-		      </td>
-		  </tr>
-		</table>
-		
-		<p style="border:1px solid red; width:200px; padding:20px;">
-		    T
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p style="border:1px solid red; width:200px; padding:20px;">
+    T
 		    <span style="background-color:#C0C0C0; position:relative;">
 		      这段文字从左向右排列，红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。
 		      可以通过它们绝对定位的位置来判断它们包含块的边缘。
@@ -37,10 +37,10 @@
 		    <em style="position:absolute; color:yellow; top:20px; left:0;">XX</em>
 		    <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
 		    </span>
-		</p>
-		
-		<p style="border:1px solid red; width:200px; padding:20px;">
-		    TEXT TEXT TEXT
+</p>
+
+<p style="border:1px solid red; width:200px; padding:20px;">
+    TEXT TEXT TEXT
 		    <span style="background-color:#C0C0C0; position:relative;">
 		      这段文字从左向右排列，红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。
 		      可以通过它们绝对定位的位置来判断它们包含块的边缘。
@@ -48,10 +48,10 @@
 		    <em style="position:absolute; color:yellow; top:20px; left:0;">XX</em>
 		    <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
 		    </span>
-		</p>
-		
-		<p style="border:1px solid red; width:200px; padding:20px; direction:rtl;">
-		    T
+</p>
+
+<p style="border:1px solid red; width:200px; padding:20px; direction:rtl;">
+    T
 		    <span style="background-color:#C0C0C0; position:relative;">
 			     这段文字从右向左排列，红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。
 			     可以通过它们绝对定位的位置来判断它们……
@@ -59,12 +59,12 @@
 			    <em style="position:absolute; color:yellow; top:20px; left:0;">XX</em>
 			    <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
 			    </span>
-			</p>
-			
-		<div id="container" style="padding:50px; background-color:#c0c0c0; position:relative; width:200px; height:200px;">
-		    <div id="div1" style="width:100%;height:100%;border:2px solid blue;">
-		               <div id="content" style="border:1px solid red; position:absolute; left:0; top:0;">absolute element</div>
-		    </div>
-		</div>
-	</body>
+</p>
+
+<div id="container" style="padding:50px; background-color:#c0c0c0; position:relative; width:200px; height:200px;">
+    <div id="div1" style="width:100%;height:100%;border:2px solid blue;">
+        <div id="content" style="border:1px solid red; position:absolute; left:0; top:0;">absolute element</div>
+    </div>
+</div>
+</body>
 </html>

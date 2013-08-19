@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>box</title>
-		<meta name="description" content="" />
-		<meta name="generator" content="Studio 3 http://aptana.com/" />
-		<meta name="author" content="CS" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="stylesheet" type="text/css" href="box-border.css" />
-	</head>
-	<body>
-		 <h1>边框-内边距</h1>
-		 <input type="button" class="J_Overflow" value="overflow:hidden">
-		 <h2>内联元素</h2>
-		 <div class="borderbox">
-		 	 <span class="box">内联元素的上下边框会与邻近行上下重叠； </span>
-		 	  <span class="box">内联文本元素的左右边框，只在首尾是可见的 </span>
-		 </div>
-		
-		 <h2>块状元素</h2>
-		 <div class="borderbox">
-			 <div class="box box-size">静态块状元素之间的边框是不会抵消的，这一点与外边距不同</div>
-			 <div class="box box-auto">被拉伸{width:auto}的同表格</div>
-		  </div>
-		 <h2>内联-块状元素</h2>
-		 <div class="borderbox">
-		 	 <span class="inline-block">上下边框和左右边框同样有效果</span>
-		 </div>
-		 <h2>表格</h2>
-		 <div class="borderbox">
-		 <table class="box box-table box-percent" style="margin: 0">
-		 	<caption>边框不会增加拉伸或设置尺寸的表格的大小</caption>
-		 	<thead></thead>
-		 	<tbody>
-		 		<tr>
-		 			<th>元素</th><th>border/padding效应</th>
-		 		</tr>
-		 		
-		 		<tr>
-		 			<td>内联元素</td>
-		 			<td>
-		 				<p>上下边框会与邻近行上下重叠；</p>
-		 				<p>内联文本元素的左右边框，只在首尾是可见的 </p>
-		 			</td>
-		 		</tr>
-		 		<tr>
-		 			<td>静态内联-块状元素</td>
-		 			<td>正常解析：边框是可见的而不是透明的；边框不能为负；不会抵消邻近块状元素的上下边框；改变元素的位置和邻居元素的位置相似于外边距</td>
-		 		</tr>
-		 		<td>静态块状元素</td>
-				 <td>
-					 <p>被拉伸，同表格</p>
-					 <p>其他，正常解析；</p>
-				</td>
-		 		<tr>
-		 			<td>浮动元素</td>
-		 			<td>同内联-块状</td>
-		 		</tr>
-		 		<tr>
-		 			<td>表格元素</td>
-		 			<td>边框不会增加拉伸或设置尺寸的表格的大小</td>
-		 		</tr>
-		 		<tr>
-		 			<td>绝对定位</td>
-		 			<td>
-		 				<p>被拉伸，同表格</p>
-		 				<p>其他，正常解析</p>
-	 				</td>
-		 		</tr>
-		 	</tbody>
-		 	<tfoot></tfoot>
-		 </table>
-		 </div>
-		  
-		  <h2>浮动</h2>
-		 <div class="borderbox  clearfix">
-		 	<div class="fl box box-percent">正常解析</div>
-		 </div>
-		  <h2>绝对定位</h2>
-		 <a class="masklayer">
-	    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
-	    		<div class="title">
-					<span class="s-opacity"></span>
-					<span class="text">水平拉伸</span>
-				</div> 
-	    	</a>
-		  	<a class="masklayer">
-		    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
-		    		<p class="layer bglayer">背景色</p>
-					<p class="layer fglayer"><span class="text">全面拉伸</span></p>
-		    </a>
-		    <script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
-		<script src="box.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8"/>
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>box</title>
+    <meta name="description" content=""/>
+    <meta name="generator" content="Studio 3 http://aptana.com/"/>
+    <meta name="author" content="CS"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="box-border.css"/>
+</head>
+<body>
+<h1>边框-内边距</h1>
+<input type="button" class="J_Overflow" value="overflow:hidden">
+
+<h2>内联元素</h2>
+
+<div class="borderbox">
+    <span class="box">内联元素的上下边框会与邻近行上下重叠； </span>
+    <span class="box">内联文本元素的左右边框，只在首尾是可见的 </span>
+</div>
+
+<h2>块状元素</h2>
+
+<div class="borderbox">
+    <div class="box box-size">静态块状元素之间的边框是不会抵消的，这一点与外边距不同</div>
+    <div class="box box-auto">被拉伸{width:auto}的同表格</div>
+</div>
+<h2>内联-块状元素</h2>
+
+<div class="borderbox">
+    <span class="inline-block">上下边框和左右边框同样有效果</span>
+</div>
+<h2>表格</h2>
+
+<div class="borderbox">
+    <table class="box box-table box-percent" style="margin: 0">
+        <caption>边框不会增加拉伸或设置尺寸的表格的大小</caption>
+        <thead></thead>
+        <tbody>
+        <tr>
+            <th>元素</th>
+            <th>border/padding效应</th>
+        </tr>
+
+        <tr>
+            <td>内联元素</td>
+            <td>
+                <p>上下边框会与邻近行上下重叠；</p>
+
+                <p>内联文本元素的左右边框，只在首尾是可见的 </p>
+            </td>
+        </tr>
+        <tr>
+            <td>静态内联-块状元素</td>
+            <td>正常解析：边框是可见的而不是透明的；边框不能为负；不会抵消邻近块状元素的上下边框；改变元素的位置和邻居元素的位置相似于外边距</td>
+        </tr>
+        <td>静态块状元素</td>
+        <td>
+            <p>被拉伸，同表格</p>
+
+            <p>其他，正常解析；</p>
+        </td>
+        <tr>
+            <td>浮动元素</td>
+            <td>同内联-块状</td>
+        </tr>
+        <tr>
+            <td>表格元素</td>
+            <td>边框不会增加拉伸或设置尺寸的表格的大小</td>
+        </tr>
+        <tr>
+            <td>绝对定位</td>
+            <td>
+                <p>被拉伸，同表格</p>
+
+                <p>其他，正常解析</p>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</div>
+
+<h2>浮动</h2>
+
+<div class="borderbox  clearfix">
+    <div class="fl box box-percent">正常解析</div>
+</div>
+<h2>绝对定位</h2>
+<a class="masklayer">
+    <img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+
+    <div class="title">
+        <span class="s-opacity"></span>
+        <span class="text">水平拉伸</span>
+    </div>
+</a>
+<a class="masklayer">
+    <img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+
+    <p class="layer bglayer">背景色</p>
+
+    <p class="layer fglayer"><span class="text">全面拉伸</span></p>
+</a>
+<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
+<script src="box.js"></script>
+</body>
 </html>

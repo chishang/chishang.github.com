@@ -1,74 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<title>包裹</title>
-		<meta name="description" content="" />
-		<meta name="generator" content="Studio 3 http://aptana.com/" />
-		<meta name="author" content="CS" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<link rel="stylesheet" type="text/css" href="box-wrap.css" />
-	</head>
-	<body>
-		 <h1>包裹</h1>
-		 <input type="button" class="J_Overflow" value="overflow:hidden">
-		 <h2>内联元素</h2>
-		 <span class="box">内联元素本身就是包裹的</span>
-		 <h2>块状元素</h2>
-		 <div class="box">块状元素只能竖直包裹，不能水平包裹</div>
-		 <h2>内联-块状元素</h2>
-		 <span class="inline-block">默认情况下({width:auto;height：auto})是包裹的</span>
-		 <h2>表格</h2>
-		 <table class="box box-table">
-		 	<caption>默认情况下({width:auto;height：auto})是包裹的</caption>
-		 	<thead></thead>
-		 	<tbody>
-		 		<tr>
-		 			<th>元素</th><th>包裹实现</th>
-		 		</tr>
-		 		<tr>
-		 			<td>浮动元素</td><td>{width:auto;height:auto}</td>
-		 		</tr>
-		 		<tr>
-		 			<td>静态内联元素</td><td>===</td>
-		 		</tr>
-		 		<tr>
-		 			<td>静态内联-块状元素</td><td>{width:auto;height:auto}</td>
-		 		</tr>
-		 		<tr>
-		 			<td>静态块状元素</td><td><p>竖直包裹：{height:auto;}</p></td>
-		 		</tr>
-		 		<tr>
-		 			<td>表格元素</td><td>{width:auto;height:auto}</td>
-		 		</tr>
-		 		<tr>
-		 			<td>绝对定位</td><td><p>水平包裹：{width:auto;left:num;right:auto;}or {width:auto;right:num;left:auto;}</p><p>竖直包裹：{height:auto;top:num;bottom:auto;}or {height:auto;to:num;bottom:auto;}</p></td>
-		 		</tr>
-		 	</tbody>
-		 	<tfoot></tfoot>
-		 </table>
-		  <h2>浮动</h2>
-		 <div class="flwrap  clearfix">
-		 	<div class="fl box">浮动元素不设定宽高的时候，是包裹的</div>
-		 	<div class="fl box"><p>但在不同的浏览器下，宽高不一致。特别是在ie6浏览器下，一不小心浮动元素就超长换行了</p></div>
-		 	<div class="fl box"><p>所以呢，在ie6下，最好还是给一个固定的宽度。</p></div>
-		 </div>
-		  <h2>绝对定位</h2>
-		
-		  	 <a class="masklayer">
-		    		<img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
-		    		<div class="price">
-						<span class="s-opacity"></span>
-						<span class="text">&yen;56.00</span>
-					</div> 
-		    	</a>
-		  <script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
-		<script src="box.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8"/>
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>包裹</title>
+    <meta name="description" content=""/>
+    <meta name="generator" content="Studio 3 http://aptana.com/"/>
+    <meta name="author" content="CS"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="box-wrap.css"/>
+</head>
+<body>
+<h1>包裹</h1>
+<input type="button" class="J_Overflow" value="overflow:hidden">
+
+<h2>内联元素</h2>
+<span class="box">内联元素本身就是包裹的</span>
+
+<h2>块状元素</h2>
+
+<div class="box">块状元素只能竖直包裹，不能水平包裹</div>
+<h2>内联-块状元素</h2>
+<span class="inline-block">默认情况下({width:auto;height：auto})是包裹的</span>
+
+<h2>表格</h2>
+<table class="box box-table">
+    <caption>默认情况下({width:auto;height：auto})是包裹的</caption>
+    <thead></thead>
+    <tbody>
+    <tr>
+        <th>元素</th>
+        <th>包裹实现</th>
+    </tr>
+    <tr>
+        <td>浮动元素</td>
+        <td>{width:auto;height:auto}</td>
+    </tr>
+    <tr>
+        <td>静态内联元素</td>
+        <td>===</td>
+    </tr>
+    <tr>
+        <td>静态内联-块状元素</td>
+        <td>{width:auto;height:auto}</td>
+    </tr>
+    <tr>
+        <td>静态块状元素</td>
+        <td><p>竖直包裹：{height:auto;}</p></td>
+    </tr>
+    <tr>
+        <td>表格元素</td>
+        <td>{width:auto;height:auto}</td>
+    </tr>
+    <tr>
+        <td>绝对定位</td>
+        <td><p>水平包裹：{width:auto;left:num;right:auto;}or {width:auto;right:num;left:auto;}</p>
+
+            <p>竖直包裹：{height:auto;top:num;bottom:auto;}or {height:auto;to:num;bottom:auto;}</p></td>
+    </tr>
+    </tbody>
+    <tfoot></tfoot>
+</table>
+<h2>浮动</h2>
+
+<div class="flwrap  clearfix">
+    <div class="fl box">浮动元素不设定宽高的时候，是包裹的</div>
+    <div class="fl box"><p>但在不同的浏览器下，宽高不一致。特别是在ie6浏览器下，一不小心浮动元素就超长换行了</p></div>
+    <div class="fl box"><p>所以呢，在ie6下，最好还是给一个固定的宽度。</p></div>
+</div>
+<h2>绝对定位</h2>
+
+<a class="masklayer">
+    <img width="235px" height="235px" src="http://img02.taobaocdn.com/tps/i2/T19c6xXmhfXXX74RY_-310-310.jpg" alt="测试">
+
+    <div class="price">
+        <span class="s-opacity"></span>
+        <span class="text">&yen;56.00</span>
+    </div>
+</a>
+<script src="http://a.tbcdn.cn/??s/kissy/1.2.0/kissy-min.js"></script>
+<script src="box.js"></script>
+</body>
 </html>

@@ -497,7 +497,7 @@ packages   : [{
     <h2 id="Event">Event 事件</h2>
     <ul>
         <li class="y">
-            相比于KISSY，YUI有全局的广播事件；YUI的simulate有兼容性问题（比如checkbox的click事件，在ie7/6下不能改变状态，而KISSY的fire可以）；对应方法及参数（基于node）:<br/>
+            相比于KISSY，YUI有全局的广播事件；YUI的simulate有兼容性问题（比如checkbox的click事件，在ie7/6下不能改变状态，而KISSY的fire虽然没有这个问题，但在模拟的过程中负值有问题）；对应方法及参数（基于node）:<br/>
             on ( type , fn , [context] , [arg*] ) <br/>
             delegate ( type , fn , spec , context , args )<br/>
             fire ( type , arguments ) 只能触发自定义事件<br/>

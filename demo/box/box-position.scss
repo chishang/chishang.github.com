@@ -1,89 +1,107 @@
 @import "box.scss";
 @import "box-base.scss";
-.marginbox{
-  width:900px;
-  margin:10px;
-  background:#eee;
+
+.marginbox {
+  width: 900px;
+  margin: 10px;
+  background: #eee;
 }
-.box{
-  @include box(auto,auto,10px 0,$b,10px);
+
+.box {
+  @include box(auto, auto, 10px 0, $b, 10px);
 }
-.inline-block{
-width:auto;
-height:auto;
-margin:0;
-line-height:1em;
+
+.inline-block {
+  width: auto;
+  height: auto;
+  margin: 0;
+  line-height: 1em;
 }
-.box-auto{
-  width:auto;
+
+.box-auto {
+  width: auto;
 }
-.box-size{
-  width:300px;
+
+.box-size {
+  width: 300px;
 }
-.box-percent{
-  width:100%;
+
+.box-percent {
+  width: 100%;
 }
-.margin-negative{
-  background:#333;
-  color:#fff;
-  border-color:red;
-  margin:-20px;
+
+.margin-negative {
+  background: #333;
+  color: #fff;
+  border-color: red;
+  margin: -20px;
 }
-.margin-tn{
-  margin-top:-20px;
+
+.margin-tn {
+  margin-top: -20px;
 }
-.margin-tp{
-  margin-top:20px;
+
+.margin-tp {
+  margin-top: 20px;
 }
-.margin-bn{
-  margin-bottom:-20px;
+
+.margin-bn {
+  margin-bottom: -20px;
 }
-.margin-bp{
-  margin-bottom:20px;
+
+.margin-bp {
+  margin-bottom: 20px;
 }
-.margin-la{
-  margin-left:auto;
-  margin-right:0;
+
+.margin-la {
+  margin-left: auto;
+  margin-right: 0;
 }
-.ib-no{
-  width:100%;
-  padding:0;
-  margin:0;
-  border:0;
-  height:auto;
-  background:#333;
-  color:#fff;
+
+.ib-no {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  height: auto;
+  background: #333;
+  color: #fff;
 }
-.ib-m{
+
+.ib-m {
   @extend .ib-no;
-  margin:20px;
+  margin: 20px;
 }
-.ib-bp{
-   @extend .ib-no;
-   padding:0 10px;
+
+.ib-bp {
+  @extend .ib-no;
+  padding: 0 10px;
 }
-.masklayer{
-  padding:10px;
+
+.masklayer {
+  padding: 10px;
 }
 
 .masklayer .title {
-  margin:10px;
+  margin: 10px;
 }
-.bglayer{
-  margin:10px;
+
+.bglayer {
+  margin: 10px;
 }
+
 .masklayer .price {
-    bottom: 10px;
-    font-size: 14px;
-    left: 0px;
-    right:0px;
-    margin:auto;
-    width:120px;
-    font-weight: bold;
-    height: 29px;
-    line-height: 29px;
-    overflow: hidden;
-    position: absolute;
-    text-align: center;
-    z-index: 100;
+  bottom: 10px;
+  font-size: 14px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  width: 120px;
+  font-weight: bold;
+  height: 29px;
+  line-height: 29px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  z-index: 100;
 }

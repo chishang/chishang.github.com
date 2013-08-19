@@ -1,44 +1,47 @@
 @import "../../css/base.scss";
 
-@mixin box($width:auto,$height:auto,$padding:0,$border:none,$margin:auto,$line-height:2em){
-	width:$width;
-	height:$height;
-	padding:$padding;
-	border:$border;
-	margin:$margin;
-	line-height:$line-height
+@mixin box($width: auto, $height: auto, $padding: 0, $border: none, $margin: auto, $line-height: 2em) {
+  width: $width;
+  height: $height;
+  padding: $padding;
+  border: $border;
+  margin: $margin;
+  line-height: $line-height
 }
 
-@mixin title($size:14px,$height:2em,$back:#ccc,$color:#000,$weight:bold){
-  font-size:$size;
-  line-height:$height;
-  color:$color;
-  background-color:$back;
-  text-indent:20px;
-  font-weight:$weight;
-  margin-bottom:10px;
+@mixin title($size: 14px, $height: 2em, $back: #ccc, $color: #000, $weight: bold) {
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+  background-color: $back;
+  text-indent: 20px;
+  font-weight: $weight;
+  margin-bottom: 10px;
 }
 
-@mixin inline($line-height:2em,$padding:10px,$border:1px solid #000,$margin:20px){
-  display:inline;
-  line-height:$line-height;
-  padding:$padding;
-  border:$border;
-  margin:$margin;
+@mixin inline($line-height: 2em, $padding: 10px, $border: 1px solid #000, $margin: 20px) {
+  display: inline;
+  line-height: $line-height;
+  padding: $padding;
+  border: $border;
+  margin: $margin;
 }
-@mixin inline-block($width:100px,$height:100px,$padding:10px,$border:1px solid #000,$margin:20px,$line-height:2em){
-  display:inline-block;
-  @include box($width,$height,$padding,$border,$margin,$line-height);
-  // _zoom:1;
-  // _diaplay:inline;
+
+@mixin inline-block($width: 100px, $height: 100px, $padding: 10px, $border: 1px solid #000, $margin: 20px, $line-height: 2em) {
+  display: inline-block;
+  @include box($width, $height, $padding, $border, $margin, $line-height);
+// _zoom:1;
+// _diaplay:inline;
 }
-@mixin fl($w:auto ,$h:auto){
-  float:left;
-  display:inline;
-  width:$w;
-  height:$h;
+
+@mixin fl($w: auto, $h: auto) {
+  float: left;
+  display: inline;
+  width: $w;
+  height: $h;
 }
-@mixin opa($o){
-  opacity:$o;
+
+@mixin opa($o) {
+  opacity: $o;
   filter: Alpha(Opacity=$o*100);
 }
