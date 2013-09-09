@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://a.tbcdn.cn/??p/global/1.0/global-min.css,app/dp/s/html5/css/common-min.css,apps/et/trip-home/v3/page/common.css,apps/et/trip-home/v3/page/header.css?t=2013060820130214.css" />
+    <script type="text/javascript" src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://g.tbcdn.cn/tb/global/1.0.9/global-min.js?t=20130802" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        var ua = "";
+        var UA_Opt = new Object;
+        UA_Opt.LogVal = "ua";
+        UA_Opt.MaxMCLog = 3;
+        UA_Opt.MaxMPLog = 3;
+        UA_Opt.MaxKSLog = 3;
+        UA_Opt.Token = new Date().getTime() + ":" + Math.random();
+        UA_Opt.SendMethod = 8;
+        UA_Opt.Flag = 14222;
+    </script>
+    <script src="http://acjs.aliyun.com/actionlog/js/ua.js"></script>
+    <style>
+        .rule,.down{
+            float: left;
+            height:600px;
+        }
+        .rule{
+            width:610px;
+            background:url('http://gtms02.alicdn.com/tps/i2/T14MiBFflaXXbAwTTH-611-600.jpg') no-repeat;
+            position: relative;
+        }
+        .rule .text{
+            font-family: "黑体";
+            background: #e1f0ff url('http://gtms02.alicdn.com/tps/i2/T1KdatFlXgXXbCiEI9-1-463.jpg') repeat-x;
+            position: absolute;
+            display: none;
+            top:65px;
+            left:50px;
+            width:230px;
+            height:410px;
+            padding:20px 30px ;
+            font-size:24px;
+            font-style: italic;
+            color:#2e3f47;
+            border-radius:5px;
+            box-shadow: 10px 15px 30px -1px #2571a7;
+        }
+        .rule .text h3{
+           font-size:32px;
+           font-weight:bold;
+            font-style: normal;
+           line-height: 64px;
+        }
+
+        .down{
+            width:380px;
+            background: url('http://gtms01.alicdn.com/tps/i1/T1xC1AFipbXXb05iT5-379-600.jpg') no-repeat;
+            color:#f0f7ff;
+            position: relative;
+        }
+        .down .pos,.rule .pos{
+            position: absolute;
+            width:125px;
+            height:33px;
+            top:490px;
+            left:87px;
+        }
+        .rule .cl{
+            left:260px;
+            top:10px;
+            width:20px;
+            height:20px;
+            background: url('http://gtms04.alicdn.com/tps/i4/T14cyBFfNaXXXS3VDa-20-20.jpg') no-repeat;
+
+        }
+        .rule .ru{
+            top:413px;
+            left:130px;
+        }
+        .down .ad{
+            top:490px;
+            left:220px;
+        }
+        .down .fs{
+            top: 157px;
+            left: 253px;
+            width: 91px;
+            background: none;
+            cursor:pointer;
+        }
+        .down .er{
+            top: 240px;
+            left: 90px;
+            width: 260px;
+            height: 20px;
+            color:#f60;
+        }
+        .down .ts{
+            top: 205px;
+            left: 305px;
+            width: 40px;
+            background: url('http://gtms01.alicdn.com/tps/i1/T1ZX5oFipgXXXBLNLf-39-29.jpg') no-repeat;
+        }
+        .down .img{
+            top: 203px;
+            left: 172px;
+            width: 66px;
+        }
+        .down input{
+            background: #6c6c6c;
+            color:#333;
+            border: none;
+            font-size:18px;
+            line-height: 34px;
+            padding-left: 5px;
+        }
+        .down .tel,.down .yz{
+            border:1px solid #3e3e3e;
+        }
+        .down .tel{
+            top: 156px;
+            left: 85px;
+            width: 150px;
+
+        }
+        .down .yz{
+            top: 203px;
+            left: 85px;
+            width:75px;
+        }
+    </style>
+</head>
+<body>
+      <div id="container" style="width:990px; margin: 0 auto; height: 600px;">
+          <div class="rule">
+              <a class="pos ru" id="J_Text_Show" href="#rule"></a>
+              <div class="text " id="J_Text">
+                  <a class="pos cl " href="#close" id="J_Text_Hide"></a>
+                  <h3>活动规则：</h3>
+                  <p>
+                      活动测试文案，注意不要超过容器！
+                      活动测试文案，注意不要超过容器！
+                      活动测试文案，注意不要超过容器！
+                      活动测试文案，注意不要超过容器！
+                  </p>
+              </div>
+          </div>
+          <div class="down">
+              <a class="pos ip" href="http://itunes.apple.com/cn/app/id453691481"></a>
+              <a class="pos ad" href="http://download.taobaocdn.com/mobile/mtrip/taobao_trip.apk"></a>
+              <form id="J_ckf1">
+
+                  <input type="text" placeholder="输入手机号" class="pos tel" id="J_ckm1"/>
+                  <input type="text" placeholder="验证码" class="yz pos" id="J_ckc1"/>
+                  <div id="" class="pos img check-code">
+                      <img width="128px" height="34px" src="http://checkcode.taobao.com/auction/checkcode?sessionID=86b1ffe9ee293798e6129fac190798af&t=1372665853045" id="J_cki1">
+                  </div>
+                  <a class="change-code pos ts" href="javascript:;" id="J_ckg1"></a>
+
+                  <div class="check-error pos er">
+                      <span id="J_ckr1"></span>
+                      <img  id="J_ckw1" src="http://img03.taobaocdn.com/tps/i3/T1oBGqXjdJXXXXXXXX-16-16.gif" style="display: none;">
+                     </div>
+                  <input type="submit" class="check-code-btn pos fs" value="" />
+
+              </form>
+
+          </div>
+      </div>
+      <script type="text/javascript">
+      KISSY.add('trip-checkcode-v2', function (S, IO) {
+
+          function Checkcode (config) {
+              this.init(config);
+          }
+
+          Checkcode.prototype = {
+              init           : function (config) {
+                  var that = this;
+
+                  that.initAttr();
+                  that.initParam(config || {});
+
+                  if(!that.form){
+                      return;
+                  }
+
+
+                  that.bindUI();
+                  that.show();
+              },
+              initParam      : function (config) {
+                  var that = this;
+
+                  that.getCheckcodeUrl = config.getCheckcodeUrl || 'http://promotion.trip.' + that._host + '/weibo/weibo_check_code_url.htm';
+                  that.submitFn = config.submitFn || new Function();
+
+
+                  var domNodes = ['img', 'form', 'errNode', 'codeNode', 'waiting'];
+                  S.each(domNodes, function (item) {
+                      that[item] = config[item] && S.one(config[item]);
+                  });
+              },
+              initAttr       : function () {
+                  var that = this;
+
+                  that._host = location.hostname.indexOf('daily.taobao.net') > 0 ? 'daily.taobao.net' : 'taobao.com';
+
+              },
+              fetchCheckcode : function (callback) {
+                  var that = this;
+
+                  var ajaxCfg = {
+                      url      : that.getCheckcodeUrl + "?&t=" + new Date().getTime(),
+                      dataType : "jsonp",
+                      success  : function (data) {
+                          var code = data.code;
+
+                          if (data.code == 200) {
+                              var tmp = data.data;
+
+                              that._url = tmp.checkUrl;
+                              that._cst = tmp.cst;
+                              that._csk = tmp.csk;
+
+                              callback(code);
+                          }
+                      }
+                  };
+
+                  IO(ajaxCfg);
+
+              },
+              bindUI         : function () {
+                  var that = this;
+
+                  that.form.on('submit', function (e) {
+                      e.halt();
+
+                      if (that.codeNode.val().length < 4) {
+                          that.errNode.css("display", "block").html('亲，请先输入验证码哦！');
+                          return;
+                      }
+
+                      that.showWaiting();
+                      var param = "checkcode=" + that.codeNode.val() + "&csk=" + that._csk + "&cst=" + that._cst + "&ua=" + that.flushUA() + "&t=" + new Date().getTime();
+
+                      that.clearErr();
+                      that.submitFn(param);
+
+                  });
+
+                  that.img.on('click', function () {
+                      that.updateImg();
+                  });
+
+                  that.codeNode.on('focus', function () {
+                      that.setErr("");
+                  });
+              },
+              updateImg      : function () {
+                  var that = this;
+
+                  that.fetchCheckcode(function () {
+                      that.img.attr("src", that._url + "&t=" + new Date().getTime());
+                  });
+              },
+              show           : function () {
+                  var that = this;
+
+                  that.codeNode.val("");
+                  that.updateImg();
+                  that.hideWaiting();
+                  //that.overlay.center().show();
+              },
+              hide           : function () {
+                  var that = this;
+
+              },
+              clearErr       : function () {
+                  var that = this;
+
+                  that.errNode.html("").hide();
+
+                  return that;
+              },
+              setErr         : function (msg) {
+
+                  if (msg) {
+                      var that = this;
+                      that.hideWaiting();
+                      that.errNode.html(msg).show();
+                  }
+
+                  return that;
+              },
+              flushUA        : function () {
+                  var _ua = encodeURIComponent(ua);
+
+                  UA_Opt.Token = new Date().getTime() + ":" + Math.random();
+                  UA_Opt && UA_Opt.reload();
+
+                  return _ua;
+              },
+              showWaiting    : function () {
+                  var that = this;
+
+                  that.waiting.show();
+
+                  return that;
+              },
+              hideWaiting    : function () {
+                  var that = this;
+
+                  that.waiting.hide();
+
+                  return that;
+              }
+          };
+
+          return Checkcode;
+
+      }, {requires : ['ajax']});
+      KISSY.use('trip-checkcode-v2, ajax, overlay', function (S, Checkcode, IO, O) {
+          var text = S.one('#J_Text');
+          var show = S.one('#J_Text_Show');
+          var hide = S.one('#J_Text_Hide');
+          show.on('click',function(e){
+              e.halt();
+              text.show();
+          });
+          hide.on('click',function(e){
+              text.hide();
+              e.halt();
+          });
+
+          var errorMsg = {
+              "100003" : "验证码错误，请重新输入！",
+              "100006" : "亲，你的验证码已超时，请重新输入哦~",
+              "100008" : "亲，服务器繁忙，请刷新重试哦~",
+              "400011" : "亲，短信发送失败！",
+              "400012" : "亲，手机号码输入有误哦！",
+              "400013" : "亲，同一号码不可以频繁发送哦！",
+              "400014" : "亲，您的手机号码发送次数已达上限！",
+              "400015" : "亲，您的发送次数已达上限！"
+          };
+
+          var submitFn = function (param, checkcode, telNode) {
+              var telNode = S.one(telNode);
+              var phonenum = S.trim(telNode.val());
+              if (!(/^0{0,1}(13[0-9]|15[0-3|5-9]|18[0|2|5-9])[0-9]{8}$/).test(phonenum)) {
+                  //SNS.alert('手机号格式有误！');
+                  checkcode.setErr("手机号格式有误!");
+                  clearCheckcode(checkcode);
+                  return false;
+              }
+
+              var url = 'http://promotion.trip.' + checkcode._host + '/platform/send_mobile_message704.htm?';
+              new IO({
+                  type     : "get",
+                  url      : url + "phonenum=" + phonenum + "&" + param,
+                  success  : function (data) {
+                      var code = data.code;
+                      //短信发送成功
+                      if (400010 == code) {
+                          //SNS.alert(data.msg);
+                          checkcode.setErr(data.msg);
+                          clearCheckcode(checkcode);
+                      } else {
+                          //验证码错误
+                          if (100003 == code) {
+                              checkcode.setErr("验证码错误，请重新输入").updateImg();
+                              return;
+                          }
+
+                          clearCheckcode(checkcode);
+                          checkcode.setErr(errorMsg[code]);
+                      }
+
+                  },
+                  error    : function () {
+                      checkcode.setErr(errorMsg[100008]);
+                      clearCheckcode(checkcode);
+                  },
+                  dataType : "jsonp",
+                  timeout  : 15
+              });
+          };
+
+          function clearCheckcode (checkcode) {
+              checkcode.waiting.css("display", "none");
+              //checkcode.clearErr();
+              checkcode.updateImg();
+          }
+
+          var popoup = new Checkcode({
+              img      : '#J_cki1',
+              form     : "#J_ckf1",
+              errNode  : "#J_ckr1",
+              codeNode : "#J_ckc1",
+              waiting  : "#J_ckw1",
+              width:70,
+              submitFn : function (param) {
+                  submitFn(param, popoup, '#J_ckm1');
+              }
+          });
+
+          S.one('#J_ckg1').on('click', function () {
+              popoup.updateImg();
+          });
+
+
+      });
+      </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+[submodule "flindlinks"]
+	path = flindlinks
+	url = git@github.com:chishang/findlinks.git
+[submodule "validation"]
+	path = validation
+	url = git@github.com:chishang/validation.git
